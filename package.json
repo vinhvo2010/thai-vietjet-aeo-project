@@ -1,0 +1,31 @@
+{
+  "name": "thai-vietjet-aeo-project",
+  "version": "1.0.0",
+  "description": "Thai Vietjet AI-First Marketing & AEO Strategy Implementation",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static HTML site - no build required'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "thai-vietjet",
+    "aeo",
+    "answer-engine-optimization",
+    "ai-search",
+    "schema-markup",
+    "seo",
+    "airline-marketing",
+    "travel-industry"
+  ],
+  "author": "Thai Vietjet AI-First Marketing Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/thai-vietjet-aeo-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/thai-vietjet-aeo-project/issues"
+  },
+  "homepage": "https://yourusername.github.io/thai-vietjet-aeo-project"
+}

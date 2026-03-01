@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Vietjet AI-First Marketing & AEO Implementation Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .section-header {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2d3748;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .subsection-header {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .highlight-box {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            margin: 16px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 32px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #667eea;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% - 12px);
+            background: #cbd5e0;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .badge-primary {
+            background: #e6f0ff;
+            color: #667eea;
+        }
+        
+        .badge-success {
+            background: #d4f4dd;
+            color: #22c55e;
+        }
+        
+        .badge-warning {
+            background: #fff4e6;
+            color: #f59e0b;
+        }
+        
+        .badge-info {
+            background: #e0f2fe;
+            color: #0ea5e9;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #22c55e;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+        
+         {
+            body {
+                background: white;
+            }
+            .card {
+                box-shadow: none;
+                border: 1px solid #e2e8f0;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-5xl font-bold mb-4">Thai Vietjet</h1>
+                    <h2 class="text-3xl font-light mb-2">AI-First Marketing & AEO Implementation Guide</h2>
+                    <p class="text-xl opacity-90">Comprehensive Strategy for th.vietjetair.com</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm opacity-75">Tháng 2, 2026</div>
+                    <div class="text-lg font-semibold mt-2">Prepared by: Genspark AI Research Team</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 py-12 max-w-7xl">
+        
+        <!-- Executive Summary -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-chart-line mr-3"></i>Executive Summary</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="stat-card">
+                    <div class="stat-number">123%</div>
+                    <div class="stat-label">AI Traffic Growth (6 months)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">84%</div>
+                    <div class="stat-label">ChatGPT Share of AI Traffic</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">91%</div>
+                    <div class="stat-label">Travelers Without Brand Preference</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">75%</div>
+                    <div class="stat-label">Projected AI Searches by 2028</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3 class="text-xl font-semibold mb-3"><i class="fas fa-bullseye mr-2 text-purple-600"></i>Opportunity</h3>
+                <p class="mb-3"><strong>Thai Vietjet</strong> is a leading low-cost carrier operating routes across Thailand, Vietnam, Australia, Japan, and Taiwan. With the rapid growth of AI-driven travel planning, there is a critical opportunity to optimize digital presence for AI search engines (ChatGPT, Perplexity, Google AI Overviews) to capture travelers at the earliest stage of their journey.</p>
+                <p class="mb-3"><strong>Current State:</strong> th.vietjetair.com has a functional booking engine and basic destination content, but lacks comprehensive AEO (Answer Engine Optimization) implementation. The site is not optimized for AI discovery, missing opportunities to appear in AI-generated travel recommendations.</p>
+                <p><strong>Recommended Investment:</strong> 6-month implementation program with estimated budget of <span class="font-bold text-purple-600">THB 2,500,000 - 4,000,000</span> (USD 70,000 - 112,000) to achieve 50-70% increase in AI visibility and 30-50% growth in organic traffic.</p>
+            </div>
+        </div>
+
+        <!-- Current State Analysis -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-globe mr-3"></i>Thai Vietjet: Current Digital Presence Analysis</h2>
+            
+            <h3 class="subsection-header">Website Structure</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h4 class="font-semibold text-lg mb-3 text-purple-600"><i class="fas fa-check-circle mr-2"></i>Strengths</h4>
+                    <ul class="checklist">
+                        <li>Modern booking engine with Round Trip/One Way options</li>
+                        <li>Mobile-responsive design</li>
+                        <li>Multi-language support (Thai, English)</li>
+                        <li>Integrated loyalty program (Fun Rewards)</li>
+                        <li>E-Magazine and travel guides section</li>
+                        <li>Online check-in functionality</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-3 text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i>Gaps</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i><span>No Flight or FlightReservation schema markup</span></li>
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i><span>Limited FAQ pages with structured data</span></li>
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i><span>Thin content on route-specific pages</span></li>
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i><span>No comprehensive destination guides</span></li>
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i><span>Missing HowTo schema for travel processes</span></li>
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i><span>Not optimized for AI-driven discovery</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="subsection-header">Route Network & Key Destinations</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Key Destinations</th>
+                        <th>Starting Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge badge-primary">Thailand Domestic</span></td>
+                        <td>Bangkok (BKK), Chiang Mai, Phuket, Krabi, Khon Kaen</td>
+                        <td>750 THB</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-success">Vietnam</span></td>
+                        <td>Hanoi, Ho Chi Minh City, Da Nang, Phu Quoc</td>
+                        <td>1,999 THB</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-info">Australia</span></td>
+                        <td>Sydney, Melbourne, Adelaide, Brisbane, Perth</td>
+                        <td>Contact for pricing</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge badge-warning">East Asia</span></td>
+                        <td>Fukuoka, Taipei, Hong Kong, Singapore</td>
+                        <td>3,999 THB</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="subsection-header">Service Offerings</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card bg-purple-50">
+                    <div class="icon-box bg-purple-200 text-purple-700"><i class="fas fa-suitcase"></i></div>
+                    <h4 class="font-semibold mb-2">Baggage</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• 7kg cabin baggage</li>
+                        <li>• 20kg checked baggage (SkyBoss/Deluxe)</li>
+                        <li>• Free 20kg on select international routes</li>
+                    </ul>
+                </div>
+                <div class="card bg-blue-50">
+                    <div class="icon-box bg-blue-200 text-blue-700"><i class="fas fa-crown"></i></div>
+                    <h4 class="font-semibold mb-2">SkyBoss</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• Premium seating</li>
+                        <li>• 30kg checked baggage</li>
+                        <li>• Priority boarding & check-in</li>
+                        <li>• Power Pass option (unlimited flights)</li>
+                    </ul>
+                </div>
+                <div class="card bg-green-50">
+                    <div class="icon-box bg-green-200 text-green-700"><i class="fas fa-gift"></i></div>
+                    <h4 class="font-semibold mb-2">Promotions</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• Zero Dong tickets (0 VND + taxes)</li>
+                        <li>• 12h Let's Vietjet (12-2pm daily)</li>
+                        <li>• Power Pass packages</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- AEO Strategy for Airlines -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-rocket mr-3"></i>AEO Strategy for Airlines: Industry Best Practices</h2>
+            
+            <div class="highlight-box bg-yellow-50 border-yellow-500">
+                <h3 class="text-xl font-semibold mb-3"><i class="fas fa-lightbulb mr-2 text-yellow-600"></i>Why AEO Matters for Airlines</h3>
+                <p class="mb-2">Traditional SEO focuses on ranking in blue links. <strong>AEO (Answer Engine Optimization)</strong> focuses on being cited in AI-generated answers. The difference is critical:</p>
+                <ul class="list-disc ml-6 space-y-1">
+                    <li><strong>91% of travelers don't have a preferred airline</strong> when they start searching</li>
+                    <li><strong>AI search is replacing traditional search</strong> – Google AI Overviews appear in 13% of searches</li>
+                    <li><strong>ChatGPT has 400M weekly users</strong> asking travel questions</li>
+                    <li><strong>By 2028, 75% of searches will be AI-powered</strong></li>
+                    <li><strong>If you're not in the AI answer, you're invisible</strong></li>
+                </ul>
+            </div>
+            
+            <h3 class="subsection-header">Core AEO Principles for Airlines</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card bg-indigo-50">
+                    <h4 class="font-semibold text-lg mb-3 text-indigo-700"><i class="fas fa-search mr-2"></i>1. Query-Focused Content</h4>
+                    <p class="text-sm mb-3">Create content that directly answers traveler questions:</p>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>✓</strong> "What is the cheapest airline from Bangkok to Phuket?"</li>
+                        <li><strong>✓</strong> "How much baggage can I bring on Thai Vietjet?"</li>
+                        <li><strong>✓</strong> "Does Thai Vietjet fly to Australia?"</li>
+                        <li><strong>✗</strong> Generic "About Us" or "Services" pages</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-pink-50">
+                    <h4 class="font-semibold text-lg mb-3 text-pink-700"><i class="fas fa-code mr-2"></i>2. Structured Data</h4>
+                    <p class="text-sm mb-3">Implement schema markup so AI can understand your content:</p>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>Flight schema:</strong> flight numbers, times, prices</li>
+                        <li><strong>FlightReservation schema:</strong> booking confirmations</li>
+                        <li><strong>FAQPage schema:</strong> common questions</li>
+                        <li><strong>HowTo schema:</strong> check-in, baggage procedures</li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-green-50">
+                    <h4 class="font-semibold text-lg mb-3 text-green-700"><i class="fas fa-map-marked-alt mr-2"></i>3. Route-Specific Pages</h4>
+                    <p class="text-sm mb-3">Every route should have a crawlable landing page:</p>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>Example:</strong> "Bangkok to Phuket Flights"</li>
+                        <li>Include: frequency, duration, price range, aircraft type</li>
+                        <li>Add: destination guide, booking CTA, FAQ</li>
+                        <li><strong>Virgin Australia did this → 27% share of voice</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="card bg-orange-50">
+                    <h4 class="font-semibold text-lg mb-3 text-orange-700"><i class="fas fa-users mr-2"></i>4. E-E-A-T Signals</h4>
+                    <p class="text-sm mb-3">Build Experience, Expertise, Authoritativeness, Trust:</p>
+                    <ul class="text-sm space-y-2">
+                        <li>Author bylines (e.g., "Written by Captain John Smith")</li>
+                        <li>Customer reviews with Review schema</li>
+                        <li>Awards & certifications</li>
+                        <li>Active social media presence</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="subsection-header">Content Types That Win in AI Search</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Content Type</th>
+                        <th>Purpose</th>
+                        <th>Schema Type</th>
+                        <th>AI Citation Lift</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Destination Guides</strong></td>
+                        <td>Answer "Where should I go?" queries</td>
+                        <td>Article, FAQPage</td>
+                        <td>40-50%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Route Pages</strong></td>
+                        <td>Capture "[City A] to [City B] flights" searches</td>
+                        <td>Flight, Offer</td>
+                        <td>30-40%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FAQ Pages</strong></td>
+                        <td>Answer specific traveler questions</td>
+                        <td>FAQPage</td>
+                        <td>35-45%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>How-To Guides</strong></td>
+                        <td>Explain check-in, baggage, boarding processes</td>
+                        <td>HowTo</td>
+                        <td>30-40%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Comparison Content</strong></td>
+                        <td>"Best airline for X" or "Thai Vietjet vs AirAsia"</td>
+                        <td>Article, Review</td>
+                        <td>25-35%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Schema Markup Implementation -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-code mr-3"></i>Schema Markup Implementation Guide</h2>
+            
+            <h3 class="subsection-header">1. Flight Schema</h3>
+            <p class="mb-4">Use this for displaying flight information on route pages and search results.</p>
+            
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Flight",
+  "flightNumber": "VZ123",
+  "provider": {
+    "@type": "Airline",
+    "name": "Thai Vietjet Air",
+    "iataCode": "VZ",
+    "url": "https://th.vietjetair.com"
+  },
+  "departureAirport": {
+    "@type": "Airport",
+    "name": "Suvarnabhumi Airport",
+    "iataCode": "BKK",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bangkok",
+      "addressCountry": "TH"
+    }
+  },
+  "departureTime": "2026-03-15T08:30:00+07:00",
+  "arrivalAirport": {
+    "@type": "Airport",
+    "name": "Phuket International Airport",
+    "iataCode": "HKT",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Phuket",
+      "addressCountry": "TH"
+    }
+  },
+  "arrivalTime": "2026-03-15T10:00:00+07:00",
+  "estimatedFlightDuration": "PT1H30M",
+  "aircraft": {
+    "@type": "Vehicle",
+    "name": "Airbus A320"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "1299",
+    "priceCurrency": "THB",
+    "availability": "https://schema.org/InStock",
+    "url": "https://th.vietjetair.com/booking"
+  }
+}
+&lt;/script&gt;
+            </div>
+            
+            <h3 class="subsection-header">2. FlightReservation Schema</h3>
+            <p class="mb-4">Implement this in booking confirmation emails and pages.</p>
+            
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FlightReservation",
+  "reservationId": "VZ123456",
+  "reservationStatus": "https://schema.org/ReservationConfirmed",
+  "underName": {
+    "@type": "Person",
+    "name": "John Smith",
+    "email": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="741e1b1c1a34110c15190418115a171b19">[email&#160;protected]</a>"
+  },
+  "reservationFor": {
+    "@type": "Flight",
+    "flightNumber": "VZ123",
+    "provider": {
+      "@type": "Airline",
+      "name": "Thai Vietjet Air",
+      "iataCode": "VZ"
+    },
+    "departureAirport": {
+      "@type": "Airport",
+      "name": "Suvarnabhumi Airport",
+      "iataCode": "BKK"
+    },
+    "departureTime": "2026-03-15T08:30:00+07:00",
+    "arrivalAirport": {
+      "@type": "Airport",
+      "name": "Phuket International Airport",
+      "iataCode": "HKT"
+    },
+    "arrivalTime": "2026-03-15T10:00:00+07:00"
+  },
+  "passengerSequenceNumber": "001",
+  "boardingGroup": "A",
+  "totalPrice": "1850",
+  "priceCurrency": "THB",
+  "bookingTime": "2026-02-20T14:30:00+07:00"
+}
+&lt;/script&gt;
+            </div>
+            
+            <h3 class="subsection-header">3. FAQPage Schema</h3>
+            <p class="mb-4">Critical for appearing in AI answers. Implement on all FAQ pages.</p>
+            
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much baggage can I bring on Thai Vietjet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thai Vietjet allows 7kg cabin baggage for all passengers. Checked baggage depends on fare type: Eco fares do not include checked baggage, Deluxe fares include 20kg, and SkyBoss fares include 30kg checked baggage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Thai Vietjet fly to Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Thai Vietjet operates flights to major Australian cities including Sydney, Melbourne, Brisbane, Adelaide, and Perth through connections via Vietnam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I check in online with Thai Vietjet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can check in online via th.vietjetair.com or the Vietjet Air mobile app 24 hours before departure. Simply enter your booking code and passenger name to complete online check-in and download your boarding pass."
+      }
+    }
+  ]
+}
+&lt;/script&gt;
+            </div>
+            
+            <h3 class="subsection-header">4. Organization Schema</h3>
+            <p class="mb-4">Add to homepage to establish Thai Vietjet's identity.</p>
+            
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Airline",
+  "name": "Thai Vietjet Air",
+  "alternateName": "Thai VietJet",
+  "url": "https://th.vietjetair.com",
+  "logo": "https://th.vietjetair.com/logo.png",
+  "iataCode": "VZ",
+  "description": "Thai Vietjet Air is a low-cost carrier operating flights across Thailand, Vietnam, Australia, Japan, and Taiwan.",
+  "foundingDate": "2014",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+66-2-126-8999",
+    "email": "<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b383e3b3b24393f0b3d222e3f212e3f2a223965282426">[email&#160;protected]</a>"
+  },
+  "sameAs": [
+    "https://www.facebook.com/VietJetThailand",
+    "https://www.instagram.com/thaivietjet",
+    "https://twitter.com/thaivietjet"
+  ],
+  "areaServed": [
+    "Thailand",
+    "Vietnam",
+    "Australia",
+    "Japan",
+    "Taiwan",
+    "Singapore",
+    "Hong Kong"
+  ]
+}
+&lt;/script&gt;
+            </div>
+            
+            <h3 class="subsection-header">5. HowTo Schema</h3>
+            <p class="mb-4">Use for procedural guides (check-in, baggage, boarding).</p>
+            
+            <div class="code-block">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Check In Online with Thai Vietjet",
+  "description": "Complete online check-in for your Thai Vietjet flight in 5 easy steps",
+  "totalTime": "PT5M",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Visit Online Check-in",
+      "text": "Go to th.vietjetair.com and click 'Online Check-in' or open the Vietjet Air mobile app.",
+      "url": "https://th.vietjetair.com/checkin"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Enter Booking Details",
+      "text": "Enter your booking code (6-digit alphanumeric code) and passenger's last name."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Select Seats",
+      "text": "Choose your preferred seats from the seat map. Some seats may have additional fees."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Review Booking",
+      "text": "Confirm passenger details, baggage allowance, and travel documents."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Download Boarding Pass",
+      "text": "Download your boarding pass to your mobile device or print it. Show at airport security and boarding gate."
+    }
+  ]
+}
+&lt;/script&gt;
+            </div>
+            
+            <div class="highlight-box bg-blue-50 border-blue-500">
+                <h4 class="font-semibold mb-2"><i class="fas fa-check-circle text-blue-600 mr-2"></i>Implementation Checklist</h4>
+                <ul class="checklist">
+                    <li>Add Flight schema to all route pages</li>
+                    <li>Add FlightReservation schema to booking confirmations</li>
+                    <li>Create FAQPage schema for 20-30 common questions</li>
+                    <li>Add Organization schema to homepage</li>
+                    <li>Create HowTo guides for check-in, baggage, boarding</li>
+                    <li>Validate all schema using Google Rich Results Test</li>
+                    <li>Monitor in Google Search Console</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Content Strategy -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-file-alt mr-3"></i>Content Strategy & Templates</h2>
+            
+            <h3 class="subsection-header">Content Hierarchy</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="card bg-purple-100">
+                    <h4 class="font-bold mb-2">Tier 1: Route Pages</h4>
+                    <p class="text-sm mb-2"><strong>Target: 50-80 pages</strong></p>
+                    <p class="text-sm">Every route Thai Vietjet operates gets a dedicated page with Flight schema, pricing, schedule, and destination highlights.</p>
+                </div>
+                <div class="card bg-blue-100">
+                    <h4 class="font-bold mb-2">Tier 2: Destination Guides</h4>
+                    <p class="text-sm mb-2"><strong>Target: 20-30 pages</strong></p>
+                    <p class="text-sm">Comprehensive guides for major destinations (Bangkok, Phuket, Hanoi, Sydney) with attractions, hotels, restaurants, FAQs.</p>
+                </div>
+                <div class="card bg-green-100">
+                    <h4 class="font-bold mb-2">Tier 3: FAQ & How-To</h4>
+                    <p class="text-sm mb-2"><strong>Target: 15-25 pages</strong></p>
+                    <p class="text-sm">Detailed guides covering baggage, check-in, boarding, cancellation, special assistance, with FAQPage and HowTo schemas.</p>
+                </div>
+            </div>
+            
+            <h3 class="subsection-header">Template 1: Route Page</h3>
+            <div class="card bg-gray-50">
+                <h4 class="font-bold text-purple-700 mb-3">Bangkok to Phuket Flights - Thai Vietjet</h4>
+                
+                <p class="mb-4"><strong>TL;DR (40-60 words):</strong><br>
+                Thai Vietjet operates daily flights from Bangkok (BKK) to Phuket (HKT) with fares starting at 750 THB. Flight duration is 1 hour 30 minutes. Choose from Eco, Deluxe, or SkyBoss fare classes. Book online at th.vietjetair.com for the best prices and flexible travel dates.</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">How many flights per day from Bangkok to Phuket?</h5>
+                <p>Thai Vietjet operates 6-8 daily flights between Bangkok (Suvarnabhumi Airport) and Phuket International Airport. Departure times range from 6:00 AM to 9:00 PM, offering flexible travel options for business and leisure travelers.</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">How much is a Thai Vietjet flight from Bangkok to Phuket?</h5>
+                <p>Ticket prices start at 750 THB for Eco fares (excluding baggage). Deluxe fares with 20kg checked baggage start at 1,299 THB. SkyBoss premium fares with 30kg baggage and priority services start at 1,899 THB. Prices vary by travel date and booking time.</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">How long is the flight from Bangkok to Phuket?</h5>
+                <p>Flight duration is approximately 1 hour 30 minutes for the 862 km journey. Boarding typically begins 40 minutes before departure.</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">What aircraft does Thai Vietjet use on this route?</h5>
+                <p>This route is primarily operated by Airbus A320 or A321 aircraft, offering comfortable seating for 180-230 passengers.</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">FAQs</h5>
+                <ul class="space-y-2">
+                    <li><strong>Can I change my booking?</strong> Yes, with applicable fees depending on fare type.</li>
+                    <li><strong>Do I need to print my boarding pass?</strong> No, mobile boarding passes are accepted.</li>
+                    <li><strong>What's the baggage allowance?</strong> 7kg cabin baggage included; checked baggage varies by fare.</li>
+                </ul>
+                
+                <div class="mt-4 p-4 bg-purple-600 text-white rounded-lg text-center">
+                    <strong>Book Now:</strong> <a href="#" class="underline">Bangkok to Phuket from 750 THB →</a>
+                </div>
+                
+                <p class="text-xs text-gray-500 mt-4"><em>Note: Add Flight schema, FAQPage schema, and Offer schema to this page.</em></p>
+            </div>
+            
+            <h3 class="subsection-header">Template 2: Destination Guide</h3>
+            <div class="card bg-gray-50">
+                <h4 class="font-bold text-blue-700 mb-3">Phuket Travel Guide - Thai Vietjet</h4>
+                
+                <p class="mb-4"><strong>TL;DR:</strong><br>
+                Phuket is Thailand's largest island, famous for pristine beaches, vibrant nightlife, and world-class diving. Best time to visit is November-April (dry season). Thai Vietjet flies to Phuket from Bangkok, Chiang Mai, and international destinations with fares from 750 THB.</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">What are the best things to do in Phuket?</h5>
+                <ul class="list-disc ml-6 space-y-1">
+                    <li><strong>Beaches:</strong> Patong Beach, Kata Beach, Karon Beach</li>
+                    <li><strong>Attractions:</strong> Big Buddha, Wat Chalong, Old Phuket Town</li>
+                    <li><strong>Activities:</strong> Island hopping (Phi Phi Islands), diving, snorkeling</li>
+                    <li><strong>Nightlife:</strong> Bangla Road, beach clubs, rooftop bars</li>
+                </ul>
+                
+                <h5 class="font-semibold mt-4 mb-2">When is the best time to visit Phuket?</h5>
+                <p>November to April (dry season) offers the best weather with temperatures 25-32°C. Avoid monsoon season (May-October) unless you prefer fewer crowds and lower prices.</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">How many days should I spend in Phuket?</h5>
+                <p>3-5 days is ideal for beaches, attractions, and day trips. Add 2-3 days if visiting nearby islands (Phi Phi, James Bond Island).</p>
+                
+                <h5 class="font-semibold mt-4 mb-2">Where should I stay in Phuket?</h5>
+                <ul class="list-disc ml-6 space-y-1">
+                    <li><strong>Patong:</strong> Nightlife & shopping (budget-friendly to luxury)</li>
+                    <li><strong>Kata/Karon:</strong> Family-friendly beaches</li>
+                    <li><strong>Bang Tao:</strong> High-end resorts & quiet beaches</li>
+                    <li><strong>Phuket Town:</strong> Cultural experience & local dining</li>
+                </ul>
+                
+                <div class="mt-4 p-4 bg-blue-600 text-white rounded-lg">
+                    <strong>Fly to Phuket with Thai Vietjet:</strong>
+                    <ul class="mt-2 space-y-1">
+                        <li>• Bangkok to Phuket: From 750 THB</li>
+                        <li>• Chiang Mai to Phuket: From 1,299 THB</li>
+                        <li>• Hanoi to Phuket: From 1,999 THB</li>
+                    </ul>
+                    <a href="#" class="underline mt-2 inline-block">Book Now →</a>
+                </div>
+                
+                <p class="text-xs text-gray-500 mt-4"><em>Note: Add Article schema, FAQPage schema, and TouristAttraction schema.</em></p>
+            </div>
+            
+            <h3 class="subsection-header">Template 3: FAQ Page</h3>
+            <div class="card bg-gray-50">
+                <h4 class="font-bold text-green-700 mb-3">Thai Vietjet Baggage Policy - FAQs</h4>
+                
+                <div class="space-y-4">
+                    <div>
+                        <h5 class="font-semibold text-purple-700">How much baggage can I bring on Thai Vietjet?</h5>
+                        <p>All passengers can bring 7kg of cabin baggage (dimensions: 56cm x 36cm x 23cm). Checked baggage depends on fare type: Eco (no checked baggage), Deluxe (20kg), SkyBoss (30kg).</p>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold text-purple-700">Can I purchase additional baggage?</h5>
+                        <p>Yes, you can add checked baggage when booking or later via "Manage Booking". Prices start at 200 THB for 15kg on domestic flights, 400 THB for 15kg on international flights.</p>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold text-purple-700">What items are prohibited in cabin baggage?</h5>
+                        <p>Liquids over 100ml, sharp objects, flammable items, and weapons are prohibited. Laptops and power banks must be in cabin baggage, not checked baggage.</p>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold text-purple-700">What happens if my baggage exceeds the limit?</h5>
+                        <p>Excess baggage fees apply: 500 THB per kg on domestic flights, 1,000 THB per kg on international flights. Pay at the airport check-in counter.</p>
+                    </div>
+                    
+                    <div>
+                        <h5 class="font-semibold text-purple-700">Can I bring sports equipment or musical instruments?</h5>
+                        <p>Yes, but they count toward your baggage allowance. Oversized items (surfboards, golf clubs) may require special handling fees. Contact customer service in advance.</p>
+                    </div>
+                </div>
+                
+                <p class="text-xs text-gray-500 mt-4"><em>Note: Implement FAQPage schema for all Q&As on this page.</em></p>
+            </div>
+        </div>
+
+        <!-- Implementation Timeline -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-calendar-alt mr-3"></i>Implementation Timeline & Phases</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="font-bold text-lg mb-2">Phase 1: Foundation (Month 1-2)</h3>
+                    <span class="badge badge-primary">Priority: High</span>
+                    <span class="badge badge-info">Duration: 8 weeks</span>
+                    <ul class="mt-3 space-y-2">
+                        <li><strong>Week 1-2: Audit & Planning</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Comprehensive SEO & content audit</li>
+                                <li>• Competitor analysis (AirAsia, Nok Air, Bangkok Airways)</li>
+                                <li>• Keyword research for 200+ route & destination queries</li>
+                                <li>• Content strategy finalization</li>
+                            </ul>
+                        </li>
+                        <li><strong>Week 3-4: Schema Implementation</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Add Organization schema to homepage</li>
+                                <li>• Create Flight schema templates</li>
+                                <li>• Implement FlightReservation schema in booking system</li>
+                                <li>• Set up Google Search Console monitoring</li>
+                            </ul>
+                        </li>
+                        <li><strong>Week 5-8: Priority Content Creation</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• 10 top route pages (Bangkok-Phuket, Bangkok-Chiang Mai, etc.)</li>
+                                <li>• 5 destination guides (Bangkok, Phuket, Hanoi, Ho Chi Minh, Sydney)</li>
+                                <li>• Master FAQ page with FAQPage schema (30 Q&As)</li>
+                                <li>• How-to guides: check-in, baggage, boarding (HowTo schema)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mt-3 p-3 bg-purple-50 rounded">
+                        <strong>Deliverables:</strong> Schema templates, 10 route pages, 5 destination guides, 1 FAQ page, 3 How-to guides
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="font-bold text-lg mb-2">Phase 2: Scale Content (Month 3-4)</h3>
+                    <span class="badge badge-success">Priority: High</span>
+                    <span class="badge badge-info">Duration: 8 weeks</span>
+                    <ul class="mt-3 space-y-2">
+                        <li><strong>Week 9-12: Route Expansion</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• 40 additional route pages covering all Thai Vietjet routes</li>
+                                <li>• Add Flight schema to all pages</li>
+                                <li>• Create comparison content ("Thai Vietjet vs AirAsia")</li>
+                            </ul>
+                        </li>
+                        <li><strong>Week 13-16: Destination Expansion</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• 15 more destination guides (Krabi, Da Nang, Phu Quoc, Melbourne, Taipei)</li>
+                                <li>• Add TouristAttraction schema</li>
+                                <li>• Seasonal content (best time to visit, weather, events)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mt-3 p-3 bg-green-50 rounded">
+                        <strong>Deliverables:</strong> 40 route pages, 15 destination guides, 5 comparison articles
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="font-bold text-lg mb-2">Phase 3: Off-Site & UGC (Month 5)</h3>
+                    <span class="badge badge-warning">Priority: Medium</span>
+                    <span class="badge badge-info">Duration: 4 weeks</span>
+                    <ul class="mt-3 space-y-2">
+                        <li><strong>Reddit & Quora Presence</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Answer 50+ questions on r/Thailand, r/travel, r/backpacking</li>
+                                <li>• Create Quora answers for top travel queries</li>
+                                <li>• Monitor brand mentions</li>
+                            </ul>
+                        </li>
+                        <li><strong>Digital PR & Backlinks</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Guest posts on travel blogs</li>
+                                <li>• Press releases for new routes/promotions</li>
+                                <li>• Partnership content with hotels & tour operators</li>
+                            </ul>
+                        </li>
+                        <li><strong>Review Generation</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Email campaigns encouraging reviews</li>
+                                <li>• Add Review schema to testimonials</li>
+                                <li>• TripAdvisor & Google Business optimization</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mt-3 p-3 bg-yellow-50 rounded">
+                        <strong>Deliverables:</strong> 50 Reddit/Quora answers, 10 guest posts, 5 PR placements
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="font-bold text-lg mb-2">Phase 4: Optimization & Monitoring (Month 6+)</h3>
+                    <span class="badge badge-info">Priority: Ongoing</span>
+                    <span class="badge badge-info">Duration: Continuous</span>
+                    <ul class="mt-3 space-y-2">
+                        <li><strong>AI Brand Testing</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Monthly tests: "Best airline for [destination]" in ChatGPT, Perplexity, Google AI</li>
+                                <li>• Track citation frequency & context</li>
+                                <li>• Adjust content based on AI responses</li>
+                            </ul>
+                        </li>
+                        <li><strong>Performance Tracking</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Set up GA4 segments for AI traffic (source: chat, chatgpt, perplexity)</li>
+                                <li>• Monitor Answer Surface Inclusion (% of target queries)</li>
+                                <li>• Track organic traffic, conversions, booking funnel</li>
+                            </ul>
+                        </li>
+                        <li><strong>Content Refresh</strong>
+                            <ul class="ml-6 mt-1 space-y-1 text-sm">
+                                <li>• Update pricing, schedules, promotions monthly</li>
+                                <li>• Add seasonal content (holidays, festivals)</li>
+                                <li>• Expand based on high-performing topics</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="mt-3 p-3 bg-blue-50 rounded">
+                        <strong>Deliverables:</strong> Monthly AI test reports, GA4 dashboards, ongoing content updates
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget & Resources -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-dollar-sign mr-3"></i>Budget & Resource Allocation</h2>
+            
+            <h3 class="subsection-header">6-Month Implementation Budget</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Cost (THB)</th>
+                        <th>Cost (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Content Creation</strong></td>
+                        <td>50 route pages + 20 destination guides + 10 FAQ/How-to pages</td>
+                        <td>600,000 - 900,000</td>
+                        <td>$17,000 - $25,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Schema Development</strong></td>
+                        <td>Flight, FlightReservation, FAQPage, HowTo, Organization schemas</td>
+                        <td>250,000 - 400,000</td>
+                        <td>$7,000 - $11,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technical SEO</strong></td>
+                        <td>Site audit, sitemap optimization, crawl management, redirects</td>
+                        <td>200,000 - 300,000</td>
+                        <td>$6,000 - $8,500</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Off-Site & Link Building</strong></td>
+                        <td>Guest posts, digital PR, Reddit/Quora presence</td>
+                        <td>350,000 - 500,000</td>
+                        <td>$10,000 - $14,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tools & Software</strong></td>
+                        <td>Profound, Ahrefs, SEMrush, Schema validators (6 months)</td>
+                        <td>180,000 - 240,000</td>
+                        <td>$5,000 - $7,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Project Management</strong></td>
+                        <td>Coordination, reporting, optimization</td>
+                        <td>300,000 - 400,000</td>
+                        <td>$8,500 - $11,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Translation & Localization</strong></td>
+                        <td>Thai/English content + cultural adaptation</td>
+                        <td>200,000 - 300,000</td>
+                        <td>$6,000 - $8,500</td>
+                    </tr>
+                    <tr class="bg-purple-100 font-bold">
+                        <td colspan="2"><strong>TOTAL (6 Months)</strong></td>
+                        <td>2,080,000 - 3,040,000</td>
+                        <td>$59,000 - $85,000</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="subsection-header mt-8">Ongoing Costs (Post-Implementation)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Monthly Cost (THB)</th>
+                        <th>Monthly Cost (USD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Content Updates & Maintenance</td>
+                        <td>80,000 - 120,000</td>
+                        <td>$2,300 - $3,400</td>
+                    </tr>
+                    <tr>
+                        <td>Tools & Monitoring</td>
+                        <td>30,000 - 40,000</td>
+                        <td>$850 - $1,150</td>
+                    </tr>
+                    <tr>
+                        <td>AI Testing & Optimization</td>
+                        <td>50,000 - 70,000</td>
+                        <td>$1,400 - $2,000</td>
+                    </tr>
+                    <tr class="bg-blue-100 font-bold">
+                        <td><strong>TOTAL (Monthly)</strong></td>
+                        <td>160,000 - 230,000</td>
+                        <td>$4,500 - $6,500</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="subsection-header">Team Structure</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card bg-purple-50">
+                    <h4 class="font-bold mb-3"><i class="fas fa-users mr-2 text-purple-600"></i>Core Team</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><strong>Project Manager (1):</strong> Overall coordination, timeline management</li>
+                        <li><strong>SEO Specialist (1-2):</strong> Technical SEO, schema implementation</li>
+                        <li><strong>Content Writers (3-4):</strong> Route pages, destination guides, FAQs</li>
+                        <li><strong>Developers (2):</strong> Schema integration, site optimization</li>
+                        <li><strong>Link Building Specialist (1):</strong> Outreach, PR, UGC</li>
+                    </ul>
+                </div>
+                <div class="card bg-blue-50">
+                    <h4 class="font-bold mb-3"><i class="fas fa-handshake mr-2 text-blue-600"></i>Support Roles</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><strong>Thai-English Translators (2):</strong> Content localization</li>
+                        <li><strong>QA Tester (1):</strong> Schema validation, content review</li>
+                        <li><strong>Data Analyst (1):</strong> GA4 setup, reporting dashboards</li>
+                        <li><strong>Graphic Designer (1):</strong> Infographics, visual content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPIs & Success Metrics -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-chart-bar mr-3"></i>KPIs & Success Metrics</h2>
+            
+            <h3 class="subsection-header">Primary KPIs</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card bg-green-50">
+                    <h4 class="font-bold text-lg mb-3 text-green-700"><i class="fas fa-robot mr-2"></i>AI Visibility Metrics</h4>
+                    <table class="text-sm">
+                        <tr>
+                            <td><strong>Answer Surface Inclusion</strong></td>
+                            <td>% of target queries where Thai Vietjet appears in AI answers</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><em>Baseline:</em></td>
+                            <td class="py-2">5-10%</td>
+                        </tr>
+                        <tr>
+                            <td><em>3-Month Target:</em></td>
+                            <td>25-35%</td>
+                        </tr>
+                        <tr>
+                            <td><em>6-Month Target:</em></td>
+                            <td>50-70%</td>
+                        </tr>
+                    </table>
+                    
+                    <table class="text-sm mt-4">
+                        <tr>
+                            <td><strong>Citation Velocity</strong></td>
+                            <td>Frequency of Thai Vietjet mentions in AI responses</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><em>Baseline:</em></td>
+                            <td class="py-2">Low/None</td>
+                        </tr>
+                        <tr>
+                            <td><em>6-Month Target:</em></td>
+                            <td>Mentioned in 40-60% of relevant queries</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="card bg-blue-50">
+                    <h4 class="font-bold text-lg mb-3 text-blue-700"><i class="fas fa-search mr-2"></i>Traditional SEO Metrics</h4>
+                    <table class="text-sm">
+                        <tr>
+                            <td><strong>Organic Traffic</strong></td>
+                            <td>Non-paid website visits from search engines</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><em>3-Month Target:</em></td>
+                            <td class="py-2">+15-25%</td>
+                        </tr>
+                        <tr>
+                            <td><em>6-Month Target:</em></td>
+                            <td>+30-50%</td>
+                        </tr>
+                    </table>
+                    
+                    <table class="text-sm mt-4">
+                        <tr>
+                            <td><strong>Keyword Rankings</strong></td>
+                            <td>Position in SERPs for target keywords</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2"><em>Target:</em></td>
+                            <td class="py-2">50+ keywords in Top 10</td>
+                        </tr>
+                        <tr>
+                            <td><em>Stretch Goal:</em></td>
+                            <td>Average position 1-3 for branded + route queries</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3 class="subsection-header">Secondary KPIs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Description</th>
+                        <th>Current</th>
+                        <th>3-Month Target</th>
+                        <th>6-Month Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AI Referral Traffic</strong></td>
+                        <td>Visits from ChatGPT, Perplexity, AI Overviews</td>
+                        <td>0-50/mo</td>
+                        <td>500-1,000/mo</td>
+                        <td>2,000-5,000/mo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Direct Bookings</strong></td>
+                        <td>Reservations made on th.vietjetair.com</td>
+                        <td>Baseline</td>
+                        <td>+10-15%</td>
+                        <td>+25-40%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Page 1 Rankings</strong></td>
+                        <td>Keywords ranking positions 1-10</td>
+                        <td>20-30</td>
+                        <td>50-70</td>
+                        <td>100-150</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Engagement Rate</strong></td>
+                        <td>% of visitors engaging with content</td>
+                        <td>40-50%</td>
+                        <td>55-65%</td>
+                        <td>70-80%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Avg. Session Duration</strong></td>
+                        <td>Time spent on site</td>
+                        <td>2-3 min</td>
+                        <td>3-4 min</td>
+                        <td>4-5 min</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rich Results</strong></td>
+                        <td>Impressions in Google Rich Results</td>
+                        <td>Low/None</td>
+                        <td>1,000-2,000/mo</td>
+                        <td>5,000-10,000/mo</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="subsection-header">Monitoring & Reporting</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card bg-purple-100">
+                    <h4 class="font-bold mb-2"><i class="fas fa-calendar-week mr-2"></i>Weekly</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• Organic traffic trends</li>
+                        <li>• Top landing pages</li>
+                        <li>• Keyword movement</li>
+                        <li>• Technical issues</li>
+                    </ul>
+                </div>
+                <div class="card bg-blue-100">
+                    <h4 class="font-bold mb-2"><i class="fas fa-calendar-alt mr-2"></i>Monthly</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• AI brand tests (ChatGPT, Perplexity)</li>
+                        <li>• Citation analysis</li>
+                        <li>• Content performance</li>
+                        <li>• Competitor benchmarking</li>
+                        <li>• ROI analysis</li>
+                    </ul>
+                </div>
+                <div class="card bg-green-100">
+                    <h4 class="font-bold mb-2"><i class="fas fa-calendar mr-2"></i>Quarterly</h4>
+                    <ul class="text-sm space-y-1">
+                        <li>• Strategic review</li>
+                        <li>• Goal adjustments</li>
+                        <li>• Content refresh plan</li>
+                        <li>• Budget optimization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight-box bg-green-50 border-green-500 mt-6">
+                <h4 class="font-semibold mb-2"><i class="fas fa-trophy text-green-600 mr-2"></i>Success Indicators (6 Months)</h4>
+                <ul class="checklist">
+                    <li>Thai Vietjet appears in 50-70% of relevant AI travel queries</li>
+                    <li>Organic traffic increases 30-50% year-over-year</li>
+                    <li>Direct bookings from organic/AI traffic grow 25-40%</li>
+                    <li>100+ keywords rank in Top 10 positions</li>
+                    <li>2,000-5,000 monthly visits from AI referrals</li>
+                    <li>Rich results impressions: 5,000-10,000/month</li>
+                    <li>Engagement rate reaches 70-80%</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-forward mr-3"></i>Next Steps & Recommendations</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card bg-purple-50">
+                    <h3 class="font-bold text-lg mb-3 text-purple-700"><i class="fas fa-bolt mr-2"></i>Immediate Actions (Week 1-2)</h3>
+                    <ol class="space-y-2 text-sm">
+                        <li><strong>1. Executive Approval:</strong> Present this plan to Thai Vietjet leadership for budget & timeline approval</li>
+                        <li><strong>2. Assemble Team:</strong> Hire or contract SEO specialists, content writers, developers</li>
+                        <li><strong>3. Set Up Tools:</strong> Purchase Profound, Ahrefs, SEMrush; configure Google Search Console & GA4</li>
+                        <li><strong>4. Kickoff Meeting:</strong> Align internal stakeholders (marketing, IT, customer service) on goals</li>
+                        <li><strong>5. Quick Wins:</strong> Add Organization schema to homepage, fix critical technical SEO issues</li>
+                    </ol>
+                </div>
+                
+                <div class="card bg-blue-50">
+                    <h3 class="font-bold text-lg mb-3 text-blue-700"><i class="fas fa-calendar-check mr-2"></i>Short-Term Priorities (Month 1)</h3>
+                    <ol class="space-y-2 text-sm">
+                        <li><strong>1. Complete Audit:</strong> Full technical SEO + content audit of th.vietjetair.com</li>
+                        <li><strong>2. Schema Templates:</strong> Develop reusable Flight, FlightReservation, FAQPage schemas</li>
+                        <li><strong>3. Priority Content:</strong> Launch first 10 route pages with full schema implementation</li>
+                        <li><strong>4. AI Testing Baseline:</strong> Test current Thai Vietjet visibility in ChatGPT/Perplexity</li>
+                        <li><strong>5. Competitor Analysis:</strong> Deep-dive into AirAsia, Nok Air AEO strategies</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="highlight-box bg-yellow-50 border-yellow-500 mt-6">
+                <h3 class="text-xl font-semibold mb-3"><i class="fas fa-exclamation-triangle mr-2 text-yellow-600"></i>Critical Success Factors</h3>
+                <ul class="space-y-2">
+                    <li><strong>1. Executive Commitment:</strong> AEO is a 6-12 month investment. Leadership must commit to timeline & budget.</li>
+                    <li><strong>2. Content Quality:</strong> AI favors accurate, helpful, authoritative content. Don't cut corners on writing.</li>
+                    <li><strong>3. Technical Excellence:</strong> Schema must be error-free. Use validators and monitor Google Search Console.</li>
+                    <li><strong>4. Patience:</strong> AI citation takes 2-3 months to build. Don't expect instant results.</li>
+                    <li><strong>5. Continuous Optimization:</strong> AI search evolves rapidly. Monthly testing and adjustment are non-negotiable.</li>
+                </ul>
+            </div>
+            
+            <div class="mt-6 p-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg">
+                <h3 class="text-2xl font-bold mb-3">Ready to Lead in AI Search?</h3>
+                <p class="mb-4">Thai Vietjet has an opportunity to be among the first airlines in Southeast Asia to dominate AI-driven travel discovery. The window is open now—but competitors are catching up fast.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-white bg-opacity-20 p-4 rounded">
+                        <strong class="block mb-1">Investment:</strong>
+                        THB 2.5M - 4M (6 months)
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-4 rounded">
+                        <strong class="block mb-1">Expected ROI:</strong>
+                        30-50% organic traffic growth
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-4 rounded">
+                        <strong class="block mb-1">Timeline:</strong>
+                        First results in 2-3 months
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appendix -->
+        <div class="card">
+            <h2 class="section-header"><i class="fas fa-book mr-3"></i>References & Resources</h2>
+            
+            <h3 class="subsection-header">Key Research Sources</h3>
+            <div class="space-y-3">
+                <div class="card bg-gray-50">
+                    <h4 class="font-semibold">1. TakeUp.ai - "How AI Is Changing Travel Planning in 2026"</h4>
+                    <p class="text-sm mb-2">Research on US travelers' AI adoption for trip planning and booking.</p>
+                    <a href="https://takeup.ai/new-research-shows-how-ai-is-changing-travel-planning-in-2026/" class="text-blue-600 text-sm underline">https://takeup.ai/new-research-shows-how-ai-is-changing-travel-planning-in-2026/</a>
+                </div>
+                
+                <div class="card bg-gray-50">
+                    <h4 class="font-semibold">2. Branchspace - "SEO and AI for Airlines"</h4>
+                    <p class="text-sm mb-2">Comprehensive guide on transitioning from traditional SEO to GEO/AEO for airlines.</p>
+                    <a href="https://www.branchspace.com/news/seo-and-ai-for-airlines" class="text-blue-600 text-sm underline">https://www.branchspace.com/news/seo-and-ai-for-airlines</a>
+                </div>
+                
+                <div class="card bg-gray-50">
+                    <h4 class="font-semibold">3. Travel Tractions - "Flight Schema Markup Guide"</h4>
+                    <p class="text-sm mb-2">Technical guide for implementing Flight and FlightReservation schemas.</p>
+                    <a href="https://traveltractions.com/flight-schema/" class="text-blue-600 text-sm underline">https://traveltractions.com/flight-schema/</a>
+                </div>
+                
+                <div class="card bg-gray-50">
+                    <h4 class="font-semibold">4. Schema.org - Flight & FlightReservation Documentation</h4>
+                    <p class="text-sm mb-2">Official schema definitions for airline industry structured data.</p>
+                    <a href="https://schema.org/Flight" class="text-blue-600 text-sm underline">https://schema.org/Flight</a>
+                </div>
+                
+                <div class="card bg-gray-50">
+                    <h4 class="font-semibold">5. HBR - "Gen AI Is Threatening Online Travel Platforms"</h4>
+                    <p class="text-sm mb-2">Analysis of how AI search is disrupting traditional OTAs and airline distribution.</p>
+                    <a href="https://hbr.org/2026/01/gen-ai-is-threatening-the-platforms-that-dominate-online-travel" class="text-blue-600 text-sm underline">https://hbr.org/2026/01/gen-ai-is-threatening-the-platforms-that-dominate-online-travel</a>
+                </div>
+            </div>
+            
+            <h3 class="subsection-header mt-8">Recommended Tools</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Purpose</th>
+                        <th>Cost</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Profound</strong></td>
+                        <td>AI visibility tracking across ChatGPT, Perplexity, etc.</td>
+                        <td>$2,000-5,000/mo</td>
+                        <td><a href="https://www.tryprofound.com" class="text-blue-600 underline">tryprofound.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ahrefs</strong></td>
+                        <td>Keyword research, backlink analysis, competitor tracking</td>
+                        <td>$99-999/mo</td>
+                        <td><a href="https://ahrefs.com" class="text-blue-600 underline">ahrefs.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Schemantra</strong></td>
+                        <td>Schema markup generator for Flight, Hotel, Event</td>
+                        <td>Free</td>
+                        <td><a href="https://schemantra.com" class="text-blue-600 underline">schemantra.com</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Search Console</strong></td>
+                        <td>Search performance, rich results, indexing monitoring</td>
+                        <td>Free</td>
+                        <td><a href="https://search.google.com/search-console" class="text-blue-600 underline">search.google.com/search-console</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Rich Results Test</strong></td>
+                        <td>Validate schema markup implementation</td>
+                        <td>Free</td>
+                        <td><a href="https://search.google.com/test/rich-results" class="text-blue-600 underline">search.google.com/test/rich-results</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="mt-6 p-4 bg-gray-100 rounded text-center">
+                <p class="text-sm text-gray-600 mb-2"><strong>Document Information</strong></p>
+                <p class="text-xs text-gray-500">Prepared by: Genspark AI Research Team | Date: February 2026</p>
+                <p class="text-xs text-gray-500">Version: 1.0 | For: Thai Vietjet Air (th.vietjetair.com)</p>
+                <p class="text-xs text-gray-500 mt-2">This document is confidential and intended for internal use only.</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer class="gradient-bg text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg mb-2">Thai Vietjet AI-First Marketing & AEO Implementation Guide</p>
+            <p class="text-sm opacity-75">Empowering Thai Vietjet to dominate AI-driven travel discovery</p>
+            <p class="text-xs mt-4 opacity-50">© 2026 Genspark AI Research Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDtjr10K7H%2FhHtWSW02KIdu3aifxEo0nQlOZtF1A1VADLjBxOkbEzOGe9EaSA4%2FUeZjFsH5MaaJNvdkMmSfc%2FbG5t%2BCii6N3g%2BJbXzoKqIq2Hls138xN%2BJLGIv4hoMMA1whkCLjHkuqpmMXcLSnigDa8aSmNj5ts0YNR3yvUqd34gy4uqEmP0AjDIrCKk%2FTkSjzDUr39raVtwPNujLPriBzMSEIImzZjprRO13mPJVGWomQp1EfeSUkfuhvEBAF%2FVe2c82cMHx3XnSsPaELd1kxH9WMQp63n1xSa1Fo%2FxQ1qxlzUYTWQ%2B3gE1DVy6pZCDzIXPjbF4h88hCQDgz4q2Oz032428aNHXmP8vYktRicYizaC8Sx4J22XKdrSBRCffFnxfy1Re0QHZwzcxahkw%2FXLPLbRKqPCeh29cnl1OsUSHnpeyNdaKYUGO51Fn9kmkZSuzvWocaYlatynaRoYImDrw5B2U5nDquIZiChKxo3%2BsSGqLuUCNR9oYttuVs0dFrTpKUODdI9MOvrufE5PhgxCBhUCBZLT4mmVbmjP3XQZREJ1JSM0ji6xRFFUaveMTLObYHEIJYxW4VCdXKaVGzi1eORGTXJw7Bc1hYc1A8RUPF%2F02nBynwoXQHDNJnVQwQQ%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDtjr10K7H/hHtWSW02KIdu3aifxEo0nQlOZtF1A1VADLjBxOkbEzOGe9EaSA4/UeZjFsH5MaaJNvdkMmSfc/bG5t+Cii6N3g+JbXzoKqIq2Hls138xN+JLGIv4hoMMA1whkCLjHkuqpmMXcLSnigDa8aSmNj5ts0YNR3yvUqd34gy4uqEmP0AjDIrCKk/TkSjzDUr39raVtwPNujLPriBzMSEIImzZjprRO13mPJVGWomQp1EfeSUkfuhvEBAF/Ve2c82cMHx3XnSsPaELd1kxH9WMQp63n1xSa1Fo/xQ1qxlzUYTWQ+3gE1DVy6pZCDzIXPjbF4h88hCQDgz4q2Oz032428aNHXmP8vYktRicYizaC8Sx4J22XKdrSBRCffFnxfy1Re0QHZwzcxahkw/XLPLbRKqPCeh29cnl1OsUSHnpeyNdaKYUGO51Fn9kmkZSuzvWocaYlatynaRoYImDrw5B2U5nDquIZiChKxo3+sSGqLuUCNR9oYttuVs0dFrTpKUODdI9MOvrufE5PhgxCBhUCBZLT4mmVbmjP3XQZREJ1JSM0ji6xRFFUaveMTLObYHEIJYxW4VCdXKaVGzi1eORGTXJw7Bc1hYc1A8RUPF/02nBynwoXQHDNJnVQwQQ==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

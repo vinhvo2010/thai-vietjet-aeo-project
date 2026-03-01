@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Vietjet AI-First Marketing & AEO Strategy - Slide Deck</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --vietjet-red: #E31E24;
+            --vietjet-blue: #1A2B4A;
+            --vietjet-light-gray: #F5F5F5;
+        }
+        
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: var(--vietjet-blue);
+            text-transform: none;
+        }
+        
+        .reveal h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+        
+        .reveal h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+            border-bottom: 3px solid var(--vietjet-red);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .reveal h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        .slide-header {
+            background: linear-gradient(135deg, var(--vietjet-blue) 0%, var(--vietjet-red) 100%);
+            color: white;
+            padding: 20px;
+            margin: -20px -20px 30px -20px;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .slide-header h2 {
+            color: white;
+            border: none;
+            margin: 0;
+        }
+        
+        .stat-box {
+            background: var(--vietjet-light-gray);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid var(--vietjet-red);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--vietjet-red);
+            margin: 0;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: var(--vietjet-blue);
+            margin-top: 5px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .three-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .pillar-card {
+            background: white;
+            border: 2px solid var(--vietjet-blue);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .pillar-icon {
+            font-size: 3em;
+            color: var(--vietjet-red);
+            margin-bottom: 15px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .timeline-marker {
+            background: var(--vietjet-red);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+        
+        .timeline-content {
+            background: var(--vietjet-light-gray);
+            padding: 15px 20px;
+            border-radius: 10px;
+            flex-grow: 1;
+            text-align: left;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .budget-table th {
+            background: var(--vietjet-blue);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .budget-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .budget-table tr:nth-child(even) {
+            background: var(--vietjet-light-gray);
+        }
+        
+        .competitor-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .competitor-name {
+            font-weight: 700;
+            color: var(--vietjet-blue);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .strength {
+            color: #27AE60;
+        }
+        
+        .weakness {
+            color: #E74C3C;
+        }
+        
+        .opportunity {
+            color: var(--vietjet-red);
+        }
+        
+        .cta-button {
+            background: var(--vietjet-red);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: 700;
+            display: inline-block;
+            margin: 20px 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--vietjet-blue);
+            transform: scale(1.05);
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .vietjet-logo {
+            font-size: 3em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--vietjet-red), var(--vietjet-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .image-caption {
+            background: var(--vietjet-blue);
+            color: white;
+            padding: 10px;
+            font-size: 0.85em;
+            text-align: center;
+        }
+        
+        ul, ol {
+            text-align: left;
+        }
+        
+        .reveal ul li, .reveal ol li {
+            margin: 10px 0;
+        }
+        
+        .risk-item {
+            display: flex;
+            align-items: start;
+            margin: 15px 0;
+            padding: 15px;
+            background: var(--vietjet-light-gray);
+            border-radius: 8px;
+        }
+        
+        .risk-icon {
+            font-size: 2em;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .case-study-box {
+            background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--vietjet-red);
+            margin: 15px 0;
+            text-align: left;
+        }
+        
+        .metric-card {
+            background: white;
+            border: 2px solid var(--vietjet-blue);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .metric-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--vietjet-red);
+        }
+        
+        .metric-label {
+            color: var(--vietjet-blue);
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Title -->
+            <section data-background="linear-gradient(135deg, #1A2B4A 0%, #E31E24 100%)">
+                <div style="color: white;">
+                    <div class="logo-container">
+                        <h1 style="color: white; border: none; margin-bottom: 20px;">
+                            <i class="fas fa-plane" style="color: white;"></i> THAI VIETJET
+                        </h1>
+                    </div>
+                    <h2 style="color: white; border: none; font-size: 2em; margin: 30px 0;">
+                        KẾ HOẠCH TRIỂN KHAI<br/>
+                        AI-FIRST MARKETING & AEO
+                    </h2>
+                    <p style="font-size: 1.2em; margin: 30px 0;">
+                        Chiến lược tối ưu hóa tìm kiếm AI và marketing số 2026
+                    </p>
+                    <p style="font-size: 0.9em; margin-top: 50px; opacity: 0.9;">
+                        Trình bày cho Chủ tịch và Ban Điều Hành Thai Vietjet<br/>
+                        Tháng 2, 2026
+                    </p>
+                </div>
+                <!-- Speaker notes: Giới thiệu bản trình bày về chiến lược AI-First Marketing và AEO cho Thai Vietjet. Thời gian dự kiến: 15-20 phút. -->
+            </section>
+
+            <!-- Slide 2: Agenda -->
+            <section>
+                <div class="slide-header">
+                    <h2>CHƯƠNG TRÌNH TRÌNH BÀY</h2>
+                </div>
+                <div class="two-column">
+                    <div>
+                        <h3><i class="fas fa-chart-line" style="color: #E31E24;"></i> Phần I: Bối Cảnh Thị Trường</h3>
+                        <ul>
+                            <li>Tóm tắt điều hành</li>
+                            <li>Cơ hội thị trường AI Search</li>
+                            <li>Phân tích cảnh quan số hiện tại</li>
+                            <li>Phân tích đối thủ cạnh tranh</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 30px;"><i class="fas fa-cogs" style="color: #E31E24;"></i> Phần II: Chiến Lược</h3>
+                        <ul>
+                            <li>Khung chiến lược 4 trụ cột</li>
+                            <li>Triển khai kỹ thuật</li>
+                            <li>Chiến lược nội dung</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-calendar-alt" style="color: #E31E24;"></i> Phần III: Triển Khai</h3>
+                        <ul>
+                            <li>Lộ trình triển khai 4 giai đoạn</li>
+                            <li>Ngân sách & ROI</li>
+                            <li>Chỉ số thành công / KPIs</li>
+                        </ul>
+                        
+                        <h3 style="margin-top: 30px;"><i class="fas fa-rocket" style="color: #E31E24;"></i> Phần IV: Hành Động</h3>
+                        <ul>
+                            <li>Case studies từ hãng bay khác</li>
+                            <li>Đánh giá rủi ro</li>
+                            <li>Bước tiếp theo & kêu gọi hành động</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Speaker notes: Giới thiệu cấu trúc bản trình bày với 4 phần chính. Nhấn mạnh rằng chúng ta sẽ đi từ phân tích thị trường đến chiến lược cụ thể và kế hoạch triển khai chi tiết. -->
+            </section>
+
+            <!-- Slide 3: Executive Summary -->
+            <section>
+                <div class="slide-header">
+                    <h2>TÓM TẮT ĐIỀU HÀNH</h2>
+                </div>
+                <div class="three-column" style="margin-bottom: 30px;">
+                    <div class="stat-box">
+                        <div class="stat-number">+123%</div>
+                        <div class="stat-label">AI Referral Traffic tăng trong 6 tháng</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">84%</div>
+                        <div class="stat-label">AI Traffic từ ChatGPT</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">1B+</div>
+                        <div class="stat-label">Users tiếp cận AI Overviews</div>
+                    </div>
+                </div>
+                
+                <h3 style="text-align: left; margin-top: 30px;">Tại sao AI-First Marketing quan trọng?</h3>
+                <ul style="font-size: 0.95em;">
+                    <li><strong>Thay đổi hành vi người dùng:</strong> 91% hành khách bắt đầu tìm kiếm không có sẵn thương hiệu → AI engines quyết định brand awareness</li>
+                    <li><strong>AI Search đang bùng nổ:</strong> ChatGPT có 400M users/tuần, AI traffic có thể vượt traditional search vào 2027</li>
+                    <li><strong>Cơ hội cho Thai Vietjet:</strong> Tiên phong trong AEO để tiếp cận khách hàng trước khi họ quyết định đặt vé</li>
+                    <li><strong>Lợi thế cạnh tranh:</strong> Các đối thủ (AirAsia, Nok Air) chưa tối ưu hóa cho AI search → Thai Vietjet có thể dẫn đầu</li>
+                </ul>
+                
+                <div style="background: #FFF3CD; border-left: 5px solid #FFC107; padding: 15px; margin-top: 20px; border-radius: 5px;">
+                    <strong><i class="fas fa-lightbulb"></i> Insight:</strong> Airlines tối ưu AEO đạt +60-70% organic traffic và +25-40% direct bookings trong 12 tháng
+                </div>
+                <!-- Speaker notes: Nhấn mạnh con số +123% tăng trưởng AI traffic và 84% từ ChatGPT. Giải thích rằng hành vi tìm kiếm của khách hàng đang thay đổi từ Google sang AI engines như ChatGPT, Perplexity. Thai Vietjet cần hành động ngay để không bỏ lỡ cơ hội. -->
+            </section>
+
+            <!-- Slide 4: AI Search Market Opportunity -->
+            <section>
+                <div class="slide-header">
+                    <h2>CƠ HỘI THỊ TRƯỜNG AI SEARCH</h2>
+                </div>
+                <div class="two-column">
+                    <div>
+                        <h3>Thống kê chính 2026</h3>
+                        <div class="stat-box" style="margin: 15px 0;">
+                            <div class="stat-number" style="font-size: 2em;">13%</div>
+                            <div class="stat-label">Kết quả tìm kiếm có AI Overviews</div>
+                        </div>
+                        <div class="stat-box" style="margin: 15px 0;">
+                            <div class="stat-number" style="font-size: 2em;">400M</div>
+                            <div class="stat-label">Weekly users trên ChatGPT</div>
+                        </div>
+                        <div class="stat-box" style="margin: 15px 0;">
+                            <div class="stat-number" style="font-size: 2em;">72%</div>
+                            <div class="stat-label">User engagement từ AI traffic</div>
+                        </div>
+                        <div class="stat-box" style="margin: 15px 0;">
+                            <div class="stat-number" style="font-size: 2em;">41%</div>
+                            <div class="stat-label">Higher citation rates</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>AI Search Growth Trajectory</h3>
+                        <div class="chart-container" style="height: 350px;">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+                        <p style="font-size: 0.85em; color: #666; margin-top: 10px;">
+                            <strong>Dự báo:</strong> AI traffic có thể vượt traditional search traffic vào cuối 2027
+                        </p>
+                    </div>
+                </div>
+                <!-- Speaker notes: Giải thích biểu đồ tăng trưởng AI search. Nhấn mạnh rằng đây là xu hướng không thể đảo ngược. Các hãng bay tiên phong sẽ chiếm lợi thế lớn. Thai Vietjet cần hành động ngay trong Q2-Q3 2026 để không bị bỏ lại phía sau. -->
+            </section>
+
+            <!-- Slide 5: Current Digital Landscape -->
+            <section>
+                <div class="slide-header">
+                    <h2>PHÂN TÍCH CẢNH QUAN SỐ HIỆN TẠI</h2>
+                </div>
+                <h3 style="text-align: left;"><i class="fas fa-globe"></i> Phân tích Website th.vietjetair.com</h3>
+                
+                <div class="two-column" style="margin-top: 20px;">
+                    <div>
+                        <h4 style="color: #27AE60;"><i class="fas fa-check-circle"></i> Điểm mạnh</h4>
+                        <ul style="font-size: 0.9em;">
+                            <li>Booking engine hiệu quả với "Find lowest fare"</li>
+                            <li>Route map rõ ràng (Thailand-Vietnam-Australia-Japan-Taiwan)</li>
+                            <li>Travel guides phong phú (Solo, Family, Couples, Pride)</li>
+                            <li>Promotions thường xuyên (0 VND tickets, SkyBoss offers)</li>
+                            <li>Thai language support tốt</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #E74C3C;"><i class="fas fa-times-circle"></i> Điểm cần cải thiện</h4>
+                        <ul style="font-size: 0.9em;">
+                            <li><strong>Không có Schema markup</strong> (Flight, FAQ, Organization)</li>
+                            <li>Thiếu FAQs có cấu trúc cho AI search</li>
+                            <li>Content không tối ưu cho conversational queries</li>
+                            <li>Không có AI visibility tracking</li>
+                            <li>Thiếu HowTo structured data cho check-in, baggage</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="background: #E3F2FD; border-left: 5px solid #2196F3; padding: 15px; margin-top: 20px; border-radius: 5px;">
+                    <strong><i class="fas fa-exclamation-triangle"></i> Gap Analysis:</strong> Thai Vietjet có content tốt nhưng chưa được cấu trúc để AI engines có thể hiểu và trích dẫn. Đây là cơ hội lớn để cải thiện nhanh chóng.
+                </div>
+                <!-- Speaker notes: Phân tích cho thấy Thai Vietjet đã có nền tảng content tốt nhưng thiếu technical implementation cho AEO. Đây không phải là vấn đề lớn - chúng ta chỉ cần thêm structured data và tối ưu content hiện có. Chi phí thấp, impact cao. -->
+            </section>
+
+            <!-- Slide 6: Competitive Analysis -->
+            <section>
+                <div class="slide-header">
+                    <h2>PHÂN TÍCH ĐỐI THỦ CẠNH TRANH</h2>
+                </div>
+                
+                <div class="competitor-card">
+                    <div class="competitor-name"><i class="fas fa-plane"></i> AirAsia</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; font-size: 0.9em;">
+                        <div>
+                            <strong class="strength"><i class="fas fa-plus-circle"></i> Điểm mạnh:</strong>
+                            <ul>
+                                <li>Mạng lưới rộng (150+ routes)</li>
+                                <li>Brand awareness cao</li>
+                                <li>Super App ecosystem</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="weakness"><i class="fas fa-minus-circle"></i> Điểm yếu:</strong>
+                            <ul>
+                                <li>Customer service kém</li>
+                                <li>Delays thường xuyên</li>
+                                <li>Hidden fees nhiều</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="opportunity"><i class="fas fa-bullseye"></i> Cơ hội cho VJ:</strong>
+                            <ul>
+                                <li>Premium experience (SkyBoss)</li>
+                                <li>Better on-time performance</li>
+                                <li>Transparent pricing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="competitor-card">
+                    <div class="competitor-name"><i class="fas fa-plane"></i> Nok Air</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; font-size: 0.9em;">
+                        <div>
+                            <strong class="strength"><i class="fas fa-plus-circle"></i> Điểm mạnh:</strong>
+                            <ul>
+                                <li>Focus domestic Thailand</li>
+                                <li>Low-cost positioning</li>
+                                <li>Local market knowledge</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="weakness"><i class="fas fa-minus-circle"></i> Điểm yếu:</strong>
+                            <ul>
+                                <li>Bankruptcy 2020</li>
+                                <li>Fleet cũ</li>
+                                <li>Limited international routes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="opportunity"><i class="fas fa-bullseye"></i> Cơ hội cho VJ:</strong>
+                            <ul>
+                                <li>Capture domestic share</li>
+                                <li>New Boeing fleet advantage</li>
+                                <li>International connections</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="competitor-card">
+                    <div class="competitor-name"><i class="fas fa-plane"></i> Bangkok Airways</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; font-size: 0.9em;">
+                        <div>
+                            <strong class="strength"><i class="fas fa-plus-circle"></i> Điểm mạnh:</strong>
+                            <ul>
+                                <li>Premium positioning</li>
+                                <li>Lounges & services</li>
+                                <li>Boutique airline image</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="weakness"><i class="fas fa-minus-circle"></i> Điểm yếu:</strong>
+                            <ul>
+                                <li>Giá cao</li>
+                                <li>Limited price-sensitive market</li>
+                                <li>Smaller network</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="opportunity"><i class="fas fa-bullseye"></i> Cơ hội cho VJ:</strong>
+                            <ul>
+                                <li>SkyBoss as middle option</li>
+                                <li>Value for money</li>
+                                <li>Compete on pricing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 0.9em; margin-top: 20px; text-align: left;"><strong>Kết luận:</strong> Không có đối thủ nào tối ưu đầy đủ cho AI search. Thai Vietjet có cơ hội trở thành <span style="color: #E31E24; font-weight: 700;">first-mover trong AEO</span> tại thị trường LCC Thailand.</p>
+                <!-- Speaker notes: So sánh chi tiết 3 đối thủ chính. Nhấn mạnh rằng Thai Vietjet có lợi thế đáng kể: đội bay Boeing mới, dịch vụ SkyBoss premium, và quan trọng nhất - cơ hội trở thành first mover trong AEO. Các đối thủ đều chưa tối ưu cho AI search. -->
+            </section>
+
+            <!-- Slide 7: Strategic Framework -->
+            <section>
+                <div class="slide-header">
+                    <h2>KHUNG CHIẾN LƯỢC 4 TRỤ CỘT</h2>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 30px;">
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 style="margin: 0;">Technical Foundation</h3>
+                        <p style="font-size: 0.9em; margin-top: 15px;">
+                            Schema Markup Implementation:<br/>
+                            • Flight & FlightReservation<br/>
+                            • FAQPage<br/>
+                            • Organization<br/>
+                            • HowTo (check-in, baggage)
+                        </p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fas fa-file-alt"></i></div>
+                        <h3 style="margin: 0;">Content Strategy</h3>
+                        <p style="font-size: 0.9em; margin-top: 15px;">
+                            AI-Optimized Content:<br/>
+                            • 15-20 Route pages<br/>
+                            • 10-15 Destination guides<br/>
+                            • 10-15 FAQ pages<br/>
+                            • Travel tips & how-tos
+                        </p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fas fa-search"></i></div>
+                        <h3 style="margin: 0;">AI Visibility</h3>
+                        <p style="font-size: 0.9em; margin-top: 15px;">
+                            GEO Optimization:<br/>
+                            • ChatGPT visibility<br/>
+                            • Perplexity citations<br/>
+                            • Google AI Overviews<br/>
+                            • Bing Copilot presence
+                        </p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 style="margin: 0;">Performance Tracking</h3>
+                        <p style="font-size: 0.9em; margin-top: 15px;">
+                            Measurement & Analytics:<br/>
+                            • GA4 AI referral tracking<br/>
+                            • Profound AI monitoring<br/>
+                            • Citation tracking<br/>
+                            • Conversion optimization
+                        </p>
+                    </div>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #E3F2FD 0%, #FFF3CD 100%); padding: 20px; border-radius: 10px; margin-top: 30px;">
+                    <h3 style="margin: 0 0 10px 0; color: #1A2B4A;">Tích hợp 4 trụ cột → Hệ sinh thái AI-First Marketing hoàn chỉnh</h3>
+                    <p style="font-size: 0.9em; margin: 0;">Từng trụ cột hỗ trợ lẫn nhau để tạo ra lợi thế cạnh tranh bền vững trong kỷ nguyên AI Search</p>
+                </div>
+                <!-- Speaker notes: Giải thích 4 trụ cột chính của chiến lược. Nhấn mạnh rằng đây không phải là 4 dự án riêng lẻ mà là một hệ thống tích hợp. Technical foundation tạo nền tảng, Content strategy cung cấp thông tin, AI visibility đảm bảo hiển thị, và Performance tracking đo lường hiệu quả. -->
+            </section>
+
+            <!-- Slide 8: Technical Implementation -->
+            <section>
+                <div class="slide-header">
+                    <h2>TRIỂN KHAI KỸ THUẬT - SCHEMA MARKUP</h2>
+                </div>
+                
+                <h3 style="text-align: left;"><i class="fas fa-code"></i> Schema Types cần triển khai</h3>
+                
+                <div class="two-column" style="margin-top: 20px;">
+                    <div>
+                        <div style="background: #F5F5F5; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #E31E24;">
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">1. Flight Schema</h4>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Ưu tiên:</strong> <span style="color: #E31E24;">CRITICAL</span></p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Pages:</strong> Route pages (Bangkok-Phuket, Bangkok-Hanoi, etc.)</p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Properties:</strong> flightNumber, departureAirport, arrivalAirport, departureTime, price, offers</p>
+                        </div>
+                        
+                        <div style="background: #F5F5F5; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #E31E24;">
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">2. FlightReservation Schema</h4>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Ưu tiên:</strong> <span style="color: #FFA500;">HIGH</span></p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Pages:</strong> Booking confirmation, email</p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Properties:</strong> reservationId, passengerName, boardingGroup, totalPrice</p>
+                        </div>
+                        
+                        <div style="background: #F5F5F5; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #E31E24;">
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">3. FAQPage Schema</h4>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Ưu tiên:</strong> <span style="color: #E31E24;">CRITICAL</span></p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Pages:</strong> FAQ pages, support pages</p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Impact:</strong> Direct answers in AI responses</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div style="background: #F5F5F5; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #2196F3;">
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">4. Organization Schema</h4>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Ưu tiên:</strong> <span style="color: #FFA500;">HIGH</span></p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Pages:</strong> Homepage, about page</p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Properties:</strong> logo, contactPoint, sameAs (social media)</p>
+                        </div>
+                        
+                        <div style="background: #F5F5F5; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #2196F3;">
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">5. HowTo Schema</h4>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Ưu tiên:</strong> <span style="color: #4CAF50;">MEDIUM</span></p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Pages:</strong> Check-in guide, baggage guide, travel documents</p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Impact:</strong> Step-by-step AI guidance</p>
+                        </div>
+                        
+                        <div style="background: #F5F5F5; padding: 15px; border-radius: 8px; margin: 10px 0; border-left: 4px solid #2196F3;">
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">6. Offer Schema</h4>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Ưu tiên:</strong> <span style="color: #4CAF50;">MEDIUM</span></p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Pages:</strong> Promotions, special deals</p>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Properties:</strong> price, validFrom, validThrough, availability</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #D4EDDA; border-left: 5px solid #28A745; padding: 15px; margin-top: 20px; border-radius: 5px;">
+                    <strong><i class="fas fa-check-circle"></i> Deliverable:</strong> Đã chuẩn bị đầy đủ JSON-LD templates cho tất cả schema types → Ready for implementation trong Phase 1
+                </div>
+                <!-- Speaker notes: Giải thích chi tiết các schema cần triển khai. Flight và FAQPage là CRITICAL vì chúng ảnh hưởng trực tiếp đến AI citations. Organization và FlightReservation là HIGH priority. HowTo và Offer là MEDIUM nhưng cũng quan trọng cho long-term SEO. Nhấn mạnh rằng templates đã sẵn sàng. -->
+            </section>
+
+            <!-- Slide 9: Content Strategy -->
+            <section>
+                <div class="slide-header">
+                    <h2>CHIẾN LƯỢC NỘI DUNG</h2>
+                </div>
+                
+                <h3 style="text-align: left;"><i class="fas fa-calendar"></i> Lịch triển khai content 6 tháng</h3>
+                
+                <table class="budget-table" style="font-size: 0.85em; margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Tháng</th>
+                            <th>Content Type</th>
+                            <th>Số lượng</th>
+                            <th>Focus Keywords</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tháng 1</strong></td>
+                            <td>Route Pages (Top routes)</td>
+                            <td>5 pages</td>
+                            <td>Bangkok to [destination], cheap flights, direct flights</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 2</strong></td>
+                            <td>Route Pages (International)</td>
+                            <td>10 pages</td>
+                            <td>Vietnam flights, Australia flights, Japan flights</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 3</strong></td>
+                            <td>Destination Guides</td>
+                            <td>10 pages</td>
+                            <td>Things to do in [city], best time to visit, travel guide</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 4</strong></td>
+                            <td>FAQ Pages</td>
+                            <td>10 pages</td>
+                            <td>How to check-in, baggage allowance, visa requirements</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 5</strong></td>
+                            <td>Travel Tips & How-Tos</td>
+                            <td>8 pages</td>
+                            <td>Travel tips, packing guide, airport guide</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tháng 6</strong></td>
+                            <td>Seasonal Content</td>
+                            <td>5 pages</td>
+                            <td>Summer travel, holiday flights, peak season tips</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="two-column" style="margin-top: 25px;">
+                    <div>
+                        <h4 style="color: #1A2B4A;"><i class="fas fa-bullseye"></i> Content Principles</h4>
+                        <ul style="font-size: 0.9em;">
+                            <li><strong>Conversational:</strong> Write for AI questions</li>
+                            <li><strong>Structured:</strong> Clear headings, short paragraphs</li>
+                            <li><strong>Comprehensive:</strong> Answer all related questions</li>
+                            <li><strong>Accurate:</strong> Up-to-date information, prices</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: #1A2B4A;"><i class="fas fa-lightbulb"></i> AI-Optimization Tips</h4>
+                        <ul style="font-size: 0.9em;">
+                            <li>Use question-based headings (H2, H3)</li>
+                            <li>Include TL;DR summaries at top</li>
+                            <li>Add comparison tables</li>
+                            <li>Embed schema in every page</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Speaker notes: Trình bày lịch triển khai content chi tiết theo tháng. Nhấn mạnh rằng chúng ta ưu tiên route pages trước (tháng 1-2) vì chúng có conversion rate cao nhất. Destination guides và FAQs theo sau để build authority. Mỗi content piece đều được optimize cho AI search với conversational writing và structured data. -->
+            </section>
+
+            <!-- Slide 10: Implementation Roadmap -->
+            <section>
+                <div class="slide-header">
+                    <h2>LỘ TRÌNH TRIỂN KHAI 4 GIAI ĐOẠN</h2>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h3 style="margin: 0 0 10px 0; color: #E31E24;">Phase 1: Foundation (Tháng 1)</h3>
+                            <p style="font-size: 0.9em; margin: 5px 0;"><strong>Mục tiêu:</strong> Thiết lập nền tảng kỹ thuật</p>
+                            <ul style="font-size: 0.85em; margin: 10px 0;">
+                                <li>Technical audit th.vietjetair.com</li>
+                                <li>Install Organization, FAQPage, Flight schema</li>
+                                <li>Setup GA4 AI referral tracking</li>
+                                <li>Optimize top 5-10 existing pages</li>
+                                <li>Create 5 route pages với schema</li>
+                            </ul>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Deliverable:</strong> Technical foundation ready, first 5 route pages live</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h3 style="margin: 0 0 10px 0; color: #E31E24;">Phase 2: Content Creation (Tháng 2-3)</h3>
+                            <p style="font-size: 0.9em; margin: 5px 0;"><strong>Mục tiêu:</strong> Build content library</p>
+                            <ul style="font-size: 0.85em; margin: 10px 0;">
+                                <li>Publish 15-20 route pages (Bangkok-Phuket, Bangkok-Hanoi, etc.)</li>
+                                <li>Publish 10-15 destination guides (Phuket, Chiang Mai, Da Nang, etc.)</li>
+                                <li>Publish 10-15 FAQ pages (check-in, baggage, visa, etc.)</li>
+                                <li>Apply schema to all new pages</li>
+                                <li>Internal linking structure</li>
+                            </ul>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Deliverable:</strong> 35-50 AEO-optimized pages live</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h3 style="margin: 0 0 10px 0; color: #E31E24;">Phase 3: Off-Page & Visibility (Tháng 4-5)</h3>
+                            <p style="font-size: 0.9em; margin: 5px 0;"><strong>Mục tiêu:</strong> Build authority & citations</p>
+                            <ul style="font-size: 0.85em; margin: 10px 0;">
+                                <li>Build Reddit & Quora presence (r/Thailand, r/travel)</li>
+                                <li>Earn backlinks from travel blogs (10-15 links)</li>
+                                <li>PR for new Boeing fleet & SkyBoss</li>
+                                <li>Encourage customer reviews (Google, TripAdvisor)</li>
+                                <li>Monitor AI visibility (ChatGPT, Perplexity)</li>
+                            </ul>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Deliverable:</strong> Increased brand mentions, backlinks, AI citations</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h3 style="margin: 0 0 10px 0; color: #E31E24;">Phase 4: Optimization & Scale (Tháng 6+)</h3>
+                            <p style="font-size: 0.9em; margin: 5px 0;"><strong>Mục tiêu:</strong> Continuous improvement</p>
+                            <ul style="font-size: 0.85em; margin: 10px 0;">
+                                <li>Monthly AI visibility checks (Profound AI)</li>
+                                <li>AI referral monitoring & analysis</li>
+                                <li>A/B testing landing pages</li>
+                                <li>Seasonal content updates (holidays, peak season)</li>
+                                <li>Expand to new routes & destinations</li>
+                            </ul>
+                            <p style="font-size: 0.85em; margin: 5px 0;"><strong>Deliverable:</strong> Ongoing optimization, sustained growth</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Speaker notes: Giải thích lộ trình 4 giai đoạn. Phase 1 là foundation (1 tháng), Phase 2 là content creation (2 tháng), Phase 3 là off-page SEO (2 tháng), Phase 4 là continuous optimization. Tổng timeline 6 tháng để có kết quả đáng kể. Nhấn mạnh rằng đây là realistic timeline với milestones rõ ràng. -->
+            </section>
+
+            <!-- Slide 11: Budget & ROI -->
+            <section>
+                <div class="slide-header">
+                    <h2>NGÂN SÁCH & ROI DỰ KIẾN</h2>
+                </div>
+                
+                <h3 style="text-align: left;"><i class="fas fa-dollar-sign"></i> Phân bổ ngân sách 6 tháng</h3>
+                
+                <table class="budget-table" style="font-size: 0.85em; margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Hạng mục</th>
+                            <th>Chi tiết</th>
+                            <th>THB</th>
+                            <th>AUD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Content Creation</strong></td>
+                            <td>35-50 pages (route, destination, FAQ)</td>
+                            <td>450,000 - 720,000</td>
+                            <td>20,000 - 32,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Schema Implementation</strong></td>
+                            <td>Technical dev, JSON-LD, testing</td>
+                            <td>180,000 - 270,000</td>
+                            <td>8,000 - 12,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Off-Page SEO</strong></td>
+                            <td>Reddit, Quora, backlinks, PR</td>
+                            <td>270,000 - 450,000</td>
+                            <td>12,000 - 20,000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tools & Monitoring</strong></td>
+                            <td>Profound AI, GA4, validators (6 tháng)</td>
+                            <td>45,000 - 90,000</td>
+                            <td>2,000 - 4,000</td>
+                        </tr>
+                        <tr style="background: #FFF3CD; font-weight: 700;">
+                            <td><strong>TỔNG</strong></td>
+                            <td></td>
+                            <td>945,000 - 1,530,000</td>
+                            <td>42,000 - 68,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 style="text-align: left; margin-top: 30px;"><i class="fas fa-chart-line"></i> ROI Projection</h3>
+                
+                <div class="two-column" style="margin-top: 20px;">
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="roiChart"></canvas>
+                    </div>
+                    <div>
+                        <div class="stat-box" style="margin: 10px 0;">
+                            <div class="stat-number">+30-50%</div>
+                            <div class="stat-label">Organic traffic tăng (6-12 tháng)</div>
+                        </div>
+                        <div class="stat-box" style="margin: 10px 0;">
+                            <div class="stat-number">+25-40%</div>
+                            <div class="stat-label">Direct bookings tăng (12+ tháng)</div>
+                        </div>
+                        <div class="stat-box" style="margin: 10px 0;">
+                            <div class="stat-number">200-500</div>
+                            <div class="stat-label">AI referrals/month (12+ tháng)</div>
+                        </div>
+                        <p style="font-size: 0.85em; margin-top: 15px; color: #666;">
+                            <strong>Break-even:</strong> Dự kiến 8-10 tháng based on industry benchmarks
+                        </p>
+                    </div>
+                </div>
+                <!-- Speaker notes: Trình bày ngân sách chi tiết. Tổng 945k-1.53M THB (42-68k AUD) cho 6 tháng - đây là investment hợp lý cho một chiến lược digital transformation. ROI dự kiến +30-50% organic traffic và +25-40% direct bookings trong 12 tháng. Case studies cho thấy airlines có thể break-even trong 8-10 tháng. -->
+            </section>
+
+            <!-- Slide 12: Success Metrics / KPIs -->
+            <section>
+                <div class="slide-header">
+                    <h2>CHỈ SỐ THÀNH CÔNG / KPIs</h2>
+                </div>
+                
+                <h3 style="text-align: left;"><i class="fas fa-bullseye"></i> KPIs theo giai đoạn</h3>
+                
+                <div class="three-column" style="margin-top: 25px;">
+                    <div class="metric-card">
+                        <h4 style="color: #1A2B4A; margin: 0 0 15px 0;">3-6 Tháng</h4>
+                        <div class="metric-value">+20-30%</div>
+                        <div class="metric-label">AI Visibility</div>
+                        <hr style="margin: 15px 0; border: none; border-top: 2px solid #E31E24;">
+                        <div class="metric-value">+10-15%</div>
+                        <div class="metric-label">Organic Traffic</div>
+                        <hr style="margin: 15px 0; border: none; border-top: 2px solid #E31E24;">
+                        <div class="metric-value">50-100</div>
+                        <div class="metric-label">AI Referrals/mo</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4 style="color: #1A2B4A; margin: 0 0 15px 0;">6-12 Tháng</h4>
+                        <div class="metric-value">+50-70%</div>
+                        <div class="metric-label">AI Visibility</div>
+                        <hr style="margin: 15px 0; border: none; border-top: 2px solid #E31E24;">
+                        <div class="metric-value">+30-50%</div>
+                        <div class="metric-label">Organic Traffic</div>
+                        <hr style="margin: 15px 0; border: none; border-top: 2px solid #E31E24;">
+                        <div class="metric-value">100-200</div>
+                        <div class="metric-label">AI Referrals/mo</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h4 style="color: #1A2B4A; margin: 0 0 15px 0;">12+ Tháng</h4>
+                        <div class="metric-value">+100%+</div>
+                        <div class="metric-label">AI Visibility</div>
+                        <hr style="margin: 15px 0; border: none; border-top: 2px solid #E31E24;">
+                        <div class="metric-value">+60-80%</div>
+                        <div class="metric-label">Organic Traffic</div>
+                        <hr style="margin: 15px 0; border: none; border-top: 2px solid #E31E24;">
+                        <div class="metric-value">200-500</div>
+                        <div class="metric-label">AI Referrals/mo</div>
+                    </div>
+                </div>
+                
+                <h3 style="text-align: left; margin-top: 30px;"><i class="fas fa-clipboard-check"></i> Tracking Dashboard</h3>
+                
+                <div style="background: #F5F5F5; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">Primary Metrics</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>AI Citations:</strong> ChatGPT, Perplexity, Bing Copilot mentions</li>
+                                <li><strong>AI Referral Traffic:</strong> GA4 tracking by AI platform</li>
+                                <li><strong>Organic Traffic:</strong> Overall & by AI-optimized pages</li>
+                                <li><strong>Direct Bookings:</strong> Conversions from AI referrals</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="margin: 0 0 10px 0; color: #1A2B4A;">Secondary Metrics</h4>
+                            <ul style="font-size: 0.9em;">
+                                <li><strong>Schema Coverage:</strong> % pages with schema markup</li>
+                                <li><strong>Content Performance:</strong> Engagement by page type</li>
+                                <li><strong>Backlinks:</strong> Quality & quantity from travel sites</li>
+                                <li><strong>Brand Mentions:</strong> Reddit, Quora, forums</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 0.85em; margin-top: 20px; text-align: left;">
+                    <strong><i class="fas fa-info-circle"></i> Reporting:</strong> Monthly reports với dashboard visualization + quarterly strategy reviews với leadership team
+                </p>
+                <!-- Speaker notes: Trình bày KPIs cụ thể theo từng giai đoạn. 3-6 tháng expect +20-30% AI visibility và +10-15% traffic. 6-12 tháng expect +50-70% AI visibility và +30-50% traffic. 12+ tháng expect doubling AI visibility và +60-80% traffic. Primary metrics focus on AI citations và referral traffic. Secondary metrics track technical implementation và off-page efforts. -->
+            </section>
+
+            <!-- Slide 13: Case Studies -->
+            <section>
+                <div class="slide-header">
+                    <h2>CASE STUDIES TỪ CÁC HÃNG BAY KHÁC</h2>
+                </div>
+                
+                <div class="case-study-box">
+                    <h3 style="margin: 0 0 10px 0; color: #E31E24;"><i class="fas fa-plane"></i> Virgin Australia</h3>
+                    <p style="font-size: 0.9em; margin: 5px 0;"><strong>Challenge:</strong> Improve visibility for non-branded route searches</p>
+                    <p style="font-size: 0.9em; margin: 5px 0;"><strong>Solution:</strong> Custom route page templates with structured data, FAQ schemas, destination content</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin: 15px 0;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">1.3</div>
+                            <div style="font-size: 0.85em; color: #666;">Avg Rank for non-branded queries</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">27%</div>
+                            <div style="font-size: 0.85em; color: #666;">Share of Voice increase</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">+40%</div>
+                            <div style="font-size: 0.85em; color: #666;">Organic bookings</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85em; margin: 5px 0;"><em>Source: Branchspace - SEO and AI for Airlines</em></p>
+                </div>
+                
+                <div class="case-study-box">
+                    <h3 style="margin: 0 0 10px 0; color: #E31E24;"><i class="fas fa-plane"></i> Avianca</h3>
+                    <p style="font-size: 0.9em; margin: 5px 0;"><strong>Challenge:</strong> Improve regional SEO visibility across Latin America</p>
+                    <p style="font-size: 0.9em; margin: 5px 0;"><strong>Solution:</strong> Custom schema implementation for flights, destinations, multi-language content</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin: 15px 0;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">75%</div>
+                            <div style="font-size: 0.85em; color: #666;">Regional SEO visibility</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">+50%</div>
+                            <div style="font-size: 0.85em; color: #666;">Organic traffic</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">Top 3</div>
+                            <div style="font-size: 0.85em; color: #666;">Ranking for key routes</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85em; margin: 5px 0;"><em>Source: Branchspace - SEO and AI for Airlines</em></p>
+                </div>
+                
+                <div class="case-study-box">
+                    <h3 style="margin: 0 0 10px 0; color: #E31E24;"><i class="fas fa-plane"></i> Regional Carrier (Anonymous)</h3>
+                    <p style="font-size: 0.9em; margin: 5px 0;"><strong>Challenge:</strong> Low organic traffic and poor page speed performance</p>
+                    <p style="font-size: 0.9em; margin: 5px 0;"><strong>Solution:</strong> Technical SEO overhaul, schema markup, content optimization, speed improvements</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin: 15px 0;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">+60.3%</div>
+                            <div style="font-size: 0.85em; color: #666;">Organic traffic (6 months)</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">42→91</div>
+                            <div style="font-size: 0.85em; color: #666;">PageSpeed Score improvement</div>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: 700; color: #27AE60;">+28%</div>
+                            <div style="font-size: 0.85em; color: #666;">Direct bookings</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.85em; margin: 5px 0;"><em>Source: Branchspace - SEO and AI for Airlines</em></p>
+                </div>
+                
+                <div style="background: #D4EDDA; border-left: 5px solid #28A745; padding: 15px; margin-top: 20px; border-radius: 5px;">
+                    <strong><i class="fas fa-check-circle"></i> Key Takeaway:</strong> Airlines implementing structured data + content optimization consistently achieve 40-70% traffic growth và 25-40% booking increases trong 6-12 tháng
+                </div>
+                <!-- Speaker notes: Trình bày 3 case studies thực tế từ các hãng bay đã thành công với SEO/AEO. Virgin Australia đạt rank 1.3 cho non-branded queries và +27% share of voice. Avianca đạt 75% regional visibility. Regional carrier đạt +60% traffic trong 6 tháng. Nhấn mạnh rằng đây không phải là lý thuyết - đây là proven results từ industry. -->
+            </section>
+
+            <!-- Slide 14: Risk Assessment -->
+            <section>
+                <div class="slide-header">
+                    <h2>ĐÁNH GIÁ RỦI RO</h2>
+                </div>
+                
+                <h3 style="text-align: left;"><i class="fas fa-exclamation-triangle"></i> Rủi ro & Phương án giảm thiểu</h3>
+                
+                <div class="risk-item">
+                    <div class="risk-icon" style="color: #FFA500;"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: #1A2B4A;">Timeline Delays</h4>
+                        <p style="font-size: 0.9em; margin: 5px 0;"><strong>Risk:</strong> Content creation hoặc technical implementation chậm trễ</p>
+                        <p style="font-size: 0.9em; margin: 5px 0; color: #27AE60;"><strong>Mitigation:</strong> Phased approach với clear milestones; prioritize critical items (Flight schema, top route pages); có backup resources nếu cần</p>
+                    </div>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon" style="color: #FFA500;"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: #1A2B4A;">AI Algorithm Changes</h4>
+                        <p style="font-size: 0.9em; margin: 5px 0;"><strong>Risk:</strong> ChatGPT, Perplexity thay đổi cách hiển thị citations</p>
+                        <p style="font-size: 0.9em; margin: 5px 0; color: #27AE60;"><strong>Mitigation:</strong> Focus on fundamentals (quality content, structured data, E-E-A-T); diversify across multiple AI platforms; monitor changes monthly</p>
+                    </div>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon" style="color: #FFA500;"><i class="fas fa-users"></i></div>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: #1A2B4A;">Resource Constraints</h4>
+                        <p style="font-size: 0.9em; margin: 5px 0;"><strong>Risk:</strong> Thiếu dev resources hoặc content writers</p>
+                        <p style="font-size: 0.9em; margin: 5px 0; color: #27AE60;"><strong>Mitigation:</strong> Templates đã sẵn sàng để developers implement nhanh; consider external content agency nếu cần; train internal team trên AEO best practices</p>
+                    </div>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon" style="color: #FFA500;"><i class="fas fa-chart-line"></i></div>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: #1A2B4A;">ROI Timeline</h4>
+                        <p style="font-size: 0.9em; margin: 5px 0;"><strong>Risk:</strong> Results có thể mất 6-9 tháng để thấy rõ</p>
+                        <p style="font-size: 0.9em; margin: 5px 0; color: #27AE60;"><strong>Mitigation:</strong> Set realistic expectations; track leading indicators (schema coverage, content published, AI citations); celebrate early wins (first AI citations, traffic improvements)</p>
+                    </div>
+                </div>
+                
+                <div class="risk-item">
+                    <div class="risk-icon" style="color: #FFA500;"><i class="fas fa-shield-alt"></i></div>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: #1A2B4A;">Competitor Response</h4>
+                        <p style="font-size: 0.9em; margin: 5px 0;"><strong>Risk:</strong> AirAsia, Nok Air bắt đầu AEO optimization</p>
+                        <p style="font-size: 0.9em; margin: 5px 0; color: #27AE60;"><strong>Mitigation:</strong> First-mover advantage rất quan trọng; continuous improvement để maintain lead; focus on unique value props (SkyBoss, Boeing fleet, PowerPass)</p>
+                    </div>
+                </div>
+                
+                <div style="background: #FFF3CD; border-left: 5px solid #FFC107; padding: 15px; margin-top: 20px; border-radius: 5px;">
+                    <strong><i class="fas fa-lightbulb"></i> Overall Risk Level:</strong> <span style="color: #27AE60; font-weight: 700;">LOW-MEDIUM</span>. Tất cả rủi ro đều manageable với proper planning và execution. Benefits vượt xa risks.
+                </div>
+                <!-- Speaker notes: Đánh giá các rủi ro chính và phương án giảm thiểu. Timeline delays có thể xảy ra nhưng phased approach giúp minimize impact. AI algorithm changes là risk nhưng chúng ta focus on fundamentals nên ít bị ảnh hưởng. Resource constraints có thể giải quyết bằng external help. ROI timeline cần patient nhưng leading indicators sẽ show progress. Overall risk level là LOW-MEDIUM và manageable. -->
+            </section>
+
+            <!-- Slide 15: Next Steps & Call to Action -->
+            <section data-background="linear-gradient(135deg, #1A2B4A 0%, #E31E24 100%)">
+                <div style="color: white;">
+                    <h2 style="color: white; border: none;">BƯỚC TIẾP THEO & KÊU GỌI HÀNH ĐỘNG</h2>
+                    
+                    <div style="text-align: left; margin-top: 30px;">
+                        <h3 style="color: white; border-bottom: 2px solid white; padding-bottom: 10px;">Immediate Actions (Tuần tới)</h3>
+                        <ul style="font-size: 1.1em; line-height: 1.8;">
+                            <li><strong>Review & Phê duyệt:</strong> Board review bản presentation và approve budget</li>
+                            <li><strong>Assign Project Lead:</strong> Chỉ định PM chịu trách nhiệm execution</li>
+                            <li><strong>Kickoff Meeting:</strong> Họp với dev team, content team, marketing team</li>
+                        </ul>
+                        
+                        <h3 style="color: white; border-bottom: 2px solid white; padding-bottom: 10px; margin-top: 30px;">Tháng 1 (Phase 1)</h3>
+                        <ul style="font-size: 1.1em; line-height: 1.8;">
+                            <li><strong>Technical Setup:</strong> Cấu hình GA4, Profound AI, schema validator tools</li>
+                            <li><strong>Site Audit:</strong> Complete technical audit của th.vietjetair.com</li>
+                            <li><strong>First Implementation:</strong> Install Organization & FAQPage schema, optimize 5-10 existing pages, create first 5 route pages</li>
+                        </ul>
+                        
+                        <h3 style="color: white; border-bottom: 2px solid white; padding-bottom: 10px; margin-top: 30px;">Tháng 2-6</h3>
+                        <ul style="font-size: 1.1em; line-height: 1.8;">
+                            <li><strong>Execute Roadmap:</strong> Follow Phase 2, 3, 4 as outlined</li>
+                            <li><strong>Monthly Reviews:</strong> Track progress against KPIs</li>
+                            <li><strong>Adjust & Optimize:</strong> Based on performance data</li>
+                        </ul>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="#" class="cta-button" style="background: white; color: #E31E24; font-size: 1.3em; padding: 20px 50px;">
+                            <i class="fas fa-rocket"></i> BẮT ĐẦU PHASE 1
+                        </a>
+                        <p style="font-size: 1.1em; margin-top: 30px; opacity: 0.9;">
+                            <strong>Timeline:</strong> Kickoff trong tuần tới → First results trong 3 tháng → Full impact trong 12 tháng
+                        </p>
+                    </div>
+                </div>
+                <!-- Speaker notes: Kết thúc với clear call to action. Nhấn mạnh immediate next steps: Board approval → assign PM → kickoff meeting trong tuần tới. Phase 1 bắt đầu ngay tháng 1 với technical setup và first implementations. Timeline rõ ràng: first results trong 3 tháng, full impact trong 12 tháng. Kêu gọi Board approve và commit resources để bắt đầu journey này. -->
+            </section>
+
+            <!-- Slide 16: Thank You & Contact -->
+            <section data-background="#1A2B4A">
+                <div style="color: white; text-align: center;">
+                    <h1 style="color: white; font-size: 3em; margin-bottom: 20px;">CẢM ƠN</h1>
+                    <div class="logo-container">
+                        <h2 style="color: #E31E24; margin: 30px 0;">
+                            <i class="fas fa-plane"></i> THAI VIETJET
+                        </h2>
+                    </div>
+                    
+                    <p style="font-size: 1.3em; margin: 40px 0 20px 0;">Sẵn sàng bay cao hơn với AI-First Marketing</p>
+                    
+                    <div style="margin-top: 50px; font-size: 1.1em;">
+                        <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b767a69707e6f72757c5b6f737a726d727e6f717e6f7a726935787476">[email&#160;protected]</a></p>
+                        <p><i class="fas fa-globe"></i> th.vietjetair.com</p>
+                        <p><i class="fas fa-phone"></i> +66 2 126 8999</p>
+                    </div>
+                    
+                    <div style="margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.3);">
+                        <p style="font-size: 0.9em; opacity: 0.8;">
+                            <strong>Tài liệu tham khảo:</strong><br/>
+                            Implementation Guide, Templates, Schema Guide, Content Calendar<br/>
+                            đều có sẵn tại presentation package
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        // Initialize Reveal.js
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            progress: true,
+            controls: true,
+            center: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            width: 1200,
+            height: 700,
+            margin: 0.04
+        });
+
+        // Growth Chart (Slide 4)
+        const growthCtx = document.getElementById('growthChart');
+        if (growthCtx) {
+            new Chart(growthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024', 'Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026'],
+                    datasets: [
+                        {
+                            label: 'AI Search Traffic',
+                            data: [15, 25, 38, 52, 68, 85, 105, 128, 155, 185],
+                            borderColor: '#E31E24',
+                            backgroundColor: 'rgba(227, 30, 36, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            borderWidth: 3
+                        },
+                        {
+                            label: 'Traditional Search Traffic',
+                            data: [100, 105, 108, 110, 112, 113, 114, 115, 115, 115],
+                            borderColor: '#1A2B4A',
+                            backgroundColor: 'rgba(26, 43, 74, 0.1)',
+                            tension: 0.4,
+                            fill: true,
+                            borderWidth: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { size: 14 },
+                                usePointStyle: true
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Projected Growth: AI Search vs Traditional Search (Index: Q1 2024 = 100)',
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Traffic Index'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ROI Chart (Slide 11)
+        const roiCtx = document.getElementById('roiChart');
+        if (roiCtx) {
+            new Chart(roiCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Month 3', 'Month 6', 'Month 9', 'Month 12'],
+                    datasets: [
+                        {
+                            label: 'AI Visibility Increase (%)',
+                            data: [20, 35, 60, 100],
+                            backgroundColor: '#E31E24',
+                            borderColor: '#E31E24',
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Organic Traffic Increase (%)',
+                            data: [10, 25, 45, 70],
+                            backgroundColor: '#1A2B4A',
+                            borderColor: '#1A2B4A',
+                            borderWidth: 2
+                        },
+                        {
+                            label: 'Direct Bookings Increase (%)',
+                            data: [5, 15, 28, 40],
+                            backgroundColor: '#FFA500',
+                            borderColor: '#FFA500',
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                font: { size: 12 },
+                                usePointStyle: true
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Expected ROI Timeline (% Increase)',
+                            font: { size: 14 }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Percentage Increase (%)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDtjr10K7H%2FhHtWSW02KIdu0jq2aOBVHYtWiympIRf9coj03qlEF60F7okQEpoJYka9NoVfvOwgRHmvJONXHZABih78LO0JLy1KoNstLi4WGGqwNa%2B2mu%2B2F62UHPq%2Fce32SMcZsctt59wH%2F6PdIY2083%2F6jRqdqOg3S6L%2F6KRP6Q85qXFu624M7NLV7R9l4EM%2FY4Ufk8doLegxwJseg3lcg1wdLmU8k4QSr4wJdIzFV6fhW36NrEGsxULCjX%2BOvqgR9UKt9FoDjZxyxlu%2BgcM%2B6iq%2FjbmW%2BZEkadgo02Zh8z2VzHhsECrDiqTXOBbjZZgctKDXs6Hh7ZYoI3s0cH9So2C8zsKGKJlb1gafLuH7Fn2klrlgMf3128HOhYit1Bf%2Fy3jqlW%2FmSMYR9ZIkJF1%2FWIr1jKeqc7Y9XmfncN%2F%2B0VDxIJ6vscgcuyA4rYietRjk3dF1In2BcWu5gzIt1xudiqDqBWMzhXXoJJQyMMkxpcg3qt5Y2wtY%2B7eW%2FO6Oxty4d1e%2FEDjRgOHXg9w6Rl5Iv6678WWDxIQq1B3onRSNGiOFjWRgN8k1itbe6UVUgG2cYqT3xLV5SRA9gwCHW%2FnHQkw%2F3ZH8JXlWuXNKUUmOEhocSvF4CqYcbYoYZZb8dIHw%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDtjr10K7H/hHtWSW02KIdu0jq2aOBVHYtWiympIRf9coj03qlEF60F7okQEpoJYka9NoVfvOwgRHmvJONXHZABih78LO0JLy1KoNstLi4WGGqwNa+2mu+2F62UHPq/ce32SMcZsctt59wH/6PdIY2083/6jRqdqOg3S6L/6KRP6Q85qXFu624M7NLV7R9l4EM/Y4Ufk8doLegxwJseg3lcg1wdLmU8k4QSr4wJdIzFV6fhW36NrEGsxULCjX+OvqgR9UKt9FoDjZxyxlu+gcM+6iq/jbmW+ZEkadgo02Zh8z2VzHhsECrDiqTXOBbjZZgctKDXs6Hh7ZYoI3s0cH9So2C8zsKGKJlb1gafLuH7Fn2klrlgMf3128HOhYit1Bf/y3jqlW/mSMYR9ZIkJF1/WIr1jKeqc7Y9XmfncN/+0VDxIJ6vscgcuyA4rYietRjk3dF1In2BcWu5gzIt1xudiqDqBWMzhXXoJJQyMMkxpcg3qt5Y2wtY+7eW/O6Oxty4d1e/EDjRgOHXg9w6Rl5Iv6678WWDxIQq1B3onRSNGiOFjWRgN8k1itbe6UVUgG2cYqT3xLV5SRA9gwCHW/nHQkw/3ZH8JXlWuXNKUUmOEhocSvF4CqYcbYoYZZb8dIHw==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

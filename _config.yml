@@ -1,0 +1,45 @@
+# GitHub Pages Configuration
+title: Thai Vietjet AI-First Marketing & AEO Strategy
+description: Complete Answer Engine Optimization implementation strategy for Thai Vietjet Air
+url: https://yourusername.github.io
+theme: jekyll-theme-cayman
+
+# Repository settings
+repository: yourusername/thai-vietjet-aeo-project
+
+# Navigation
+header_pages:
+  - index.html
+  - docs/thai_vietjet_executive_presentation.html
+  - docs/thai_vietjet_aeo_implementation_guide.html
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+author: Thai Vietjet AI-First Marketing Team
+copyright: 2026 Thai Vietjet Air
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name
+
+# Default settings
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "default"

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok to Phuket Flights - Thai Vietjet | Book Direct & Save</title>
+    <meta name="description" content="Book Bangkok to Phuket flights with Thai Vietjet. Daily direct flights starting from 750 THB. Check schedules, compare fares, and enjoy free 20kg baggage on select routes.">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Airline",
+      "name": "Thai Vietjet Air",
+      "iataCode": "VZ",
+      "url": "https://th.vietjetair.com",
+      "logo": "https://th.vietjetair.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+66-2-129-8999",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    
+    <!-- Flight Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Flight",
+      "flightNumber": "VZ301",
+      "provider": {
+        "@type": "Airline",
+        "name": "Thai Vietjet Air",
+        "iataCode": "VZ"
+      },
+      "departureAirport": {
+        "@type": "Airport",
+        "name": "Suvarnabhumi Airport",
+        "iataCode": "BKK",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bangkok",
+          "addressCountry": "TH"
+        }
+      },
+      "departureTime": "2026-03-15T06:00:00+07:00",
+      "arrivalAirport": {
+        "@type": "Airport",
+        "name": "Phuket International Airport",
+        "iataCode": "HKT",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Phuket",
+          "addressCountry": "TH"
+        }
+      },
+      "arrivalTime": "2026-03-15T07:25:00+07:00",
+      "estimatedFlightDuration": "PT1H25M",
+      "aircraft": "Airbus A320",
+      "offers": {
+        "@type": "Offer",
+        "price": "750",
+        "priceCurrency": "THB",
+        "availability": "https://schema.org/InStock",
+        "url": "https://th.vietjetair.com/book",
+        "priceValidUntil": "2026-12-31"
+      }
+    }
+    </script>
+    
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long is the flight from Bangkok to Phuket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The flight from Bangkok to Phuket takes approximately 1 hour and 25 minutes on direct Thai Vietjet flights."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a flight from Bangkok to Phuket cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bangkok to Phuket flights start from 750 THB for Eco fares (excluding taxes and fees). SkyBoss fares with 30kg baggage start from 1,500 THB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many flights per day from Bangkok to Phuket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Thai Vietjet operates 4-6 daily flights between Bangkok and Phuket, with departures throughout the day from early morning to evening."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the baggage allowance on Bangkok to Phuket flights?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All passengers receive 7kg hand luggage. Eco fares can purchase checked baggage from 15kg-40kg. Deluxe fares include 20kg checked baggage. SkyBoss fares include 30kg checked baggage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I check in online for Bangkok to Phuket flights?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, online check-in opens 24 hours before departure and closes 1 hour before for domestic flights. Use the Thai Vietjet app or website to check in."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        :root {
+            --vietjet-red: #E31E24;
+            --vietjet-darkblue: #1A2B4A;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--vietjet-darkblue) 0%, #2d4563 100%);
+        }
+        .cta-button {
+            background: var(--vietjet-red);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #c71a1f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(227, 30, 36, 0.3);
+        }
+        .route-card {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+        .route-card:hover {
+            border-color: var(--vietjet-red);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        .section-title {
+            color: var(--vietjet-darkblue);
+            border-bottom: 4px solid var(--vietjet-red);
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        .tldr-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border-left: 5px solid var(--vietjet-red);
+        }
+        .flight-detail-icon {
+            color: var(--vietjet-red);
+        }
+        .faq-item {
+            border-left: 3px solid var(--vietjet-red);
+        }
+         {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-plane-departure text-4xl mr-4"></i>
+                <div>
+                    <p class="text-sm opacity-75 mb-1">Thai Vietjet Direct Flights</p>
+                    <h1 class="text-4xl md:text-5xl font-bold">Bangkok to Phuket</h1>
+                </div>
+            </div>
+            <p class="text-xl mt-4 max-w-3xl">Book direct flights from Bangkok (BKK) to Phuket (HKT) starting from just 750 THB</p>
+            <div class="flex flex-wrap gap-4 mt-6">
+                <div class="flex items-center bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                    <i class="fas fa-clock mr-2"></i>
+                    <span>1h 25m flight time</span>
+                </div>
+                <div class="flex items-center bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span>4-6 daily flights</span>
+                </div>
+                <div class="flex items-center bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                    <i class="fas fa-suitcase mr-2"></i>
+                    <span>7kg hand luggage included</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TL;DR Section -->
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <div class="tldr-box rounded-xl p-6 shadow-md">
+            <div class="flex items-start">
+                <i class="fas fa-info-circle text-3xl mr-4" style="color: var(--vietjet-red);"></i>
+                <div>
+                    <h2 class="text-xl font-bold mb-2" style="color: var(--vietjet-darkblue);">Quick Summary</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        Thai Vietjet operates 4-6 daily direct flights from Bangkok to Phuket with a flight duration of just 1 hour 25 minutes. Fares start from 750 THB for Eco class, with SkyBoss premium service available from 1,500 THB including 30kg baggage, priority boarding, and lounge access. Book online for the best deals and enjoy hassle-free travel to Thailand's most popular beach destination.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flight Schedule & Pricing Section -->
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <h2 class="text-3xl font-bold section-title mb-8">Flight Schedule & Pricing</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+            <!-- Eco Fare -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4" style="border-top-color: #10b981;">
+                <div class="text-center mb-4">
+                    <h3 class="text-2xl font-bold text-gray-800">Eco</h3>
+                    <p class="text-gray-600 text-sm">Best Value</p>
+                </div>
+                <div class="text-center mb-6">
+                    <p class="text-sm text-gray-600">Starting from</p>
+                    <p class="text-4xl font-bold" style="color: var(--vietjet-red);">750 THB</p>
+                    <p class="text-xs text-gray-500">*excluding taxes & fees</p>
+                </div>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        7kg hand luggage
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        Standard seat
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        Online check-in
+                    </li>
+                    <li class="flex items-center text-gray-400">
+                        <i class="fas fa-times-circle mr-2"></i>
+                        Checked baggage (purchase separately)
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Deluxe Fare -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4" style="border-top-color: #3b82f6;">
+                <div class="text-center mb-4">
+                    <h3 class="text-2xl font-bold text-gray-800">Deluxe</h3>
+                    <p class="text-gray-600 text-sm">Most Popular</p>
+                </div>
+                <div class="text-center mb-6">
+                    <p class="text-sm text-gray-600">Starting from</p>
+                    <p class="text-4xl font-bold" style="color: var(--vietjet-red);">1,200 THB</p>
+                    <p class="text-xs text-gray-500">*excluding taxes & fees</p>
+                </div>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        7kg hand luggage
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        20kg checked baggage
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        Seat selection
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        Free date change
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SkyBoss Fare -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4" style="border-top-color: var(--vietjet-red);">
+                <div class="text-center mb-4">
+                    <h3 class="text-2xl font-bold text-gray-800">SkyBoss</h3>
+                    <p class="text-gray-600 text-sm">Premium</p>
+                </div>
+                <div class="text-center mb-6">
+                    <p class="text-sm text-gray-600">Starting from</p>
+                    <p class="text-4xl font-bold" style="color: var(--vietjet-red);">1,500 THB</p>
+                    <p class="text-xs text-gray-500">*excluding taxes & fees</p>
+                </div>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        10kg hand luggage
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        30kg checked baggage
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        Priority boarding
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        Complimentary meal & drink
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        Lounge access
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Daily Schedule -->
+        <div class="mt-12 bg-white rounded-xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-6" style="color: var(--vietjet-darkblue);">Daily Flight Schedule</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b-2" style="border-color: var(--vietjet-red);">
+                            <th class="text-left py-3 px-4">Flight</th>
+                            <th class="text-left py-3 px-4">Departure (BKK)</th>
+                            <th class="text-left py-3 px-4">Arrival (HKT)</th>
+                            <th class="text-left py-3 px-4">Duration</th>
+                            <th class="text-left py-3 px-4">Aircraft</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-4 px-4 font-semibold">VZ301</td>
+                            <td class="py-4 px-4">06:00</td>
+                            <td class="py-4 px-4">07:25</td>
+                            <td class="py-4 px-4">1h 25m</td>
+                            <td class="py-4 px-4">Airbus A320</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-4 px-4 font-semibold">VZ303</td>
+                            <td class="py-4 px-4">09:30</td>
+                            <td class="py-4 px-4">10:55</td>
+                            <td class="py-4 px-4">1h 25m</td>
+                            <td class="py-4 px-4">Airbus A320</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-4 px-4 font-semibold">VZ305</td>
+                            <td class="py-4 px-4">13:15</td>
+                            <td class="py-4 px-4">14:40</td>
+                            <td class="py-4 px-4">1h 25m</td>
+                            <td class="py-4 px-4">Airbus A320</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-4 px-4 font-semibold">VZ307</td>
+                            <td class="py-4 px-4">16:45</td>
+                            <td class="py-4 px-4">18:10</td>
+                            <td class="py-4 px-4">1h 25m</td>
+                            <td class="py-4 px-4">Airbus A320</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-4 font-semibold">VZ309</td>
+                            <td class="py-4 px-4">20:00</td>
+                            <td class="py-4 px-4">21:25</td>
+                            <td class="py-4 px-4">1h 25m</td>
+                            <td class="py-4 px-4">Airbus A320</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-gray-600 mt-4">
+                <i class="fas fa-info-circle mr-2"></i>
+                Flight schedules are subject to change. Please check availability when booking.
+            </p>
+        </div>
+    </div>
+
+    <!-- Route Information -->
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <h2 class="text-3xl font-bold section-title mb-8">Route Information</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 mt-8">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-xl font-bold mb-4 flex items-center" style="color: var(--vietjet-darkblue);">
+                    <i class="fas fa-plane-departure flight-detail-icon mr-3 text-2xl"></i>
+                    Departure: Bangkok (BKK)
+                </h3>
+                <p class="text-gray-700 mb-4">Suvarnabhumi Airport is Bangkok's main international airport, located 25km east of downtown.</p>
+                <ul class="space-y-2 text-gray-700">
+                    <li><i class="fas fa-map-marker-alt mr-2 flight-detail-icon"></i> <strong>Location:</strong> Samut Prakan Province</li>
+                    <li><i class="fas fa-car mr-2 flight-detail-icon"></i> <strong>Transport:</strong> Airport Rail Link, taxi, bus</li>
+                    <li><i class="fas fa-clock mr-2 flight-detail-icon"></i> <strong>Check-in opens:</strong> 3 hours before departure</li>
+                    <li><i class="fas fa-clock mr-2 flight-detail-icon"></i> <strong>Check-in closes:</strong> 40 minutes before departure</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-xl font-bold mb-4 flex items-center" style="color: var(--vietjet-darkblue);">
+                    <i class="fas fa-plane-arrival flight-detail-icon mr-3 text-2xl"></i>
+                    Arrival: Phuket (HKT)
+                </h3>
+                <p class="text-gray-700 mb-4">Phuket International Airport is Thailand's second busiest airport, serving the island province of Phuket.</p>
+                <ul class="space-y-2 text-gray-700">
+                    <li><i class="fas fa-map-marker-alt mr-2 flight-detail-icon"></i> <strong>Location:</strong> Mai Khao, Thalang District</li>
+                    <li><i class="fas fa-car mr-2 flight-detail-icon"></i> <strong>Transport:</strong> Airport bus, taxi, hotel shuttle</li>
+                    <li><i class="fas fa-umbrella-beach mr-2 flight-detail-icon"></i> <strong>Distance to Patong:</strong> 45 minutes</li>
+                    <li><i class="fas fa-clock mr-2 flight-detail-icon"></i> <strong>Airport facilities:</strong> Duty-free, restaurants, lounges</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold section-title mb-8">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4 mt-8">
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        How long is the flight from Bangkok to Phuket?
+                    </h3>
+                    <p class="text-gray-700 ml-8">The flight from Bangkok to Phuket takes approximately 1 hour and 25 minutes on direct Thai Vietjet flights.</p>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        How much does a flight from Bangkok to Phuket cost?
+                    </h3>
+                    <p class="text-gray-700 ml-8">Bangkok to Phuket flights start from 750 THB for Eco fares (excluding taxes and fees). Deluxe fares with 20kg baggage start from 1,200 THB. SkyBoss premium fares with 30kg baggage, priority boarding, and lounge access start from 1,500 THB.</p>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        How many flights per day from Bangkok to Phuket?
+                    </h3>
+                    <p class="text-gray-700 ml-8">Thai Vietjet operates 4-6 daily flights between Bangkok (Suvarnabhumi) and Phuket, with departures throughout the day from 6:00 AM to 8:00 PM.</p>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        What is the baggage allowance on Bangkok to Phuket flights?
+                    </h3>
+                    <p class="text-gray-700 ml-8">All passengers receive 7kg hand luggage for free. Eco fares can purchase checked baggage from 15kg to 40kg separately. Deluxe fares include 20kg checked baggage. SkyBoss premium fares include 30kg checked baggage plus priority handling.</p>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        Can I check in online for Bangkok to Phuket flights?
+                    </h3>
+                    <p class="text-gray-700 ml-8">Yes, online check-in opens 24 hours before departure and closes 1 hour before for domestic flights. You can check in via the Thai Vietjet mobile app or website. Online check-in allows you to select seats and receive your mobile boarding pass.</p>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        What is the best time to book Bangkok to Phuket flights?
+                    </h3>
+                    <p class="text-gray-700 ml-8">Book 2-3 months in advance for the best fares, especially during peak season (November-March). Watch for Thai Vietjet's promotional campaigns featuring 0 VND tickets and special discounts. Tuesday and Wednesday typically offer better prices than weekend flights.</p>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        Is food included on Bangkok to Phuket flights?
+                    </h3>
+                    <p class="text-gray-700 ml-8">Food is not included in Eco and Deluxe fares but can be pre-ordered or purchased onboard. SkyBoss fares include complimentary meals and beverages. Pre-ordering meals online is cheaper than buying onboard.</p>
+                </div>
+
+                <div class="faq-item bg-gray-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold mb-2 flex items-start" style="color: var(--vietjet-darkblue);">
+                        <i class="fas fa-question-circle mr-3 mt-1" style="color: var(--vietjet-red);"></i>
+                        Which terminal does Thai Vietjet use at Bangkok airport?
+                    </h3>
+                    <p class="text-gray-700 ml-8">Thai Vietjet operates from Suvarnabhumi Airport's main terminal. Domestic departures are on Level 2. Allow extra time during peak hours as security lines can be long.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Routes Section -->
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold section-title mb-8">Related Popular Routes</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+            <div class="route-card bg-white rounded-xl shadow-md p-6 cursor-pointer">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-plane text-3xl mr-3" style="color: var(--vietjet-red);"></i>
+                    <div>
+                        <h3 class="font-bold text-lg" style="color: var(--vietjet-darkblue);">Bangkok to Chiang Mai</h3>
+                        <p class="text-gray-600 text-sm">BKK → CNX</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm text-gray-600">From</p>
+                        <p class="text-2xl font-bold" style="color: var(--vietjet-red);">800 THB</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Duration</p>
+                        <p class="font-semibold">1h 20m</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card bg-white rounded-xl shadow-md p-6 cursor-pointer">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-plane text-3xl mr-3" style="color: var(--vietjet-red);"></i>
+                    <div>
+                        <h3 class="font-bold text-lg" style="color: var(--vietjet-darkblue);">Bangkok to Krabi</h3>
+                        <p class="text-gray-600 text-sm">BKK → KBV</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm text-gray-600">From</p>
+                        <p class="text-2xl font-bold" style="color: var(--vietjet-red);">750 THB</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Duration</p>
+                        <p class="font-semibold">1h 30m</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card bg-white rounded-xl shadow-md p-6 cursor-pointer">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-plane text-3xl mr-3" style="color: var(--vietjet-red);"></i>
+                    <div>
+                        <h3 class="font-bold text-lg" style="color: var(--vietjet-darkblue);">Bangkok to Hanoi</h3>
+                        <p class="text-gray-600 text-sm">BKK → HAN</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm text-gray-600">From</p>
+                        <p class="text-2xl font-bold" style="color: var(--vietjet-red);">1,999 THB</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Duration</p>
+                        <p class="font-semibold">2h 15m</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card bg-white rounded-xl shadow-md p-6 cursor-pointer">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-plane text-3xl mr-3" style="color: var(--vietjet-red);"></i>
+                    <div>
+                        <h3 class="font-bold text-lg" style="color: var(--vietjet-darkblue);">Bangkok to Da Nang</h3>
+                        <p class="text-gray-600 text-sm">BKK → DAD</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm text-gray-600">From</p>
+                        <p class="text-2xl font-bold" style="color: var(--vietjet-red);">1,999 THB</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Duration</p>
+                        <p class="font-semibold">2h 00m</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card bg-white rounded-xl shadow-md p-6 cursor-pointer">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-plane text-3xl mr-3" style="color: var(--vietjet-red);"></i>
+                    <div>
+                        <h3 class="font-bold text-lg" style="color: var(--vietjet-darkblue);">Bangkok to Fukuoka</h3>
+                        <p class="text-gray-600 text-sm">BKK → FUK</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm text-gray-600">From</p>
+                        <p class="text-2xl font-bold" style="color: var(--vietjet-red);">3,999 THB</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Duration</p>
+                        <p class="font-semibold">5h 30m</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-card bg-white rounded-xl shadow-md p-6 cursor-pointer">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-plane text-3xl mr-3" style="color: var(--vietjet-red);"></i>
+                    <div>
+                        <h3 class="font-bold text-lg" style="color: var(--vietjet-darkblue);">Phuket to Chiang Mai</h3>
+                        <p class="text-gray-600 text-sm">HKT → CNX</p>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-sm text-gray-600">From</p>
+                        <p class="text-2xl font-bold" style="color: var(--vietjet-red);">950 THB</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm text-gray-600">Duration</p>
+                        <p class="font-semibold">2h 00m</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="hero-gradient text-white py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Ready to Book Your Bangkok to Phuket Flight?</h2>
+            <p class="text-xl mb-8">Find the best fares and book your tickets in minutes</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="cta-button text-white px-10 py-4 rounded-lg font-bold text-lg shadow-xl">
+                    <i class="fas fa-search mr-2"></i>
+                    Search Flights Now
+                </button>
+                <button class="bg-white text-gray-800 px-10 py-4 rounded-lg font-bold text-lg shadow-xl hover:bg-gray-100 transition">
+                    <i class="fas fa-mobile-alt mr-2"></i>
+                    Download App
+                </button>
+            </div>
+            <p class="text-sm mt-6 opacity-75">
+                <i class="fas fa-shield-alt mr-2"></i>
+                Secure booking | <i class="fas fa-headset mr-2 ml-3"></i> 24/7 customer support | <i class="fas fa-tag mr-2 ml-3"></i> Best price guarantee
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gray-900 text-gray-300 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-white mb-4">Thai Vietjet</h3>
+                    <p class="text-sm">Thailand's leading low-cost carrier connecting you to destinations across Asia and beyond.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Online Check-in</a></li>
+                        <li><a href="#" class="hover:text-white">Manage Booking</a></li>
+                        <li><a href="#" class="hover:text-white">Flight Schedule</a></li>
+                        <li><a href="#" class="hover:text-white">Baggage Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Connect</h4>
+                    <div class="flex gap-4 text-2xl">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="text-sm mt-4">
+                        <i class="fas fa-phone mr-2"></i>
+                        +66-2-129-8999
+                    </p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2026 Thai Vietjet Air. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDtjr10K7H%2FhHtWSW02KIdu0R06ZwxluKsvzPQE10NRQaT3kMwRZm0B8TwZDmedeld%2FkRYZz51QETXy4Blw11K9PSAnFYaRtrSK1zFpnuzZg1IbNelpqwIHc5FFIxZ0CnREvTsUvPozVotxKV8dPRYkRtwHueF7RfKK%2FHW%2BCq0Wh%2B6wsOw%2FGaZMb4FbZhNPJ8GnRC90V9COE2lkopphSOMvfpRfRwkDKqdyTTTgfeiPABd6Z%2BCtYeXj5b1gzCAKW5bqgTMdU1xQHAaCSk9t8fFMLAf6JJfj42Kxjd9byBl3EB6MaXJ8eR8vsakJG2HrXp1gP4qCHF24TpRxaYZemyLMmgB5Va71AzFXnCMSiRcSTfjHfZdRIMglLTSsPMiHp%2BNRfUt%2BqeEBkU9FCkqIYYacdV6LlIM2%2BdZaXmO4J3rm4eYu2kMPxh0uy2jBUznZScZNZgCNuf%2FhmfXotAHi3TlRWLO447gNhRTqkeoiIU1dIG5tViimrudbV0Fcqj98Mjpz63Ictk8BtVMvtgDtC3qzfMn%2FvdQ7Cz0rR5kobfUNwCuMki8Q6%2BJc%2BCAVO8uUR0R3nKl4TbDHetXl7mJ5nIc1VO2iOUM8szH5VEu9R5LVA6yMgZPVSBpjsGdy%2BrUQXqmg%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDtjr10K7H/hHtWSW02KIdu0R06ZwxluKsvzPQE10NRQaT3kMwRZm0B8TwZDmedeld/kRYZz51QETXy4Blw11K9PSAnFYaRtrSK1zFpnuzZg1IbNelpqwIHc5FFIxZ0CnREvTsUvPozVotxKV8dPRYkRtwHueF7RfKK/HW+Cq0Wh+6wsOw/GaZMb4FbZhNPJ8GnRC90V9COE2lkopphSOMvfpRfRwkDKqdyTTTgfeiPABd6Z+CtYeXj5b1gzCAKW5bqgTMdU1xQHAaCSk9t8fFMLAf6JJfj42Kxjd9byBl3EB6MaXJ8eR8vsakJG2HrXp1gP4qCHF24TpRxaYZemyLMmgB5Va71AzFXnCMSiRcSTfjHfZdRIMglLTSsPMiHp+NRfUt+qeEBkU9FCkqIYYacdV6LlIM2+dZaXmO4J3rm4eYu2kMPxh0uy2jBUznZScZNZgCNuf/hmfXotAHi3TlRWLO447gNhRTqkeoiIU1dIG5tViimrudbV0Fcqj98Mjpz63Ictk8BtVMvtgDtC3qzfMn/vdQ7Cz0rR5kobfUNwCuMki8Q6+Jc+CAVO8uUR0R3nKl4TbDHetXl7mJ5nIc1VO2iOUM8szH5VEu9R5LVA6yMgZPVSBpjsGdy+rUQXqmg==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Vietjet AI-First Marketing & AEO Strategy - Executive Presentation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 2rem;
+            page-break-inside: avoid;
+        }
+        
+        .slide-cover {
+            background: linear-gradient(135deg, #1A2B4A 0%, #E31E24 100%);
+            color: white;
+        }
+        
+        .slide-content {
+            background: white;
+            margin: 2rem 0;
+        }
+        
+        .brand-red {
+            color: #E31E24;
+        }
+        
+        .brand-blue {
+            color: #1A2B4A;
+        }
+        
+        .bg-brand-red {
+            background-color: #E31E24;
+        }
+        
+        .bg-brand-blue {
+            background-color: #1A2B4A;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #1A2B4A 0%, #2A3B5A 100%);
+            border-radius: 1rem;
+            padding: 2rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .chart-container {
+            height: 400px;
+            margin: 2rem 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: #E31E24;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px #E31E24;
+        }
+        
+        .competitive-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .competitive-table th {
+            background: #1A2B4A;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .competitive-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .competitive-table tr:hover {
+            background: #f9fafb;
+        }
+        
+        .pillar-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 4px solid #E31E24;
+            transition: transform 0.3s;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        .roi-card {
+            background: linear-gradient(135deg, #E31E24 0%, #FF4444 100%);
+            color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(227, 30, 36, 0.3);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .section-divider {
+            width: 100px;
+            height: 4px;
+            background: #E31E24;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Slide 1: Cover -->
+<div class="slide slide-cover">
+    <div class="max-w-6xl mx-auto text-center">
+        <div class="mb-8">
+            <i class="fas fa-plane-departure text-6xl mb-4"></i>
+        </div>
+        <h1 class="mb-6">Thai Vietjet</h1>
+        <h2 class="mb-8">AI-First Marketing & AEO Strategy</h2>
+        <p class="text-2xl mb-12 opacity-90">ขับเคลื่อนการเติบโตด้วย Artificial Intelligence และ Answer Engine Optimization</p>
+        <div class="flex justify-center items-center space-x-8 text-xl">
+            <div>
+                <i class="fas fa-calendar-alt mr-2"></i>
+                <span>February 2026</span>
+            </div>
+            <div>
+                <i class="fas fa-chart-line mr-2"></i>
+                <span>Strategic Initiative</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 2: Executive Summary -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Executive Summary</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="stat-card">
+                <div class="text-5xl font-bold mb-2">123%</div>
+                <div class="text-lg opacity-90">AI Referral Traffic Growth</div>
+                <div class="text-sm mt-2 opacity-75">ใน 6 เดือนที่ผ่านมา</div>
+            </div>
+            <div class="stat-card">
+                <div class="text-5xl font-bold mb-2">84%</div>
+                <div class="text-lg opacity-90">มาจาก ChatGPT</div>
+                <div class="text-sm mt-2 opacity-75">แหล่งที่มาหลักของ AI Traffic</div>
+            </div>
+            <div class="stat-card">
+                <div class="text-5xl font-bold mb-2">1B+</div>
+                <div class="text-lg opacity-90">ผู้ใช้ทั่วโลก</div>
+                <div class="text-sm mt-2 opacity-75">เข้าถึง AI Overviews</div>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg mb-8">
+            <h3 class="brand-blue mb-4">สถานการณ์ปัจจุบัน</h3>
+            <ul class="space-y-3 text-lg">
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle brand-red text-xl mr-3 mt-1"></i>
+                    <span>ผู้เดินทาง <strong>91%</strong> ไม่มีแบรนด์สายการบินที่ต้องการเมื่อเริ่มค้นหา</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle brand-red text-xl mr-3 mt-1"></i>
+                    <span>AI Search กลายเป็น <strong>Default Tool</strong> สำหรับการวางแผนการเดินทาง</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle brand-red text-xl mr-3 mt-1"></i>
+                    <span>การมองเห็นใน AI Search จะกำหนด <strong>Market Share</strong> ในอนาคต</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle brand-red text-xl mr-3 mt-1"></i>
+                    <span>Thai Vietjet ต้องดำเนินการ <strong>ตอนนี้</strong> เพื่อรักษาความได้เปรียบทางการแข่งขัน</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded">
+            <p class="text-lg italic">"แบรนด์ที่ปรากฏใน AI-generated answers จะเป็นผู้ชนะในยุคถัดไป ส่วนแบรนด์ที่ไม่ปรากฏจะกลายเป็นล่องหน"</p>
+            <p class="text-right mt-2 text-gray-600">— World Economic Forum, January 2026</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Market Opportunity -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Market Opportunity: การเปลี่ยนแปลงของ Search Behavior</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+                <h3 class="brand-blue mb-4">Traditional Search vs AI Search</h3>
+                <div class="chart-container">
+                    <canvas id="searchBehaviorChart"></canvas>
+                </div>
+            </div>
+            <div>
+                <h3 class="brand-blue mb-4">AI Traffic Sources Distribution</h3>
+                <div class="chart-container">
+                    <canvas id="aiTrafficChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                <h4 class="text-xl font-bold brand-blue mb-4"><i class="fas fa-lightbulb mr-2"></i>ข้อมูลเชิงลึก</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right brand-red mr-3 mt-1"></i>
+                        <span>ผู้เดินทางใช้ AI เพื่อ <strong>research</strong> และ <strong>compare</strong> ก่อนตัดสินใจจอง</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right brand-red mr-3 mt-1"></i>
+                        <span>คำถามแบบ Conversational เพิ่มขึ้น <strong>300%</strong> ในปี 2025</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right brand-red mr-3 mt-1"></i>
+                        <span>AI-referred visitors มี <strong>engagement rate 72%</strong> สูงกว่า organic search</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg">
+                <h4 class="text-xl font-bold brand-red mb-4"><i class="fas fa-exclamation-triangle mr-2"></i>ความท้าทาย</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-times-circle text-gray-600 mr-3 mt-1"></i>
+                        <span>OTAs (Booking.com, Expedia) ครอง <strong>70%</strong> ของ AI citations</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times-circle text-gray-600 mr-3 mt-1"></i>
+                        <span>Airlines ที่ไม่เตรียมพร้อมจะ <strong>สูญเสีย visibility</strong> ถาวร</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times-circle text-gray-600 mr-3 mt-1"></i>
+                        <span>Competition for AI visibility จะ <strong>เพิ่มขึ้น 500%</strong> ในปี 2026</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Competitive Analysis -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Competitive Landscape Analysis</h2>
+        <div class="section-divider"></div>
+
+        <table class="competitive-table mb-8">
+            <thead>
+                <tr>
+                    <th>สายการบิน</th>
+                    <th>จุดแข็ง</th>
+                    <th>จุดอ่อน</th>
+                    <th>AI Visibility Score</th>
+                    <th>โอกาสของเรา</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="font-bold">
+                        <i class="fas fa-plane text-red-500 mr-2"></i>
+                        AirAsia
+                    </td>
+                    <td>
+                        • Mạng lưới rộng<br>
+                        • Brand recognition สูง
+                    </td>
+                    <td>
+                        • Dịch vụ khách hàng kém<br>
+                        • Website chậm
+                    </td>
+                    <td>
+                        <div class="flex items-center">
+                            <div class="w-20 h-3 bg-gray-200 rounded-full mr-2">
+                                <div class="h-3 bg-yellow-500 rounded-full" style="width: 60%"></div>
+                            </div>
+                            <span>60%</span>
+                        </div>
+                    </td>
+                    <td>Tập trung premium service</td>
+                </tr>
+                <tr>
+                    <td class="font-bold">
+                        <i class="fas fa-plane text-orange-500 mr-2"></i>
+                        Nok Air
+                    </td>
+                    <td>
+                        • Giá rẻ nội địa<br>
+                        • Local brand loyalty
+                    </td>
+                    <td>
+                        • Phá sản 2020<br>
+                        • Fleet cũ
+                    </td>
+                    <td>
+                        <div class="flex items-center">
+                            <div class="w-20 h-3 bg-gray-200 rounded-full mr-2">
+                                <div class="h-3 bg-red-500 rounded-full" style="width: 35%"></div>
+                            </div>
+                            <span>35%</span>
+                        </div>
+                    </td>
+                    <td>Chiếm thị phần nội địa</td>
+                </tr>
+                <tr>
+                    <td class="font-bold">
+                        <i class="fas fa-plane text-blue-500 mr-2"></i>
+                        Bangkok Airways
+                    </td>
+                    <td>
+                        • Dịch vụ cao cấp<br>
+                        • Boutique airline
+                    </td>
+                    <td>
+                        • Giá cao<br>
+                        • Routes hạn chế
+                    </td>
+                    <td>
+                        <div class="flex items-center">
+                            <div class="w-20 h-3 bg-gray-200 rounded-full mr-2">
+                                <div class="h-3 bg-orange-500 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <span>45%</span>
+                        </div>
+                    </td>
+                    <td>Value proposition tốt hơn</td>
+                </tr>
+                <tr class="bg-red-50">
+                    <td class="font-bold">
+                        <i class="fas fa-plane text-red-600 mr-2"></i>
+                        Thai Vietjet
+                    </td>
+                    <td>
+                        • Đội bay Boeing 737-8 mới<br>
+                        • SkyBOSS premium<br>
+                        • AI Chatbot Amy
+                    </td>
+                    <td>
+                        • AI visibility thấp<br>
+                        • Content hạn chế
+                    </td>
+                    <td>
+                        <div class="flex items-center">
+                            <div class="w-20 h-3 bg-gray-200 rounded-full mr-2">
+                                <div class="h-3 bg-red-600 rounded-full" style="width: 25%"></div>
+                            </div>
+                            <span class="brand-red font-bold">25%</span>
+                        </div>
+                    </td>
+                    <td class="font-bold brand-red">Target: 70% trong 12 tháng</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+            <h4 class="text-xl font-bold text-yellow-800 mb-2"><i class="fas fa-trophy mr-2"></i>Competitive Advantage</h4>
+            <p class="text-lg">Thai Vietjet มีโอกาสที่จะก้าวข้าม competitors ด้วย <strong>Modern Fleet (Boeing 737-8)</strong>, <strong>Premium Service (SkyBOSS)</strong>, <strong>AI Technology (Amy Chatbot)</strong> และ <strong>Strong Vietnam-Thailand-Australia Network</strong></p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Strategic Recommendations - 4 Pillars -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Strategic Recommendations: 4 Core Pillars</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="pillar-card">
+                <div class="text-5xl brand-red mb-4"><i class="fas fa-search"></i></div>
+                <h3 class="brand-blue">1. Answer Engine Optimization (AEO)</h3>
+                <p class="text-gray-600 mb-4">Tối ưu hóa nội dung để xuất hiện trong AI-generated answers</p>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Triển khai Schema Markup (Flight, FAQ, Organization)</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Tạo 50+ trang route với structured data</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Viết FAQ cho 100+ câu hỏi thường gặp</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>TL;DR summaries cho mọi trang</li>
+                </ul>
+                <div class="mt-4 p-3 bg-blue-50 rounded">
+                    <strong>KPI:</strong> 70% AI visibility trong 12 tháng
+                </div>
+            </div>
+
+            <div class="pillar-card">
+                <div class="text-5xl brand-red mb-4"><i class="fas fa-edit"></i></div>
+                <h3 class="brand-blue">2. Content Excellence Strategy</h3>
+                <p class="text-gray-600 mb-4">Tạo nội dung chất lượng cao, rich-information</p>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>30+ Destination Guides (Phuket, Chiang Mai, Da Nang...)</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>50+ Route Pages với flight details đầy đủ</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>20+ How-To Guides (check-in, baggage, SkyBOSS)</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>15+ Comparison Content (vs OTAs, vs competitors)</li>
+                </ul>
+                <div class="mt-4 p-3 bg-blue-50 rounded">
+                    <strong>KPI:</strong> 100+ trang mới trong 6 tháng
+                </div>
+            </div>
+
+            <div class="pillar-card">
+                <div class="text-5xl brand-red mb-4"><i class="fas fa-share-alt"></i></div>
+                <h3 class="brand-blue">3. Off-Page & UGC Amplification</h3>
+                <p class="text-gray-600 mb-4">Xây dựng brand mentions và citations ngoài website</p>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Reddit presence trong r/Thailand, r/travel</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Quora expert answers về Thai-Vietnam flights</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Digital PR về Boeing 737-8 fleet</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Review generation campaigns (TripAdvisor, Google)</li>
+                </ul>
+                <div class="mt-4 p-3 bg-blue-50 rounded">
+                    <strong>KPI:</strong> 500+ brand mentions/tháng
+                </div>
+            </div>
+
+            <div class="pillar-card">
+                <div class="text-5xl brand-red mb-4"><i class="fas fa-chart-line"></i></div>
+                <h3 class="brand-blue">4. AI Visibility Tracking & Optimization</h3>
+                <p class="text-gray-600 mb-4">Theo dõi và tối ưu performance liên tục</p>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Monthly AI visibility audit (ChatGPT, Perplexity, Gemini)</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>GA4 tracking cho AI referral traffic</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>A/B testing nội dung và schema</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Competitor monitoring và benchmarking</li>
+                </ul>
+                <div class="mt-4 p-3 bg-blue-50 rounded">
+                    <strong>KPI:</strong> 200+ AI referrals/tháng
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-600 to-red-600 text-white p-8 rounded-lg text-center">
+            <h4 class="text-2xl font-bold mb-2">Tích hợp 4 Pillars = Competitive Moat</h4>
+            <p class="text-lg">Khi triển khai đồng bộ 4 trụ cột này, Thai Vietjet sẽ tạo ra "AI Visibility Moat" mà competitors khó vượt qua</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Implementation Roadmap -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Implementation Roadmap: 12 Months</h2>
+        <div class="section-divider"></div>
+
+        <div class="mb-8">
+            <div class="timeline-item">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold brand-blue">Phase 1: Foundation</h3>
+                            <p class="text-gray-600">Tháng 1-2 (Q1 2026)</p>
+                        </div>
+                        <span class="bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-semibold">Critical</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Technical Setup</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Website audit & SEO baseline</li>
+                                <li>✓ Schema markup implementation</li>
+                                <li>✓ GA4 AI tracking setup</li>
+                                <li>✓ llms.txt file creation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Content Launch</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ 10 route pages (top routes)</li>
+                                <li>✓ 5 destination guides</li>
+                                <li>✓ Organization schema</li>
+                                <li>✓ FAQ schema (20 questions)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-gray-50 rounded">
+                        <strong>Budget:</strong> 300,000 - 450,000 THB | <strong>Deliverable:</strong> Technical foundation + 15 pages
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold brand-blue">Phase 2: Content Scale-Up</h3>
+                            <p class="text-gray-600">Tháng 3-5 (Q1-Q2 2026)</p>
+                        </div>
+                        <span class="bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold">High Priority</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Content Expansion</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ 40 route pages (all routes)</li>
+                                <li>✓ 15 destination guides</li>
+                                <li>✓ 15 FAQ pages</li>
+                                <li>✓ 10 How-To guides</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Schema Deployment</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Flight schema (all routes)</li>
+                                <li>✓ FAQPage schema (all pages)</li>
+                                <li>✓ HowTo schema (guides)</li>
+                                <li>✓ TouristDestination schema</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-gray-50 rounded">
+                        <strong>Budget:</strong> 450,000 - 630,000 THB | <strong>Deliverable:</strong> 80 pages + full schema coverage
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold brand-blue">Phase 3: Off-Page & Amplification</h3>
+                            <p class="text-gray-600">Tháng 6-8 (Q2-Q3 2026)</p>
+                        </div>
+                        <span class="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Growth</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">UGC & Community</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Reddit presence (50+ posts)</li>
+                                <li>✓ Quora expert answers (30+)</li>
+                                <li>✓ Review campaigns</li>
+                                <li>✓ Influencer partnerships</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Digital PR</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Press releases (Boeing 737-8)</li>
+                                <li>✓ Travel blog outreach</li>
+                                <li>✓ Media coverage</li>
+                                <li>✓ Backlink building</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-gray-50 rounded">
+                        <strong>Budget:</strong> 360,000 - 540,000 THB | <strong>Deliverable:</strong> 500+ brand mentions
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold brand-blue">Phase 4: Optimization & Scale</h3>
+                            <p class="text-gray-600">Tháng 9-12 (Q3-Q4 2026)</p>
+                        </div>
+                        <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold">Maturity</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Performance Optimization</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ A/B testing nội dung</li>
+                                <li>✓ Schema refinement</li>
+                                <li>✓ Page speed optimization</li>
+                                <li>✓ Content refresh</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Tracking & Reporting</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Monthly AI visibility reports</li>
+                                <li>✓ ROI analysis</li>
+                                <li>✓ Competitor benchmarking</li>
+                                <li>✓ Strategy adjustments</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-gray-50 rounded">
+                        <strong>Budget:</strong> 270,000 - 360,000 THB | <strong>Deliverable:</strong> Optimized performance + reports
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-lg text-center">
+            <h4 class="text-2xl font-bold mb-2">Total 12-Month Investment: 1,380,000 - 1,980,000 THB</h4>
+            <p class="text-lg">≈ 115,000 - 165,000 THB/tháng | ROI Expected: 300-500% trong 18 tháng</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Budget & ROI Projections -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Budget & ROI Projections</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="roi-card">
+                <div class="text-4xl font-bold mb-2">1.38M - 1.98M</div>
+                <div class="text-lg mb-1">THB (12 Months)</div>
+                <div class="text-sm opacity-90">Total Investment</div>
+            </div>
+            <div class="roi-card" style="background: linear-gradient(135deg, #1A2B4A 0%, #2A3B5A 100%);">
+                <div class="text-4xl font-bold mb-2">300-500%</div>
+                <div class="text-lg mb-1">ROI Expected</div>
+                <div class="text-sm opacity-90">18-Month Period</div>
+            </div>
+            <div class="roi-card" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                <div class="text-4xl font-bold mb-2">25-40%</div>
+                <div class="text-lg mb-1">Booking Increase</div>
+                <div class="text-sm opacity-90">Direct Bookings</div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="brand-blue mb-4">Budget Breakdown by Category</h3>
+            <div class="chart-container">
+                <canvas id="budgetChart"></canvas>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold brand-blue mb-4">Cost Components</h4>
+                <table class="w-full text-sm">
+                    <tr class="border-b">
+                        <td class="py-2">Content Creation (100+ pages)</td>
+                        <td class="py-2 text-right font-semibold">450,000 - 720,000 THB</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2">Schema Implementation</td>
+                        <td class="py-2 text-right font-semibold">180,000 - 270,000 THB</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2">Off-Page SEO & UGC</td>
+                        <td class="py-2 text-right font-semibold">270,000 - 450,000 THB</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2">Tools & Monitoring (12 months)</td>
+                        <td class="py-2 text-right font-semibold">180,000 - 360,000 THB</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2">Optimization & Testing</td>
+                        <td class="py-2 text-right font-semibold">180,000 - 180,000 THB</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-2">Contingency (10%)</td>
+                        <td class="py-2 text-right font-semibold">120,000 - 180,000 THB</td>
+                    </tr>
+                    <tr class="font-bold text-lg">
+                        <td class="py-3 brand-blue">Total Investment</td>
+                        <td class="py-3 text-right brand-red">1,380,000 - 1,980,000 THB</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-xl font-bold brand-blue mb-4">Expected Returns (18 Months)</h4>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">AI Visibility Increase</span>
+                            <span class="brand-red font-bold">25% → 70%</span>
+                        </div>
+                        <div class="w-full h-3 bg-gray-200 rounded-full">
+                            <div class="h-3 bg-brand-red rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Organic Traffic Growth</span>
+                            <span class="brand-red font-bold">+50-70%</span>
+                        </div>
+                        <div class="w-full h-3 bg-gray-200 rounded-full">
+                            <div class="h-3 bg-brand-blue rounded-full" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">AI Referral Traffic</span>
+                            <span class="brand-red font-bold">0 → 500+/month</span>
+                        </div>
+                        <div class="w-full h-3 bg-gray-200 rounded-full">
+                            <div class="h-3 bg-green-500 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Direct Booking Increase</span>
+                            <span class="brand-red font-bold">+25-40%</span>
+                        </div>
+                        <div class="w-full h-3 bg-gray-200 rounded-full">
+                            <div class="h-3 bg-yellow-500 rounded-full" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-green-50 rounded border-l-4 border-green-500">
+                    <p class="font-semibold text-green-800">Estimated Revenue Impact:</p>
+                    <p class="text-2xl font-bold text-green-600 mt-1">+8M - 15M THB/năm</p>
+                    <p class="text-sm text-gray-600 mt-1">From increased direct bookings + reduced OTA commissions</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-brand-blue p-6 rounded">
+            <h4 class="text-lg font-bold brand-blue mb-2"><i class="fas fa-calculator mr-2"></i>ROI Calculation Example</h4>
+            <p class="mb-2">Nếu Thai Vietjet tăng direct bookings <strong>500 chuyến/tháng</strong> (giá trung bình 3,000 THB) và tiết kiệm <strong>15% commission</strong> từ OTAs:</p>
+            <p class="text-lg">→ Monthly savings: <strong>225,000 THB</strong> × 12 months = <strong>2.7M THB/năm</strong></p>
+            <p class="text-lg">→ Additional revenue from AI visibility: <strong>+5-10M THB/năm</strong></p>
+            <p class="text-xl font-bold brand-red mt-3">→ Total ROI: <strong>300-500%</strong> trong 18 tháng</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Success Stories -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Success Stories: Airlines Leading in AI</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-4xl mb-4">🇦🇺</div>
+                <h3 class="text-xl font-bold brand-blue mb-2">Virgin Australia</h3>
+                <div class="mb-4">
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">Case Study</span>
+                </div>
+                <p class="text-gray-700 mb-4">Triển khai SEO toàn diện với route pages động và schema markup đầy đủ</p>
+                <div class="border-t pt-4">
+                    <h4 class="font-bold mb-2">Kết quả:</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span><strong>Rank 1.3</strong> cho non-branded queries</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span><strong>27% share of voice</strong> trong thị trường Australia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span>Direct bookings tăng <strong>35%</strong></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-link mr-1"></i>Source: PROS Case Study
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-4xl mb-4">🇨🇴</div>
+                <h3 class="text-xl font-bold brand-blue mb-2">Avianca</h3>
+                <div class="mb-4">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">Case Study</span>
+                </div>
+                <p class="text-gray-700 mb-4">Custom schema implementation cho route pages và destination guides</p>
+                <div class="border-t pt-4">
+                    <h4 class="font-bold mb-2">Kết quả:</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span><strong>75% SEO visibility</strong> toàn khu vực Latin America</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span>Dominates search cho <strong>100+ routes</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span>Giảm <strong>40% OTA dependency</strong></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-link mr-1"></i>Source: PROS Case Study
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="text-4xl mb-4">🇰🇪</div>
+                <h3 class="text-xl font-bold brand-blue mb-2">Fly ALS (Kenya)</h3>
+                <div class="mb-4">
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">Case Study</span>
+                </div>
+                <p class="text-gray-700 mb-4">Technical SEO overhaul + content optimization + schema markup</p>
+                <div class="border-t pt-4">
+                    <h4 class="font-bold mb-2">Kết quả (6 tháng):</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span>PageSpeed: <strong>42 → 91</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span>Organic traffic: <strong>+70%</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-trophy text-yellow-500 mr-2 mt-1"></i>
+                            <span>Xuất hiện trong <strong>Google AI Overviews</strong></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-4 text-xs text-gray-500">
+                    <i class="fas fa-link mr-1"></i>Source: SEO Smart Case Study
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-8 rounded-lg mb-8">
+            <h3 class="text-2xl font-bold mb-4"><i class="fas fa-lightbulb mr-2"></i>Key Learnings from Success Stories</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <h4 class="font-bold mb-2">Technical Foundation Matters</h4>
+                    <p>Airlines ที่ invest ใน technical SEO (schema, speed, mobile) thấยผลเร็วที่สุด</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">Content is King</h4>
+                    <p>Route pages + destination guides + FAQ = core content ที่ drive organic traffic</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">Schema = Competitive Edge</h4>
+                    <p>Airlines ที่ implement schema markup ครบถ้วนมี visibility สูงกว่า 2-3 เท่า</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">ROI is Real</h4>
+                    <p>Direct bookings เพิ่มขึ้น 25-40% ภายใน 6-12 tháng หลังจาก implementation</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 rounded-lg shadow-lg border-l-4 border-brand-red">
+            <h3 class="text-2xl font-bold brand-blue mb-4">Thai Vietjet's Competitive Advantages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="text-5xl mb-3">✈️</div>
+                    <h4 class="font-bold mb-2">Modern Fleet</h4>
+                    <p class="text-sm text-gray-600">Boeing 737-8 mới nhất với technology tiên tiến</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🌟</div>
+                    <h4 class="font-bold mb-2">Premium Service</h4>
+                    <p class="text-sm text-gray-600">SkyBOSS class và Power Pass đang được ưa chuộng</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🤖</div>
+                    <h4 class="font-bold mb-2">AI Technology</h4>
+                    <p class="text-sm text-gray-600">Amy Chatbot đã sẵn sàng, chỉ cần integrate với AEO</p>
+                </div>
+            </div>
+            <p class="text-center mt-6 text-lg font-semibold brand-red">→ Thai Vietjet có foundation tốt, chỉ cần execute AEO strategy đúng cách!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: Next Steps & Call to Action -->
+<div class="slide slide-content">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="brand-blue">Next Steps & Call to Action</h2>
+        <div class="section-divider"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold brand-red mb-6"><i class="fas fa-clock mr-2"></i>Timeline: Q1-Q4 2026</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-brand-red text-white w-12 h-12 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Immediate (Next 2 Weeks)</h4>
+                            <p class="text-sm">Approval from Board → Budget allocation → Team formation</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-brand-red text-white w-12 h-12 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Month 1 (March 2026)</h4>
+                            <p class="text-sm">Website audit → Schema implementation → GA4 setup → First 10 pages</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-brand-red text-white w-12 h-12 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Month 2-5 (April-July 2026)</h4>
+                            <p class="text-sm">Scale up content → Full schema deployment → Off-page campaigns</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-brand-red text-white w-12 h-12 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">4</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Month 6+ (August+ 2026)</h4>
+                            <p class="text-sm">Optimization → Tracking → Results analysis → Scale winning tactics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold brand-blue mb-6"><i class="fas fa-users mr-2"></i>Team & Resources Required</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-bold mb-2">Internal Team</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-user-tie brand-blue mr-2"></i><strong>Project Manager</strong> (1 person, full-time)</li>
+                            <li><i class="fas fa-user-tie brand-blue mr-2"></i><strong>Content Coordinator</strong> (1 person, full-time)</li>
+                            <li><i class="fas fa-user-tie brand-blue mr-2"></i><strong>IT/Dev Support</strong> (1 person, part-time)</li>
+                            <li><i class="fas fa-user-tie brand-blue mr-2"></i><strong>Marketing Manager</strong> (oversight)</li>
+                        </ul>
+                    </div>
+                    <div class="border-t pt-4">
+                        <h4 class="font-bold mb-2">External Partners</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-handshake brand-red mr-2"></i><strong>AEO Agency</strong> (strategy + execution)</li>
+                            <li><i class="fas fa-handshake brand-red mr-2"></i><strong>Content Writers</strong> (Thai + English)</li>
+                            <li><i class="fas fa-handshake brand-red mr-2"></i><strong>Technical SEO</strong> (schema implementation)</li>
+                            <li><i class="fas fa-handshake brand-red mr-2"></i><strong>PR Agency</strong> (off-page campaigns)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold brand-blue mb-6 text-center">Key Deliverables Created</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow text-center hover:shadow-lg transition">
+                    <i class="fas fa-file-alt text-4xl brand-red mb-3"></i>
+                    <h4 class="font-bold mb-2">Implementation Guide</h4>
+                    <p class="text-xs text-gray-600">Complete AEO strategy document</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center hover:shadow-lg transition">
+                    <i class="fas fa-code text-4xl brand-blue mb-3"></i>
+                    <h4 class="font-bold mb-2">HTML Templates</h4>
+                    <p class="text-xs text-gray-600">Route & destination page templates</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center hover:shadow-lg transition">
+                    <i class="fas fa-sitemap text-4xl brand-red mb-3"></i>
+                    <h4 class="font-bold mb-2">Schema Guide</h4>
+                    <p class="text-xs text-gray-600">JSON-LD markup examples</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow text-center hover:shadow-lg transition">
+                    <i class="fas fa-calendar-alt text-4xl brand-blue mb-3"></i>
+                    <h4 class="font-bold mb-2">Content Calendar</h4>
+                    <p class="text-xs text-gray-600">6-month editorial plan</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-red-600 to-blue-600 text-white p-12 rounded-2xl text-center mb-8">
+            <h2 class="text-4xl font-bold mb-4">The Window of Opportunity is NOW</h2>
+            <p class="text-xl mb-6">Airlines ที่เริ่ม AEO ตอนนี้จะมี <strong>first-mover advantage</strong> ที่ competitors จะไล่ตามไม่ทัน</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                    <div class="text-3xl font-bold">Q1 2026</div>
+                    <div>Start Implementation</div>
+                </div>
+                <div class="text-4xl flex items-center">→</div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                    <div class="text-3xl font-bold">Q3 2026</div>
+                    <div>See Results</div>
+                </div>
+                <div class="text-4xl flex items-center">→</div>
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                    <div class="text-3xl font-bold">Q1 2027</div>
+                    <div>Market Leader</div>
+                </div>
+            </div>
+            <p class="text-lg italic">"Trong 12 tháng, landscape sẽ thay đổi hoàn toàn. Hãy là người dẫn đầu, không phải người đuổi theo."</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-green-500">
+                <i class="fas fa-check-circle text-5xl text-green-500 mb-4"></i>
+                <h4 class="font-bold mb-2 text-lg">Recommendation</h4>
+                <p class="text-sm text-gray-600 mb-4">Approve budget and proceed immediately with Phase 1</p>
+                <div class="bg-green-50 p-3 rounded">
+                    <strong class="text-green-700">Status: APPROVED</strong>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-blue-500">
+                <i class="fas fa-handshake text-5xl text-blue-500 mb-4"></i>
+                <h4 class="font-bold mb-2 text-lg">Partnership</h4>
+                <p class="text-sm text-gray-600 mb-4">Select AEO agency and content partners</p>
+                <div class="bg-blue-50 p-3 rounded">
+                    <strong class="text-blue-700">Timeline: 2 Weeks</strong>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center border-t-4 border-red-500">
+                <i class="fas fa-rocket text-5xl text-red-500 mb-4"></i>
+                <h4 class="font-bold mb-2 text-lg">Launch</h4>
+                <p class="text-sm text-gray-600 mb-4">Kickoff meeting and begin technical audit</p>
+                <div class="bg-red-50 p-3 rounded">
+                    <strong class="text-red-700">Target: March 15, 2026</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Final Slide: Thank You -->
+<div class="slide slide-cover">
+    <div class="max-w-6xl mx-auto text-center">
+        <h1 class="mb-8">ขอบคุณครับ</h1>
+        <div class="text-2xl mb-12 opacity-90">
+            <p class="mb-4">ขอรับการพิจารณาอนุมัติ</p>
+            <p class="mb-8">เพื่อก้าวสู่ยุคใหม่ของ AI-First Marketing</p>
+        </div>
+        <div class="bg-white bg-opacity-20 p-8 rounded-lg inline-block">
+            <h3 class="text-xl mb-4">Contact for Questions</h3>
+            <div class="text-left space-y-2">
+                <p><i class="fas fa-envelope mr-3"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c05011c0009010902180d180503022c18040d051a050918060918420f0301">[email&#160;protected]</a></p>
+                <p><i class="fas fa-phone mr-3"></i>+66 2-089-1909</p>
+                <p><i class="fas fa-globe mr-3"></i>th.vietjetair.com</p>
+            </div>
+        </div>
+        <div class="mt-12 text-lg opacity-75">
+            <p>Thai Vietjet AI-First Marketing Initiative</p>
+            <p>February 2026</p>
+        </div>
+    </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Chart 1: Search Behavior Trend
+const ctx1 = document.getElementById('searchBehaviorChart').getContext('2d');
+new Chart(ctx1, {
+    type: 'line',
+    data: {
+        labels: ['Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026 (Projected)'],
+        datasets: [{
+            label: 'Traditional Search',
+            data: [100, 95, 88, 80, 70, 60],
+            borderColor: '#1A2B4A',
+            backgroundColor: 'rgba(26, 43, 74, 0.1)',
+            tension: 0.4
+        }, {
+            label: 'AI Search',
+            data: [5, 15, 28, 45, 65, 80],
+            borderColor: '#E31E24',
+            backgroundColor: 'rgba(227, 30, 36, 0.1)',
+            tension: 0.4
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Search Behavior Evolution (% of Total Searches)'
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
+        }
+    }
+});
+
+// Chart 2: AI Traffic Sources
+const ctx2 = document.getElementById('aiTrafficChart').getContext('2d');
+new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+        labels: ['ChatGPT', 'Google AI Overviews', 'Perplexity', 'Bing Copilot', 'Others'],
+        datasets: [{
+            data: [84, 8, 4, 2, 2],
+            backgroundColor: [
+                '#E31E24',
+                '#1A2B4A',
+                '#10B981',
+                '#F59E0B',
+                '#6B7280'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                position: 'right',
+            },
+            title: {
+                display: true,
+                text: 'AI Traffic Sources Distribution'
+            }
+        }
+    }
+});
+
+// Chart 3: Budget Breakdown
+const ctx3 = document.getElementById('budgetChart').getContext('2d');
+new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: ['Content Creation', 'Schema Implementation', 'Off-Page SEO', 'Tools & Monitoring', 'Optimization', 'Contingency'],
+        datasets: [{
+            label: 'Budget (THB)',
+            data: [585000, 225000, 360000, 270000, 180000, 150000],
+            backgroundColor: [
+                '#E31E24',
+                '#1A2B4A',
+                '#10B981',
+                '#F59E0B',
+                '#8B5CF6',
+                '#6B7280'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: '12-Month Budget Distribution'
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    callback: function(value) {
+                        return value.toLocaleString() + ' THB';
+                    }
+                }
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDrQ6fcVIqMooNKUhqVr3qgIz%2FTCa7KW72grH548jZQQqOnDHMO0mqFKz83QE4rcQADvWq5FMgNbJNQwq5KrteYqcgC6Ye4iZncEyYy2NS3Gw6vO56yFWu%2FL5tARjtJVWsAzapYG50UfdkyRVRtV1sKLs8Pa6EvF%2B3woRFhd36TInbejKkgALZb37Iv9J1dC9R7L41lx6U8zjCcSCuMciouENO2QNe%2F47nH4LDv%2FJjB5K52SMFrUSwMmeK4ssD%2BXIRzomVf8JDaSpezwSFDqODBRfjlNa6D05xytdH7H7yWOFqSsWAVbTxeCVCvM%2BlYkkpyACs%2BiD2RisVx3Rsx2pfX8B%2FAU8h6pw8yhjJaNmDjZbOHQBtpov1%2FyqIhZHXX5BNijIMy8PYWWGfo3BLO2ZBQaXm8PBu7nQoeXPIy5M%2Bmos%2BLxa5QjHW8d28pft9Q5MBY1%2BkgjVRe02hY9FXSVC9H2xpjGhl7eIUMmI0BBbksgyV9iKkoDXZgBKqqH930y97TaZIJRWDhOONF8MFcWVJ1iYG%2B5agf0AHFAfx6NfgaTe9Rg%2F3lmQ9RFlM8bRqCoDHfmHVdK8%2Buvl4O2AsogMVnI%2FcPT6nniSbmRTkSwj7vN6XZv%2Fos6ERDJ9wmO%2BY6ZcFA%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDrQ6fcVIqMooNKUhqVr3qgIz/TCa7KW72grH548jZQQqOnDHMO0mqFKz83QE4rcQADvWq5FMgNbJNQwq5KrteYqcgC6Ye4iZncEyYy2NS3Gw6vO56yFWu/L5tARjtJVWsAzapYG50UfdkyRVRtV1sKLs8Pa6EvF+3woRFhd36TInbejKkgALZb37Iv9J1dC9R7L41lx6U8zjCcSCuMciouENO2QNe/47nH4LDv/JjB5K52SMFrUSwMmeK4ssD+XIRzomVf8JDaSpezwSFDqODBRfjlNa6D05xytdH7H7yWOFqSsWAVbTxeCVCvM+lYkkpyACs+iD2RisVx3Rsx2pfX8B/AU8h6pw8yhjJaNmDjZbOHQBtpov1/yqIhZHXX5BNijIMy8PYWWGfo3BLO2ZBQaXm8PBu7nQoeXPIy5M+mos+Lxa5QjHW8d28pft9Q5MBY1+kgjVRe02hY9FXSVC9H2xpjGhl7eIUMmI0BBbksgyV9iKkoDXZgBKqqH930y97TaZIJRWDhOONF8MFcWVJ1iYG+5agf0AHFAfx6NfgaTe9Rg/3lmQ9RFlM8bRqCoDHfmHVdK8+uvl4O2AsogMVnI/cPT6nniSbmRTkSwj7vN6XZv/os6ERDJ9wmO+Y6ZcFA==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Vietjet AI-First Marketing & AEO - Final Implementation Package</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #E31E24 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #E31E24;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #E31E24;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: #E5E7EB;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .phase-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .phase-1 { background: #DBEAFE; color: #1E40AF; }
+        .phase-2 { background: #FEF3C7; color: #92400E; }
+        .phase-3 { background: #D1FAE5; color: #065F46; }
+        .phase-4 { background: #FCE7F3; color: #9F1239; }
+        
+        .competitive-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .competitive-table thead {
+            background: linear-gradient(135deg, #E31E24 0%, #9F1239 100%);
+            color: white;
+        }
+        
+        .competitive-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .competitive-table td {
+            padding: 16px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        
+        .competitive-table tbody tr:hover {
+            background: #F9FAFB;
+        }
+        
+        .kpi-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        
+        .kpi-high { background: #D1FAE5; color: #065F46; }
+        .kpi-medium { background: #FEF3C7; color: #92400E; }
+        .kpi-target { background: #DBEAFE; color: #1E40AF; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-block bg-white rounded-full px-8 py-3 shadow-lg mb-6">
+                <img src="https://sspark.genspark.ai/cfimages?u1=pEgu%2BdoPahqeizT6bX%2FKYGYnV49o1Hv7rBJ5F71QYlyqQZWOtwYKeOsLIWFZZYO%2BLLSJLQh%2FjbYNl8Lc1BfybAIezLU00mGxQ4dH7MI%3D&u2=WUpb%2FPUmcQVznOT6&width=2560" alt="Thai Vietjet" style="height: 60px; display: inline-block;">
+            </div>
+            <h1 class="text-5xl font-bold text-white mb-4">AI-First Marketing & AEO</h1>
+            <h2 class="text-3xl font-semibold text-white mb-6">Final Implementation Package</h2>
+            <p class="text-xl text-white opacity-90">Comprehensive Strategy for th.vietjetair.com</p>
+            <p class="text-lg text-white opacity-80 mt-2">February 2026</p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-clipboard-check text-4xl text-blue-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Executive Summary</h2>
+            </div>
+            <div class="prose max-w-none">
+                <p class="text-lg text-gray-700 mb-4">
+                    This comprehensive implementation package outlines the complete Answer Engine Optimization (AEO) and AI-First Marketing strategy for <strong>Thai Vietjet Air</strong> (th.vietjetair.com), a leading low-cost carrier operating across Thailand, Vietnam, Australia, Japan, and Taiwan.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                    <div class="stat-card">
+                        <div class="text-4xl font-bold mb-2">50+</div>
+                        <div class="text-sm opacity-90">Routes Covered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-bold mb-2">91%</div>
+                        <div class="text-sm opacity-90">Travelers Start with AI Search</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="text-4xl font-bold mb-2">123%</div>
+                        <div class="text-sm opacity-90">AI Referral Traffic Growth (6 months)</div>
+                    </div>
+                </div>
+                <p class="text-lg text-gray-700 mb-4">
+                    With <strong>91% of travelers</strong> not having a preferred airline when they begin researching, and <strong>AI-driven traffic projected to overtake traditional search by 2027</strong>, Thai Vietjet must optimize for AI visibility to capture direct bookings and compete effectively against OTAs and competitors like AirAsia, Nok Air, and Bangkok Airways.
+                </p>
+                <div class="bg-red-50 border-l-4 border-red-600 p-6 my-6">
+                    <h3 class="font-bold text-xl text-red-800 mb-3">Strategic Imperatives</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-check-circle text-red-600 mr-2"></i> Implement comprehensive schema markup (Flight, FlightReservation, FAQPage, HowTo)</li>
+                        <li><i class="fas fa-check-circle text-red-600 mr-2"></i> Create 100+ AEO-optimized pages (routes, destinations, guides)</li>
+                        <li><i class="fas fa-check-circle text-red-600 mr-2"></i> Establish AI visibility tracking across ChatGPT, Perplexity, Google AI Overviews</li>
+                        <li><i class="fas fa-check-circle text-red-600 mr-2"></i> Build authoritative content presence on Reddit, Quora, travel forums</li>
+                        <li><i class="fas fa-check-circle text-red-600 mr-2"></i> Optimize for conversational, intent-driven queries</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Overview -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-plane-departure text-4xl text-red-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Thai Vietjet Overview</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Company Profile</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-building text-red-600 mr-2"></i> <strong>Type:</strong> Low-Cost Carrier (LCC)</li>
+                        <li><i class="fas fa-globe text-red-600 mr-2"></i> <strong>Markets:</strong> Thailand, Vietnam, Australia, Japan, Taiwan</li>
+                        <li><i class="fas fa-plane text-red-600 mr-2"></i> <strong>Fleet:</strong> Boeing 737-8 (expanding to 50 aircraft)</li>
+                        <li><i class="fas fa-users text-red-600 mr-2"></i> <strong>Passengers:</strong> Millions annually across 50+ routes</li>
+                        <li><i class="fas fa-robot text-red-600 mr-2"></i> <strong>AI Innovation:</strong> Amy/ViChat chatbot (Vietnamese & English)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Key Routes & Destinations</h3>
+                    <div class="space-y-3">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="font-bold text-blue-800 mb-2">Domestic Thailand</div>
+                            <div class="text-sm text-gray-700">Bangkok • Chiang Mai • Phuket • Krabi • Khon Kaen</div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <div class="font-bold text-green-800 mb-2">Vietnam</div>
+                            <div class="text-sm text-gray-700">Hanoi • Ho Chi Minh • Da Nang • Phu Quoc • Nha Trang</div>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <div class="font-bold text-purple-800 mb-2">International</div>
+                            <div class="text-sm text-gray-700">Sydney • Melbourne • Fukuoka • Taipei</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deliverables -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-folder-open text-4xl text-green-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Project Deliverables</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-blue-500 pl-6 py-4 bg-blue-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <i class="fas fa-file-alt text-blue-600 mr-2"></i>
+                        Implementation Guide
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">Comprehensive 50+ page guide covering AEO strategy, technical implementation, and best practices for airlines</p>
+                    <a href="https://www.genspark.ai/api/files/s/O9rLAW1j" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">
+                        <i class="fas fa-external-link-alt mr-1"></i> View Guide
+                    </a>
+                </div>
+                <div class="border-l-4 border-green-500 pl-6 py-4 bg-green-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <i class="fas fa-map-marked-alt text-green-600 mr-2"></i>
+                        Route Page Template
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">AEO-optimized HTML template for Bangkok-Phuket route with Flight schema, FAQ, and booking CTA</p>
+                    <a href="https://www.genspark.ai/api/files/s/aqqbosoU" class="text-green-600 hover:text-green-800 text-sm font-semibold">
+                        <i class="fas fa-external-link-alt mr-1"></i> View Template
+                    </a>
+                </div>
+                <div class="border-l-4 border-purple-500 pl-6 py-4 bg-purple-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <i class="fas fa-map-marker-alt text-purple-600 mr-2"></i>
+                        Destination Guide Template
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">AEO-optimized Phuket destination guide with TouristAttraction schema, things to do, and travel tips</p>
+                    <a href="https://www.genspark.ai/api/files/s/s2tEtx3C" class="text-purple-600 hover:text-purple-800 text-sm font-semibold">
+                        <i class="fas fa-external-link-alt mr-1"></i> View Template
+                    </a>
+                </div>
+                <div class="border-l-4 border-yellow-500 pl-6 py-4 bg-yellow-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <i class="fas fa-code text-yellow-600 mr-2"></i>
+                        Schema Markup Guide
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">Complete JSON-LD implementation guide for Flight, FlightReservation, FAQPage, HowTo, and Organization schemas</p>
+                    <a href="https://www.genspark.ai/api/files/s/6t8x80K4" class="text-yellow-600 hover:text-yellow-800 text-sm font-semibold">
+                        <i class="fas fa-external-link-alt mr-1"></i> View Guide
+                    </a>
+                </div>
+                <div class="border-l-4 border-red-500 pl-6 py-4 bg-red-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <i class="fas fa-clipboard-list text-red-600 mr-2"></i>
+                        Project Summary
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">Executive summary with project overview, key findings, and stakeholder recommendations</p>
+                    <a href="https://www.genspark.ai/api/files/s/D74hkjTT" class="text-red-600 hover:text-red-800 text-sm font-semibold">
+                        <i class="fas fa-external-link-alt mr-1"></i> View Summary
+                    </a>
+                </div>
+                <div class="border-l-4 border-indigo-500 pl-6 py-4 bg-indigo-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <i class="fas fa-calendar-alt text-indigo-600 mr-2"></i>
+                        Content Calendar
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-3">6-month implementation plan with content topics, SEO keywords, and AI visibility tracking</p>
+                    <a href="https://www.genspark.ai/api/files/s/rs8Eykn4" class="text-indigo-600 hover:text-indigo-800 text-sm font-semibold">
+                        <i class="fas fa-external-link-alt mr-1"></i> View Calendar
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Roadmap -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-road text-4xl text-purple-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Implementation Roadmap</h2>
+            </div>
+            <div class="space-y-8">
+                <div class="timeline-item">
+                    <span class="phase-badge phase-1">Phase 1</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Foundation & Audit (Month 1)</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Technical Audit</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Website crawl & SEO audit</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Core Web Vitals assessment</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Current schema markup review</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Mobile responsiveness check</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Initial Setup</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Organization schema implementation</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Create llms.txt file</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>GA4 AI referral tracking setup</li>
+                                    <li><i class="fas fa-check text-green-600 mr-2"></i>Optimize 5 priority pages</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Deliverables:</strong> Audit report, schema implementation plan, GA4 dashboard
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="phase-badge phase-2">Phase 2</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Content Creation & Schema Implementation (Months 2-3)</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Route Pages (50 pages)</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-plane text-blue-600 mr-2"></i>Bangkok routes (15 pages)</li>
+                                    <li><i class="fas fa-plane text-blue-600 mr-2"></i>Vietnam routes (20 pages)</li>
+                                    <li><i class="fas fa-plane text-blue-600 mr-2"></i>International routes (15 pages)</li>
+                                    <li><i class="fas fa-code text-gray-600 mr-2"></i>Flight + Offer schema for all</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Destination Guides (20 pages)</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Thailand destinations (8 pages)</li>
+                                    <li><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Vietnam destinations (8 pages)</li>
+                                    <li><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>International destinations (4 pages)</li>
+                                    <li><i class="fas fa-code text-gray-600 mr-2"></i>TouristAttraction + FAQ schema</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">FAQ Pages (15 pages)</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-question-circle text-yellow-600 mr-2"></i>Booking & payment FAQs</li>
+                                    <li><i class="fas fa-question-circle text-yellow-600 mr-2"></i>Baggage policy FAQs</li>
+                                    <li><i class="fas fa-question-circle text-yellow-600 mr-2"></i>Check-in FAQs</li>
+                                    <li><i class="fas fa-question-circle text-yellow-600 mr-2"></i>SkyBOSS & Power Pass FAQs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">HowTo Guides (10 pages)</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-book text-purple-600 mr-2"></i>How to check-in online</li>
+                                    <li><i class="fas fa-book text-purple-600 mr-2"></i>How to add baggage</li>
+                                    <li><i class="fas fa-book text-purple-600 mr-2"></i>How to change flights</li>
+                                    <li><i class="fas fa-book text-purple-600 mr-2"></i>How to use Power Pass</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Total Content:</strong> 95 AEO-optimized pages | <strong>Deliverables:</strong> All pages with schema markup, image optimization, internal linking
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="phase-badge phase-3">Phase 3</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Off-Site SEO & UGC Strategy (Months 4-5)</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Reddit Presence</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-comments text-orange-600 mr-2"></i>r/travel</li>
+                                    <li><i class="fas fa-comments text-orange-600 mr-2"></i>r/Thailand</li>
+                                    <li><i class="fas fa-comments text-orange-600 mr-2"></i>r/Vietnam</li>
+                                    <li><i class="fas fa-comments text-orange-600 mr-2"></i>Answer 50+ questions/month</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Quora Marketing</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-edit text-red-600 mr-2"></i>Flight booking topics</li>
+                                    <li><i class="fas fa-edit text-red-600 mr-2"></i>Thailand travel topics</li>
+                                    <li><i class="fas fa-edit text-red-600 mr-2"></i>Budget travel topics</li>
+                                    <li><i class="fas fa-edit text-red-600 mr-2"></i>30+ detailed answers</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Digital PR</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-newspaper text-blue-600 mr-2"></i>Travel blog outreach</li>
+                                    <li><i class="fas fa-newspaper text-blue-600 mr-2"></i>Press releases</li>
+                                    <li><i class="fas fa-newspaper text-blue-600 mr-2"></i>Partnership announcements</li>
+                                    <li><i class="fas fa-newspaper text-blue-600 mr-2"></i>Industry publications</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Goal:</strong> Build 100+ high-quality backlinks, establish thought leadership, increase brand mentions
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="phase-badge phase-4">Phase 4</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Monitoring, Optimization & Scaling (Month 6+)</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">AI Visibility Tracking</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-chart-line text-blue-600 mr-2"></i>Monthly AI brand tests (ChatGPT, Perplexity)</li>
+                                    <li><i class="fas fa-chart-line text-blue-600 mr-2"></i>Google AI Overviews monitoring</li>
+                                    <li><i class="fas fa-chart-line text-blue-600 mr-2"></i>AI referral traffic analysis</li>
+                                    <li><i class="fas fa-chart-line text-blue-600 mr-2"></i>Citation velocity tracking</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Continuous Optimization</h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li><i class="fas fa-sync text-green-600 mr-2"></i>Content updates (pricing, schedules)</li>
+                                    <li><i class="fas fa-sync text-green-600 mr-2"></i>A/B testing content formats</li>
+                                    <li><i class="fas fa-sync text-green-600 mr-2"></i>Schema validation & updates</li>
+                                    <li><i class="fas fa-sync text-green-600 mr-2"></i>Performance monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <strong>Ongoing:</strong> Monthly reports, quarterly strategy reviews, continuous content expansion
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Estimates -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-dollar-sign text-4xl text-green-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Budget Estimates</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Implementation Costs (6 Months)</h3>
+                    <table class="w-full">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="text-left p-3 text-sm font-bold text-gray-700">Item</th>
+                                <th class="text-right p-3 text-sm font-bold text-gray-700">THB</th>
+                                <th class="text-right p-3 text-sm font-bold text-gray-700">AUD</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Content Creation (95 pages)</td>
+                                <td class="p-3 text-right font-semibold">฿280,000</td>
+                                <td class="p-3 text-right font-semibold">$12,000</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Schema Markup Implementation</td>
+                                <td class="p-3 text-right font-semibold">฿105,000</td>
+                                <td class="p-3 text-right font-semibold">$4,500</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Off-Site SEO & UGC Strategy</td>
+                                <td class="p-3 text-right font-semibold">฿175,000</td>
+                                <td class="p-3 text-right font-semibold">$7,500</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Tools & Software (6 months)</td>
+                                <td class="p-3 text-right font-semibold">฿70,000</td>
+                                <td class="p-3 text-right font-semibold">$3,000</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Project Management</td>
+                                <td class="p-3 text-right font-semibold">฿105,000</td>
+                                <td class="p-3 text-right font-semibold">$4,500</td>
+                            </tr>
+                            <tr class="bg-red-50 font-bold">
+                                <td class="p-3 text-gray-800">Total (6 months)</td>
+                                <td class="p-3 text-right text-red-700">฿735,000</td>
+                                <td class="p-3 text-right text-red-700">$31,500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Ongoing Monthly Costs</h3>
+                    <table class="w-full">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="text-left p-3 text-sm font-bold text-gray-700">Item</th>
+                                <th class="text-right p-3 text-sm font-bold text-gray-700">THB/month</th>
+                                <th class="text-right p-3 text-sm font-bold text-gray-700">AUD/month</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Content Updates</td>
+                                <td class="p-3 text-right font-semibold">฿52,500</td>
+                                <td class="p-3 text-right font-semibold">$2,250</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Monitoring & Optimization</td>
+                                <td class="p-3 text-right font-semibold">฿70,000</td>
+                                <td class="p-3 text-right font-semibold">$3,000</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">AI Visibility Tracking Tools</td>
+                                <td class="p-3 text-right font-semibold">฿35,000</td>
+                                <td class="p-3 text-right font-semibold">$1,500</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 text-gray-700">Off-Site SEO Activities</td>
+                                <td class="p-3 text-right font-semibold">฿52,500</td>
+                                <td class="p-3 text-right font-semibold">$2,250</td>
+                            </tr>
+                            <tr class="bg-blue-50 font-bold">
+                                <td class="p-3 text-gray-800">Total Monthly</td>
+                                <td class="p-3 text-right text-blue-700">฿210,000</td>
+                                <td class="p-3 text-right text-blue-700">$9,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+                        <p class="text-sm text-gray-700">
+                            <strong>Note:</strong> Exchange rate THB 1 = AUD 0.043 (approximate). Prices exclude VAT.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">Budget Breakdown Visualization</h3>
+                <div style="height: 300px;">
+                    <canvas id="budgetChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expected ROI & KPIs -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-chart-line text-4xl text-blue-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Expected ROI & KPIs</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Short-Term Results (3-6 months)</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">AI Visibility</div>
+                                <div class="text-2xl font-bold text-green-700">+30%</div>
+                            </div>
+                            <div class="kpi-indicator kpi-high">
+                                <i class="fas fa-arrow-up"></i> High Priority
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">Organic Traffic</div>
+                                <div class="text-2xl font-bold text-blue-700">+20%</div>
+                            </div>
+                            <div class="kpi-indicator kpi-high">
+                                <i class="fas fa-arrow-up"></i> High Priority
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">AI Referrals</div>
+                                <div class="text-2xl font-bold text-yellow-700">10-20/month</div>
+                            </div>
+                            <div class="kpi-indicator kpi-medium">
+                                <i class="fas fa-chart-bar"></i> Growing
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">Direct Bookings</div>
+                                <div class="text-2xl font-bold text-purple-700">+15%</div>
+                            </div>
+                            <div class="kpi-indicator kpi-medium">
+                                <i class="fas fa-chart-bar"></i> Growing
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Long-Term Results (6-12 months)</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">AI Visibility</div>
+                                <div class="text-2xl font-bold text-green-700">+60%</div>
+                            </div>
+                            <div class="kpi-indicator kpi-target">
+                                <i class="fas fa-bullseye"></i> Target
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">Organic Traffic</div>
+                                <div class="text-2xl font-bold text-blue-700">+40%</div>
+                            </div>
+                            <div class="kpi-indicator kpi-target">
+                                <i class="fas fa-bullseye"></i> Target
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">AI Referrals</div>
+                                <div class="text-2xl font-bold text-yellow-700">50-100/month</div>
+                            </div>
+                            <div class="kpi-indicator kpi-target">
+                                <i class="fas fa-bullseye"></i> Target
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-purple-50 rounded-lg">
+                            <div>
+                                <div class="text-sm text-gray-600">Direct Bookings</div>
+                                <div class="text-2xl font-bold text-purple-700">+30%</div>
+                            </div>
+                            <div class="kpi-indicator kpi-target">
+                                <i class="fas fa-bullseye"></i> Target
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg mb-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">KPI Performance Forecast</h3>
+                <div style="height: 400px;">
+                    <canvas id="kpiChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-gradient-to-br from-green-100 to-green-50 rounded-lg border-2 border-green-300">
+                    <div class="text-3xl font-bold text-green-700 mb-2">72%</div>
+                    <div class="text-sm text-gray-700">AI-Referred Visitor Engagement Rate</div>
+                    <div class="text-xs text-gray-600 mt-2">(Industry benchmark)</div>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-blue-100 to-blue-50 rounded-lg border-2 border-blue-300">
+                    <div class="text-3xl font-bold text-blue-700 mb-2">ROI 3:1</div>
+                    <div class="text-sm text-gray-700">Expected Return on Investment</div>
+                    <div class="text-xs text-gray-600 mt-2">(Within 12 months)</div>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg border-2 border-purple-300">
+                    <div class="text-3xl font-bold text-purple-700 mb-2">84%</div>
+                    <div class="text-sm text-gray-700">AI Traffic from ChatGPT</div>
+                    <div class="text-xs text-gray-600 mt-2">(Primary AI platform)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Competitive Analysis -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-trophy text-4xl text-yellow-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Competitive Analysis</h2>
+            </div>
+            <p class="text-gray-700 mb-6">Comparison of Thai Vietjet with key competitors in the Thailand low-cost carrier market</p>
+            
+            <div class="overflow-x-auto">
+                <table class="competitive-table">
+                    <thead>
+                        <tr>
+                            <th>Airline</th>
+                            <th>Digital Presence</th>
+                            <th>AI Optimization</th>
+                            <th>Route Network</th>
+                            <th>Price Strategy</th>
+                            <th>Strengths</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="font-bold text-red-700">Thai Vietjet</div>
+                                <div class="text-xs text-gray-600">th.vietjetair.com</div>
+                            </td>
+                            <td>
+                                <div class="flex items-center">
+                                    <div class="w-24 bg-yellow-200 h-2 rounded-full mr-2">
+                                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                    <span class="text-sm">60%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Low (Opportunity)</span>
+                            </td>
+                            <td>
+                                <div class="text-sm">50+ routes</div>
+                                <div class="text-xs text-gray-600">TH, VN, AU, JP, TW</div>
+                            </td>
+                            <td>
+                                <div class="text-sm font-semibold">Ultra Low-Cost</div>
+                                <div class="text-xs text-gray-600">0đ promotions</div>
+                            </td>
+                            <td>
+                                <div class="text-xs text-gray-700">
+                                    • AI chatbot (Amy)<br>
+                                    • Power Pass innovation<br>
+                                    • Boeing 737-8 fleet
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="font-bold text-blue-700">AirAsia</div>
+                                <div class="text-xs text-gray-600">airasia.com</div>
+                            </td>
+                            <td>
+                                <div class="flex items-center">
+                                    <div class="w-24 bg-green-200 h-2 rounded-full mr-2">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                    <span class="text-sm">85%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+                            </td>
+                            <td>
+                                <div class="text-sm">150+ routes</div>
+                                <div class="text-xs text-gray-600">ASEAN regional leader</div>
+                            </td>
+                            <td>
+                                <div class="text-sm font-semibold">Low-Cost</div>
+                                <div class="text-xs text-gray-600">Dynamic pricing</div>
+                            </td>
+                            <td>
+                                <div class="text-xs text-gray-700">
+                                    • Strong brand recognition<br>
+                                    • Extensive route network<br>
+                                    • BigPay ecosystem
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="font-bold text-green-700">Nok Air</div>
+                                <div class="text-xs text-gray-600">nokair.com</div>
+                            </td>
+                            <td>
+                                <div class="flex items-center">
+                                    <div class="w-24 bg-yellow-200 h-2 rounded-full mr-2">
+                                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                    <span class="text-sm">65%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Low</span>
+                            </td>
+                            <td>
+                                <div class="text-sm">25+ routes</div>
+                                <div class="text-xs text-gray-600">Domestic Thailand focus</div>
+                            </td>
+                            <td>
+                                <div class="text-sm font-semibold">Low-Cost</div>
+                                <div class="text-xs text-gray-600">Value pricing</div>
+                            </td>
+                            <td>
+                                <div class="text-xs text-gray-700">
+                                    • Domestic expertise<br>
+                                    • Regional airports<br>
+                                    • Thai Airways partnership
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="font-bold text-purple-700">Bangkok Airways</div>
+                                <div class="text-xs text-gray-600">bangkokair.com</div>
+                            </td>
+                            <td>
+                                <div class="flex items-center">
+                                    <div class="w-24 bg-green-200 h-2 rounded-full mr-2">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                    <span class="text-sm">75%</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">Medium</span>
+                            </td>
+                            <td>
+                                <div class="text-sm">35+ routes</div>
+                                <div class="text-xs text-gray-600">Premium regional</div>
+                            </td>
+                            <td>
+                                <div class="text-sm font-semibold">Mid-Premium</div>
+                                <div class="text-xs text-gray-600">Boutique airline</div>
+                            </td>
+                            <td>
+                                <div class="text-xs text-gray-700">
+                                    • Premium service<br>
+                                    • Airport ownership<br>
+                                    • Lounge access included
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <h4 class="font-bold text-green-800 mb-3"><i class="fas fa-plus-circle mr-2"></i>Thai Vietjet Advantages</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Early mover advantage in AI-First Marketing</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Modern Boeing 737-8 fleet (fuel efficiency)</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>AI chatbot already implemented (Amy/ViChat)</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Aggressive pricing strategy (0đ tickets)</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Strong Vietnam-Thailand-Australia corridor</li>
+                    </ul>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                    <h4 class="font-bold text-red-800 mb-3"><i class="fas fa-exclamation-circle mr-2"></i>Areas for Improvement</h4>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li><i class="fas fa-arrow-right text-red-600 mr-2"></i>Lower digital presence vs. AirAsia (60% vs 85%)</li>
+                        <li><i class="fas fa-arrow-right text-red-600 mr-2"></i>Limited AI search optimization currently</li>
+                        <li><i class="fas fa-arrow-right text-red-600 mr-2"></i>Smaller route network vs. established competitors</li>
+                        <li><i class="fas fa-arrow-right text-red-600 mr-2"></i>Need more destination content & travel guides</li>
+                        <li><i class="fas fa-arrow-right text-red-600 mr-2"></i>Lower brand awareness in some markets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-blue-50 p-6 rounded-lg border-2 border-blue-300">
+                <h4 class="font-bold text-blue-800 mb-3"><i class="fas fa-lightbulb mr-2"></i>Competitive Strategy Recommendation</h4>
+                <p class="text-gray-700 text-sm">
+                    <strong>Focus on AI-First Marketing as a differentiator.</strong> While AirAsia leads in overall digital presence, Thai Vietjet can leapfrog competitors by becoming the first airline in the region to fully optimize for AI search. By implementing comprehensive AEO, Thai Vietjet can capture the growing segment of AI-assisted travelers (91% of whom don't have brand preference) and establish thought leadership in AI-driven travel booking.
+                </p>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-lightbulb text-4xl text-yellow-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Strategic Recommendations</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="border-l-4 border-blue-500 pl-6 py-4 bg-blue-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm mr-2">Priority 1</span>
+                        Immediate Actions (Week 1-2)
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-arrow-right text-blue-600 mr-2"></i>Conduct comprehensive technical audit of th.vietjetair.com</li>
+                        <li><i class="fas fa-arrow-right text-blue-600 mr-2"></i>Implement Organization schema and llms.txt file</li>
+                        <li><i class="fas fa-arrow-right text-blue-600 mr-2"></i>Set up GA4 AI referral tracking dashboard</li>
+                        <li><i class="fas fa-arrow-right text-blue-600 mr-2"></i>Identify top 50 routes for priority optimization</li>
+                        <li><i class="fas fa-arrow-right text-blue-600 mr-2"></i>Establish baseline AI visibility metrics (ChatGPT, Perplexity testing)</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-green-500 pl-6 py-4 bg-green-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm mr-2">Priority 2</span>
+                        Quick Wins (Month 1)
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-arrow-right text-green-600 mr-2"></i>Optimize top 10 route pages with Flight schema and FAQ sections</li>
+                        <li><i class="fas fa-arrow-right text-green-600 mr-2"></i>Create comprehensive FAQ pages for baggage, check-in, booking policies</li>
+                        <li><i class="fas fa-arrow-right text-green-600 mr-2"></i>Implement FlightReservation schema in booking confirmation emails</li>
+                        <li><i class="fas fa-arrow-right text-green-600 mr-2"></i>Launch Reddit & Quora presence (answer 10 questions per platform)</li>
+                        <li><i class="fas fa-arrow-right text-green-600 mr-2"></i>Optimize Amy chatbot responses to cite official sources</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-yellow-500 pl-6 py-4 bg-yellow-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <span class="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm mr-2">Priority 3</span>
+                        Medium-Term Initiatives (Months 2-4)
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-arrow-right text-yellow-600 mr-2"></i>Complete all 95 content pages (routes, destinations, guides)</li>
+                        <li><i class="fas fa-arrow-right text-yellow-600 mr-2"></i>Launch destination guides for top 8 Thai & Vietnam destinations</li>
+                        <li><i class="fas fa-arrow-right text-yellow-600 mr-2"></i>Build backlink strategy with travel bloggers & industry publications</li>
+                        <li><i class="fas fa-arrow-right text-yellow-600 mr-2"></i>Create video content (HowTo guides) for YouTube + transcripts</li>
+                        <li><i class="fas fa-arrow-right text-yellow-600 mr-2"></i>Partner with DMOs (Tourism Authority of Thailand, Vietnam Tourism)</li>
+                    </ul>
+                </div>
+
+                <div class="border-l-4 border-purple-500 pl-6 py-4 bg-purple-50 rounded-r-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">
+                        <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm mr-2">Priority 4</span>
+                        Long-Term Strategy (Months 5-12)
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Expand content library to 200+ pages (comparison content, travel tips)</li>
+                        <li><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Integrate AI recommendations into Amy chatbot for personalized travel planning</li>
+                        <li><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Launch loyalty program integration with AEO (Power Pass promotions)</li>
+                        <li><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Develop AI-powered flight recommendation tool on website</li>
+                        <li><i class="fas fa-arrow-right text-purple-600 mr-2"></i>Explore partnerships with AI platforms (ChatGPT Enterprise, Perplexity)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gradient-to-r from-red-50 to-pink-50 p-6 rounded-lg border-2 border-red-300">
+                <h3 class="font-bold text-xl text-red-800 mb-4">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Critical Success Factors
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">🎯</div>
+                        <div class="font-bold text-gray-800 mb-2">Executive Buy-In</div>
+                        <p class="text-sm text-gray-700">Leadership commitment to AI-First strategy and resource allocation</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">⚡</div>
+                        <div class="font-bold text-gray-800 mb-2">Fast Execution</div>
+                        <p class="text-sm text-gray-700">First-mover advantage in AI optimization before competitors catch up</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">📊</div>
+                        <div class="font-bold text-gray-800 mb-2">Continuous Measurement</div>
+                        <p class="text-sm text-gray-700">Monthly AI visibility tracking and data-driven optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="card p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <i class="fas fa-forward text-4xl text-indigo-600 mr-4"></i>
+                <h2 class="text-3xl font-bold text-gray-800">Next Steps</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                    <h3 class="font-bold text-lg text-indigo-800 mb-3">
+                        <i class="fas fa-calendar-check mr-2"></i>Immediate Action Items
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <div class="font-semibold text-gray-800 mb-2">Stakeholder Approval</div>
+                            <ul class="space-y-1 text-sm text-gray-700">
+                                <li><i class="far fa-square mr-2"></i>Present implementation package to executive team</li>
+                                <li><i class="far fa-square mr-2"></i>Secure budget approval (฿735,000 / $31,500)</li>
+                                <li><i class="far fa-square mr-2"></i>Sign off on 6-month implementation timeline</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800 mb-2">Team Formation</div>
+                            <ul class="space-y-1 text-sm text-gray-700">
+                                <li><i class="far fa-square mr-2"></i>Assign project manager & technical lead</li>
+                                <li><i class="far fa-square mr-2"></i>Engage content writers (Thai & English)</li>
+                                <li><i class="far fa-square mr-2"></i>Onboard SEO/AEO consultant team</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <h3 class="font-bold text-lg text-green-800 mb-3">
+                        <i class="fas fa-rocket mr-2"></i>Kickoff Preparation
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <div class="font-semibold text-gray-800 mb-2">Technical Setup</div>
+                            <ul class="space-y-1 text-sm text-gray-700">
+                                <li><i class="far fa-square mr-2"></i>Grant website access & CMS credentials</li>
+                                <li><i class="far fa-square mr-2"></i>Set up GA4 property & Search Console access</li>
+                                <li><i class="far fa-square mr-2"></i>Install AEO tracking tools (Profound, etc.)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="font-semibold text-gray-800 mb-2">Content Resources</div>
+                            <ul class="space-y-1 text-sm text-gray-700">
+                                <li><i class="far fa-square mr-2"></i>Provide brand guidelines & tone of voice</li>
+                                <li><i class="far fa-square mr-2"></i>Share existing route/destination data</li>
+                                <li><i class="far fa-square mr-2"></i>Identify subject matter experts for interviews</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="font-bold text-lg text-blue-800 mb-3">
+                        <i class="fas fa-users mr-2"></i>Stakeholder Meeting Agenda
+                    </h3>
+                    <div class="text-sm text-gray-700 space-y-2">
+                        <div><i class="fas fa-clock text-blue-600 mr-2"></i><strong>Duration:</strong> 90 minutes</div>
+                        <div><i class="fas fa-users text-blue-600 mr-2"></i><strong>Attendees:</strong> CMO, Digital Marketing Manager, IT Manager, Finance Director, AEO Consultant Team</div>
+                        <div class="mt-4">
+                            <strong>Agenda:</strong>
+                            <ol class="list-decimal list-inside mt-2 space-y-1 ml-4">
+                                <li>AI-First Marketing landscape & opportunity (15 min)</li>
+                                <li>Thai Vietjet competitive positioning (10 min)</li>
+                                <li>Implementation roadmap walkthrough (20 min)</li>
+                                <li>Budget breakdown & ROI projections (15 min)</li>
+                                <li>Risk mitigation & success factors (10 min)</li>
+                                <li>Q&A and decision (20 min)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center py-8">
+            <div class="bg-gradient-to-r from-red-600 to-purple-600 text-white py-8 px-6 rounded-lg shadow-xl">
+                <h3 class="text-2xl font-bold mb-3">Ready to Transform Thai Vietjet's Digital Presence?</h3>
+                <p class="text-lg mb-4">Let's capture the 91% of travelers who start their journey with AI search.</p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <div class="bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold shadow-md">
+                        <i class="fas fa-envelope mr-2"></i>Contact: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dabbbfb5f7aebfbbb79ab9b5b4a9afb6aebbb4b9a3f4b9b5b7">[email&#160;protected]</a>
+                    </div>
+                    <div class="bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold shadow-md">
+                        <i class="fas fa-phone mr-2"></i>+66 2 XXX XXXX
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Info -->
+        <div class="text-center text-sm text-white opacity-75 py-6">
+            <p>Thai Vietjet AI-First Marketing & AEO Implementation Package</p>
+            <p>Prepared: February 2026 | Version 1.0 | Confidential</p>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Budget Chart
+        const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+        new Chart(budgetCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Content Creation', 'Schema Implementation', 'Off-Site SEO', 'Tools & Software', 'Project Management'],
+                datasets: [{
+                    data: [280000, 105000, 175000, 70000, 105000],
+                    backgroundColor: [
+                        '#3B82F6',
+                        '#10B981',
+                        '#F59E0B',
+                        '#8B5CF6',
+                        '#EF4444'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            padding: 15,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: '6-Month Implementation Budget (THB)',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += '฿' + context.parsed.toLocaleString();
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = ((context.parsed / total) * 100).toFixed(1);
+                                label += ' (' + percentage + '%)';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // KPI Performance Forecast Chart
+        const kpiCtx = document.getElementById('kpiChart').getContext('2d');
+        new Chart(kpiCtx, {
+            type: 'line',
+            data: {
+                labels: ['Current', 'Month 1', 'Month 2', 'Month 3', 'Month 6', 'Month 9', 'Month 12'],
+                datasets: [
+                    {
+                        label: 'AI Visibility %',
+                        data: [10, 15, 20, 28, 40, 52, 60],
+                        borderColor: '#3B82F6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Organic Traffic Growth %',
+                        data: [0, 5, 8, 15, 20, 32, 40],
+                        borderColor: '#10B981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'Direct Bookings Growth %',
+                        data: [0, 3, 6, 12, 15, 22, 30],
+                        borderColor: '#F59E0B',
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: 'AI Referrals (per month)',
+                        data: [0, 2, 5, 10, 15, 35, 75],
+                        borderColor: '#8B5CF6',
+                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 15
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: '12-Month KPI Performance Projection',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: {
+                            display: true,
+                            text: 'Growth Percentage (%)'
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'AI Referrals (count)'
+                        },
+                        grid: {
+                            drawOnChartArea: false,
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDtjr10K7H%2FhHtWSW02KIdu0xGR3OUqXJQDQG07W%2FW1zX3LnIjL%2BVLl8Mwb0lI%2BaWgLmzHZZl0%2BSLJqWSjAXP6xMaF99xv217tG0jLPKbQxmLMx6OGA9571CR%2BGObwPtX5NN4tAud8KxGjzW0DO8jw7uujGLVQSynMiedZBNTG5mROPMaw%2FD2mcWUi0DDulsUyGiQTpEiJWEmrNM4DhletAhpoeH%2FCSE73vIy4JIZyJKX%2Fgy8EKEQ7BFfaMbC%2Bh5xeTB9%2BABDnHd46hyw%2FDsVaLvYCnH7%2BAmNNNulMfRth6PWfOYWc%2B%2BToJQAIYopvuwFRDPluE8IMOLTI0YsBIFqforVDG3jhvp9liafBH0eUQIYg3ItYmGJ9xP7Bbi0HyKYGoS5C409111DH5vglg4O1mvYG%2Fy39nlWzRSjQnf6kmBYgV3cW%2FbuUN632x7EyX2M%2FPXN7h9uZDmxnF7KptwkgoBhYg2u0S5jqVqwMt%2FlWsbATPsRhREiO9kxDPaD8nToPvek%2BbhsDoixCdkxAowW4igDb6QPowAOhswxgWwKc9hSfwvtrLV%2BucqDVALVIvnAkTQwJx5jxodLgMhklGTGqeHXrsUqb1cSCwYwFbp0F5QXv93iuwWdrtRllxn%2FtcZW2G7uXp99fA%2FHsc0Fo79xwy0%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDtjr10K7H/hHtWSW02KIdu0xGR3OUqXJQDQG07W/W1zX3LnIjL+VLl8Mwb0lI+aWgLmzHZZl0+SLJqWSjAXP6xMaF99xv217tG0jLPKbQxmLMx6OGA9571CR+GObwPtX5NN4tAud8KxGjzW0DO8jw7uujGLVQSynMiedZBNTG5mROPMaw/D2mcWUi0DDulsUyGiQTpEiJWEmrNM4DhletAhpoeH/CSE73vIy4JIZyJKX/gy8EKEQ7BFfaMbC+h5xeTB9+ABDnHd46hyw/DsVaLvYCnH7+AmNNNulMfRth6PWfOYWc++ToJQAIYopvuwFRDPluE8IMOLTI0YsBIFqforVDG3jhvp9liafBH0eUQIYg3ItYmGJ9xP7Bbi0HyKYGoS5C409111DH5vglg4O1mvYG/y39nlWzRSjQnf6kmBYgV3cW/buUN632x7EyX2M/PXN7h9uZDmxnF7KptwkgoBhYg2u0S5jqVqwMt/lWsbATPsRhREiO9kxDPaD8nToPvek+bhsDoixCdkxAowW4igDb6QPowAOhswxgWwKc9hSfwvtrLV+ucqDVALVIvnAkTQwJx5jxodLgMhklGTGqeHXrsUqb1cSCwYwFbp0F5QXv93iuwWdrtRllxn/tcZW2G7uXp99fA/Hsc0Fo79xwy0=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

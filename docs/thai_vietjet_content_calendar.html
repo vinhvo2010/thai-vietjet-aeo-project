@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Vietjet AEO Content Calendar & Implementation Plan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --vietjet-red: #E31E24;
+            --vietjet-blue: #1A2B4A;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .header-gradient {
+            background: linear-gradient(135deg, var(--vietjet-blue) 0%, var(--vietjet-red) 100%);
+        }
+        
+        .section-title {
+            color: var(--vietjet-blue);
+            border-left: 4px solid var(--vietjet-red);
+            padding-left: 1rem;
+        }
+        
+        .calendar-table th {
+            background-color: var(--vietjet-blue);
+            color: white;
+        }
+        
+        .calendar-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .priority-high {
+            background-color: #fee;
+            border-left: 3px solid #e31e24;
+        }
+        
+        .priority-medium {
+            background-color: #fff4e6;
+            border-left: 3px solid #ff9800;
+        }
+        
+        .priority-low {
+            background-color: #f0f9ff;
+            border-left: 3px solid: #0284c7;
+        }
+        
+        .phase-card {
+            border-left: 4px solid var(--vietjet-red);
+            transition: all 0.3s ease;
+        }
+        
+        .phase-card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .keyword-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+        }
+        
+        .keyword-high-volume {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        
+        .keyword-medium-volume {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .keyword-low-volume {
+            background-color: #e0e7ff;
+            color: #3730a3;
+        }
+        
+        .deliverable-item {
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+            border-left: 3px solid var(--vietjet-red);
+        }
+        
+        .timeline-bar {
+            height: 30px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 0.875rem;
+            color: white;
+        }
+        
+        .month-header {
+            background-color: var(--vietjet-blue);
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <div class="header-gradient text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-4xl font-bold mb-4">Thai Vietjet AEO Content Calendar & Implementation Plan</h1>
+            <p class="text-xl opacity-90">6-Month AI-First Marketing Strategy & Answer Engine Optimization</p>
+            <div class="mt-6 flex items-center space-x-4 text-sm">
+                <span><i class="fas fa-calendar-alt mr-2"></i>Duration: 6 Months</span>
+                <span><i class="fas fa-chart-line mr-2"></i>Focus: AI Visibility & Direct Bookings</span>
+                <span><i class="fas fa-globe mr-2"></i>Markets: Thailand, Vietnam, Australia, Japan</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <div class="max-w-7xl mx-auto px-6 py-8">
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">Executive Summary</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-900 mb-2">180+</div>
+                    <div class="text-gray-700">Content Pieces</div>
+                    <div class="text-sm text-gray-600 mt-2">Route pages, destination guides, FAQs</div>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold" style="color: var(--vietjet-red);">8</div>
+                    <div class="text-gray-700">Schema Types</div>
+                    <div class="text-sm text-gray-600 mt-2">Flight, Organization, FAQ, HowTo, etc.</div>
+                </div>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-green-900">50%</div>
+                    <div class="text-gray-700">AI Visibility Target</div>
+                    <div class="text-sm text-gray-600 mt-2">Increase in 6 months</div>
+                </div>
+            </div>
+            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400">
+                <p class="text-sm text-yellow-800">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    <strong>Critical Success Factor:</strong> 91% of travelers don't have a preferred airline when they start searching. Thai Vietjet must appear in AI-generated answers for flight booking queries to capture this audience.
+                </p>
+            </div>
+        </div>
+
+        <!-- 6-Month Content Calendar -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">6-Month Content Calendar</h2>
+            
+            <!-- Month 1 -->
+            <div class="mb-8">
+                <div class="month-header">Month 1: Foundation & Audit (March 2026)</div>
+                <table class="calendar-table w-full border-collapse mt-4">
+                    <thead>
+                        <tr>
+                            <th class="border p-3 text-left" style="width: 20%;">Week</th>
+                            <th class="border p-3 text-left" style="width: 30%;">Content Type</th>
+                            <th class="border p-3 text-left" style="width: 35%;">Deliverable</th>
+                            <th class="border p-3 text-left" style="width: 15%;">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Week 1-2</td>
+                            <td class="border p-3">Website Audit</td>
+                            <td class="border p-3">
+                                <strong>Complete Technical SEO Audit</strong><br>
+                                - Current schema markup review<br>
+                                - Page speed analysis<br>
+                                - Mobile optimization check<br>
+                                - Crawl error identification
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 2-3</td>
+                            <td class="border p-3">Organization Schema</td>
+                            <td class="border p-3">
+                                <strong>Implement Organization Schema</strong><br>
+                                - Company information<br>
+                                - Contact details<br>
+                                - Social media profiles<br>
+                                - Logo and branding
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 3-4</td>
+                            <td class="border p-3">Route Pages (Priority)</td>
+                            <td class="border p-3">
+                                <strong>Create 10 Priority Route Pages</strong><br>
+                                - Bangkok-Phuket<br>
+                                - Bangkok-Chiang Mai<br>
+                                - Bangkok-Krabi<br>
+                                - Bangkok-Da Nang<br>
+                                - Bangkok-Ho Chi Minh<br>
+                                - Bangkok-Hanoi<br>
+                                - Bangkok-Phu Quoc<br>
+                                - Bangkok-Fukuoka<br>
+                                - Bangkok-Taipei<br>
+                                - Bangkok-Sydney
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 4</td>
+                            <td class="border p-3">FAQ Pages</td>
+                            <td class="border p-3">
+                                <strong>Create 5 Core FAQ Pages</strong><br>
+                                - General booking FAQs<br>
+                                - Baggage policy FAQs<br>
+                                - Check-in process FAQs<br>
+                                - SkyBOSS benefits FAQs<br>
+                                - Power Pass FAQs
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Month 2 -->
+            <div class="mb-8">
+                <div class="month-header">Month 2: Content Expansion (April 2026)</div>
+                <table class="calendar-table w-full border-collapse mt-4">
+                    <thead>
+                        <tr>
+                            <th class="border p-3 text-left" style="width: 20%;">Week</th>
+                            <th class="border p-3 text-left" style="width: 30%;">Content Type</th>
+                            <th class="border p-3 text-left" style="width: 35%;">Deliverable</th>
+                            <th class="border p-3 text-left" style="width: 15%;">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Week 1-2</td>
+                            <td class="border p-3">Route Pages (Secondary)</td>
+                            <td class="border p-3">
+                                <strong>Create 20 Secondary Route Pages</strong><br>
+                                - Chiang Mai-Phuket<br>
+                                - Phuket-Krabi<br>
+                                - Bangkok-Khon Kaen<br>
+                                - All Vietnam domestic routes<br>
+                                - Regional connections
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 2-3</td>
+                            <td class="border p-3">Destination Guides</td>
+                            <td class="border p-3">
+                                <strong>Create 8 Destination Guides</strong><br>
+                                - Phuket Travel Guide<br>
+                                - Chiang Mai Travel Guide<br>
+                                - Krabi Travel Guide<br>
+                                - Da Nang Travel Guide<br>
+                                - Hanoi Travel Guide<br>
+                                - Ho Chi Minh Travel Guide<br>
+                                - Phu Quoc Travel Guide<br>
+                                - Fukuoka Travel Guide
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 3-4</td>
+                            <td class="border p-3">HowTo Guides</td>
+                            <td class="border p-3">
+                                <strong>Create 10 HowTo Guides</strong><br>
+                                - How to check-in online<br>
+                                - How to add baggage<br>
+                                - How to select seats<br>
+                                - How to use Power Pass<br>
+                                - How to upgrade to SkyBOSS<br>
+                                - How to manage booking<br>
+                                - How to request refund<br>
+                                - How to book group travel<br>
+                                - How to use mobile app<br>
+                                - How to earn Fun Rewards
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 4</td>
+                            <td class="border p-3">Flight Schema</td>
+                            <td class="border p-3">
+                                <strong>Implement Flight Schema</strong><br>
+                                - All route pages<br>
+                                - Flight search results<br>
+                                - Booking confirmation
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Month 3 -->
+            <div class="mb-8">
+                <div class="month-header">Month 3: Deep Content & Schema (May 2026)</div>
+                <table class="calendar-table w-full border-collapse mt-4">
+                    <thead>
+                        <tr>
+                            <th class="border p-3 text-left" style="width: 20%;">Week</th>
+                            <th class="border p-3 text-left" style="width: 30%;">Content Type</th>
+                            <th class="border p-3 text-left" style="width: 35%;">Deliverable</th>
+                            <th class="border p-3 text-left" style="width: 15%;">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Week 1-2</td>
+                            <td class="border p-3">Comparison Content</td>
+                            <td class="border p-3">
+                                <strong>Create 10 Comparison Articles</strong><br>
+                                - Thai Vietjet vs AirAsia<br>
+                                - Thai Vietjet vs Nok Air<br>
+                                - Economy vs SkyBOSS<br>
+                                - Power Pass vs Pay-as-you-go<br>
+                                - Direct flights vs connecting<br>
+                                - Bangkok airports: Don Mueang vs Suvarnabhumi<br>
+                                - Best time to visit destinations<br>
+                                - Beach destinations comparison<br>
+                                - City break destinations<br>
+                                - Family vs solo travel
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 2-3</td>
+                            <td class="border p-3">Travel Tips</td>
+                            <td class="border p-3">
+                                <strong>Create 15 Travel Tips Articles</strong><br>
+                                - Packing tips for tropical destinations<br>
+                                - Travel insurance guide<br>
+                                - Visa requirements by destination<br>
+                                - Airport transfer options<br>
+                                - Budget travel tips<br>
+                                - Family travel tips<br>
+                                - Solo travel safety<br>
+                                - Food & dining guides<br>
+                                - Cultural etiquette guides<br>
+                                - Weather & seasonal advice<br>
+                                - Photography tips<br>
+                                - Shopping guides<br>
+                                - Nightlife guides<br>
+                                - Adventure activity tips<br>
+                                - Accommodation recommendations
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 3-4</td>
+                            <td class="border p-3">Promotional Content</td>
+                            <td class="border p-3">
+                                <strong>Create 8 Promotional Landing Pages</strong><br>
+                                - Zero Dong promotion page<br>
+                                - SkyBOSS special offers<br>
+                                - Power Pass promotion<br>
+                                - Seasonal sale pages<br>
+                                - Group booking offers<br>
+                                - Student discounts<br>
+                                - Corporate travel packages<br>
+                                - Loyalty program benefits
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 4</td>
+                            <td class="border p-3">FAQPage Schema</td>
+                            <td class="border p-3">
+                                <strong>Implement FAQPage Schema</strong><br>
+                                - All FAQ pages<br>
+                                - Destination guide FAQs<br>
+                                - Route page FAQs
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Month 4 -->
+            <div class="mb-8">
+                <div class="month-header">Month 4: Off-Page SEO & UGC (June 2026)</div>
+                <table class="calendar-table w-full border-collapse mt-4">
+                    <thead>
+                        <tr>
+                            <th class="border p-3 text-left" style="width: 20%;">Week</th>
+                            <th class="border p-3 text-left" style="width: 30%;">Content Type</th>
+                            <th class="border p-3 text-left" style="width: 35%;">Deliverable</th>
+                            <th class="border p-3 text-left" style="width: 15%;">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Week 1-2</td>
+                            <td class="border p-3">Reddit & Quora</td>
+                            <td class="border p-3">
+                                <strong>Build Presence on Q&A Platforms</strong><br>
+                                - Create accounts and profiles<br>
+                                - Answer 50+ questions on r/Thailand, r/travel<br>
+                                - Answer 30+ questions on Quora<br>
+                                - Provide helpful, non-promotional answers<br>
+                                - Target: "Best airline to...", "How to fly to..."
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 2-3</td>
+                            <td class="border p-3">Guest Blogging</td>
+                            <td class="border p-3">
+                                <strong>Publish 10 Guest Posts</strong><br>
+                                - Travel blogs (Thailand, Vietnam, Australia)<br>
+                                - Tourism websites<br>
+                                - Lifestyle magazines<br>
+                                - Business travel sites<br>
+                                - Topics: destination guides, travel tips
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 3-4</td>
+                            <td class="border p-3">Review Management</td>
+                            <td class="border p-3">
+                                <strong>Optimize Review Platforms</strong><br>
+                                - Claim TripAdvisor listing<br>
+                                - Optimize Google Business Profile<br>
+                                - Respond to all reviews<br>
+                                - Encourage customer reviews<br>
+                                - Monitor Skytrax, Trustpilot
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 4</td>
+                            <td class="border p-3">HowTo Schema</td>
+                            <td class="border p-3">
+                                <strong>Implement HowTo Schema</strong><br>
+                                - All HowTo guides<br>
+                                - Step-by-step instructions<br>
+                                - Duration estimates
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Month 5 -->
+            <div class="mb-8">
+                <div class="month-header">Month 5: AI Visibility & Testing (July 2026)</div>
+                <table class="calendar-table w-full border-collapse mt-4">
+                    <thead>
+                        <tr>
+                            <th class="border p-3 text-left" style="width: 20%;">Week</th>
+                            <th class="border p-3 text-left" style="width: 30%;">Content Type</th>
+                            <th class="border p-3 text-left" style="width: 35%;">Deliverable</th>
+                            <th class="border p-3 text-left" style="width: 15%;">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Week 1-2</td>
+                            <td class="border p-3">AI Testing</td>
+                            <td class="border p-3">
+                                <strong>Test AI Visibility</strong><br>
+                                - Test 100+ queries in ChatGPT<br>
+                                - Test 100+ queries in Perplexity<br>
+                                - Test Google AI Overviews<br>
+                                - Test Bing Copilot<br>
+                                - Document citation rates<br>
+                                - Identify gaps
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 2-3</td>
+                            <td class="border p-3">Content Optimization</td>
+                            <td class="border p-3">
+                                <strong>Optimize Existing Content</strong><br>
+                                - Update 50+ pages based on AI testing<br>
+                                - Improve E-E-A-T signals<br>
+                                - Add more citations<br>
+                                - Enhance structured data<br>
+                                - Improve internal linking
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 3-4</td>
+                            <td class="border p-3">Video Content</td>
+                            <td class="border p-3">
+                                <strong>Create 10 Video Guides</strong><br>
+                                - How to check-in online<br>
+                                - How to pack carry-on<br>
+                                - Airport navigation guides<br>
+                                - Destination videos<br>
+                                - SkyBOSS experience<br>
+                                - Upload to YouTube with transcripts
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 4</td>
+                            <td class="border p-3">Offer Schema</td>
+                            <td class="border p-3">
+                                <strong>Implement Offer Schema</strong><br>
+                                - All promotional pages<br>
+                                - Special offers<br>
+                                - Pricing information
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Month 6 -->
+            <div class="mb-8">
+                <div class="month-header">Month 6: Optimization & Scaling (August 2026)</div>
+                <table class="calendar-table w-full border-collapse mt-4">
+                    <thead>
+                        <tr>
+                            <th class="border p-3 text-left" style="width: 20%;">Week</th>
+                            <th class="border p-3 text-left" style="width: 30%;">Content Type</th>
+                            <th class="border p-3 text-left" style="width: 35%;">Deliverable</th>
+                            <th class="border p-3 text-left" style="width: 15%;">Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Week 1-2</td>
+                            <td class="border p-3">Performance Analysis</td>
+                            <td class="border p-3">
+                                <strong>Comprehensive Performance Review</strong><br>
+                                - AI visibility analysis<br>
+                                - Organic traffic growth<br>
+                                - Keyword rankings<br>
+                                - Conversion rates<br>
+                                - Schema validation<br>
+                                - Competitive analysis
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 2-3</td>
+                            <td class="border p-3">Content Scaling</td>
+                            <td class="border p-3">
+                                <strong>Create 30+ Additional Pages</strong><br>
+                                - Seasonal content<br>
+                                - Event-based content<br>
+                                - New route pages<br>
+                                - Partner destination guides<br>
+                                - Long-tail keyword content
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 3-4</td>
+                            <td class="border p-3">Digital PR Campaign</td>
+                            <td class="border p-3">
+                                <strong>Launch Major PR Initiative</strong><br>
+                                - Press releases (10+)<br>
+                                - Media outreach<br>
+                                - Influencer partnerships<br>
+                                - Industry publication features<br>
+                                - News coverage of Boeing 737-8 fleet
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-100" style="color: var(--vietjet-red);">HIGH</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Week 4</td>
+                            <td class="border p-3">Future Planning</td>
+                            <td class="border p-3">
+                                <strong>6-Month Extension Plan</strong><br>
+                                - Next phase content strategy<br>
+                                - Budget allocation<br>
+                                - Team expansion needs<br>
+                                - Tool recommendations<br>
+                                - KPI adjustments
+                            </td>
+                            <td class="border p-3">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800">MEDIUM</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SEO Keyword Strategy -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">SEO Keyword Strategy for Flight Booking</h2>
+            
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Keyword Categories & Priorities</h3>
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="p-4 bg-green-50 rounded-lg">
+                        <div class="font-bold text-green-900 mb-2">High Volume Keywords</div>
+                        <div class="text-sm text-gray-700">10K+ monthly searches</div>
+                        <div class="text-xs text-gray-600 mt-2">High competition, brand-building</div>
+                    </div>
+                    <div class="p-4 bg-yellow-50 rounded-lg">
+                        <div class="font-bold text-yellow-900 mb-2">Medium Volume Keywords</div>
+                        <div class="text-sm text-gray-700">1K-10K monthly searches</div>
+                        <div class="text-xs text-gray-600 mt-2">Moderate competition, conversion focus</div>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg">
+                        <div class="font-bold text-blue-900 mb-2">Long-Tail Keywords</div>
+                        <div class="text-sm text-gray-700">100-1K monthly searches</div>
+                        <div class="text-xs text-gray-600 mt-2">Low competition, high intent</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Primary Keyword Clusters</h3>
+                
+                <div class="mb-6">
+                    <h4 class="font-bold mb-3">1. Flight Booking Keywords</h4>
+                    <div class="flex flex-wrap">
+                        <span class="keyword-badge keyword-high-volume">flights to Thailand</span>
+                        <span class="keyword-badge keyword-high-volume">cheap flights to Bangkok</span>
+                        <span class="keyword-badge keyword-high-volume">flights to Phuket</span>
+                        <span class="keyword-badge keyword-medium-volume">Bangkok to Phuket flights</span>
+                        <span class="keyword-badge keyword-medium-volume">Bangkok to Chiang Mai flights</span>
+                        <span class="keyword-badge keyword-medium-volume">flights to Da Nang</span>
+                        <span class="keyword-badge keyword-medium-volume">Vietnam flights from Bangkok</span>
+                        <span class="keyword-badge keyword-low-volume">Thai Vietjet flight schedule</span>
+                        <span class="keyword-badge keyword-low-volume">Vietjet Thailand booking</span>
+                        <span class="keyword-badge keyword-low-volume">domestic flights Thailand</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold mb-3">2. AI-Optimized Query Keywords</h4>
+                    <div class="flex flex-wrap">
+                        <span class="keyword-badge keyword-medium-volume">best airline to fly to Phuket</span>
+                        <span class="keyword-badge keyword-medium-volume">cheapest way to get to Chiang Mai</span>
+                        <span class="keyword-badge keyword-medium-volume">how to fly to Vietnam from Thailand</span>
+                        <span class="keyword-badge keyword-low-volume">which airline flies Bangkok to Da Nang</span>
+                        <span class="keyword-badge keyword-low-volume">what is the best airline for domestic Thailand</span>
+                        <span class="keyword-badge keyword-low-volume">how much does it cost to fly to Phuket</span>
+                        <span class="keyword-badge keyword-low-volume">when is the cheapest time to fly to Thailand</span>
+                        <span class="keyword-badge keyword-low-volume">best low cost airline Thailand</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold mb-3">3. Route-Specific Keywords</h4>
+                    <div class="flex flex-wrap">
+                        <span class="keyword-badge keyword-high-volume">Bangkok to Phuket</span>
+                        <span class="keyword-badge keyword-high-volume">Bangkok to Chiang Mai</span>
+                        <span class="keyword-badge keyword-medium-volume">Bangkok to Krabi</span>
+                        <span class="keyword-badge keyword-medium-volume">Bangkok to Da Nang</span>
+                        <span class="keyword-badge keyword-medium-volume">Bangkok to Hanoi</span>
+                        <span class="keyword-badge keyword-medium-volume">Bangkok to Ho Chi Minh</span>
+                        <span class="keyword-badge keyword-low-volume">Bangkok to Phu Quoc</span>
+                        <span class="keyword-badge keyword-low-volume">Bangkok to Fukuoka</span>
+                        <span class="keyword-badge keyword-low-volume">Bangkok to Taipei</span>
+                        <span class="keyword-badge keyword-low-volume">Bangkok to Sydney</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold mb-3">4. Destination Keywords</h4>
+                    <div class="flex flex-wrap">
+                        <span class="keyword-badge keyword-high-volume">Phuket travel guide</span>
+                        <span class="keyword-badge keyword-high-volume">things to do in Chiang Mai</span>
+                        <span class="keyword-badge keyword-high-volume">Da Nang travel guide</span>
+                        <span class="keyword-badge keyword-medium-volume">best time to visit Phuket</span>
+                        <span class="keyword-badge keyword-medium-volume">Krabi travel tips</span>
+                        <span class="keyword-badge keyword-medium-volume">Hanoi attractions</span>
+                        <span class="keyword-badge keyword-low-volume">how to get to Phu Quoc</span>
+                        <span class="keyword-badge keyword-low-volume">Fukuoka one day itinerary</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold mb-3">5. Service Keywords</h4>
+                    <div class="flex flex-wrap">
+                        <span class="keyword-badge keyword-medium-volume">online check-in Thai Vietjet</span>
+                        <span class="keyword-badge keyword-medium-volume">Thai Vietjet baggage allowance</span>
+                        <span class="keyword-badge keyword-low-volume">Thai Vietjet SkyBOSS</span>
+                        <span class="keyword-badge keyword-low-volume">Vietjet Power Pass</span>
+                        <span class="keyword-badge keyword-low-volume">Thai Vietjet seat selection</span>
+                        <span class="keyword-badge keyword-low-volume">Vietjet check-in time</span>
+                        <span class="keyword-badge keyword-low-volume">Thai Vietjet customer service</span>
+                        <span class="keyword-badge keyword-low-volume">Vietjet refund policy</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-bold mb-3">6. Comparison Keywords</h4>
+                    <div class="flex flex-wrap">
+                        <span class="keyword-badge keyword-medium-volume">Thai Vietjet vs AirAsia</span>
+                        <span class="keyword-badge keyword-medium-volume">Thai Vietjet vs Nok Air</span>
+                        <span class="keyword-badge keyword-low-volume">best low cost airline Thailand</span>
+                        <span class="keyword-badge keyword-low-volume">Economy vs SkyBOSS Thai Vietjet</span>
+                        <span class="keyword-badge keyword-low-volume">Thai Vietjet vs Thai Lion Air</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Keyword Implementation Strategy</h3>
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr style="background-color: var(--vietjet-blue); color: white;">
+                            <th class="border p-3 text-left">Keyword Type</th>
+                            <th class="border p-3 text-left">Target Page</th>
+                            <th class="border p-3 text-left">Optimization Tactics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Flight Booking</td>
+                            <td class="border p-3">Homepage, Route Pages</td>
+                            <td class="border p-3">
+                                - H1: Include route name<br>
+                                - TL;DR: Include price & duration<br>
+                                - Flight schema with pricing<br>
+                                - CTA buttons with keywords
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">AI Query</td>
+                            <td class="border p-3">FAQ Pages, HowTo Guides</td>
+                            <td class="border p-3">
+                                - H2: Use exact question format<br>
+                                - Direct 1-2 sentence answer<br>
+                                - FAQPage schema<br>
+                                - Natural language
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Route-Specific</td>
+                            <td class="border p-3">Individual Route Pages</td>
+                            <td class="border p-3">
+                                - URL: /flights/[origin]-to-[destination]<br>
+                                - Meta title: [Route] | Thai Vietjet<br>
+                                - Flight schema<br>
+                                - Related routes section
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Destination</td>
+                            <td class="border p-3">Destination Guides</td>
+                            <td class="border p-3">
+                                - TouristDestination schema<br>
+                                - Comprehensive content (2000+ words)<br>
+                                - Internal links to route pages<br>
+                                - Image alt text optimization
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Service</td>
+                            <td class="border p-3">Service Pages, FAQ</td>
+                            <td class="border p-3">
+                                - HowTo schema<br>
+                                - Step-by-step instructions<br>
+                                - Screenshots/videos<br>
+                                - FAQ sections
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Comparison</td>
+                            <td class="border p-3">Blog Articles</td>
+                            <td class="border p-3">
+                                - Comparison tables<br>
+                                - Pros/cons lists<br>
+                                - Data-driven insights<br>
+                                - Neutral, helpful tone
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Schema Implementation Priorities -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">Schema Markup Implementation Priorities</h2>
+            
+            <div class="mb-6">
+                <div class="p-4 bg-blue-50 border-l-4 border-blue-500 mb-4">
+                    <p class="text-sm text-blue-900">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <strong>Implementation Method:</strong> Use JSON-LD format in &lt;script type="application/ld+json"&gt; tags in the &lt;head&gt; section of each page.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Priority 1 -->
+                <div class="priority-high p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold mr-3 bg-red-100" style="color: var(--vietjet-red);">PRIORITY 1</span>
+                        <h3 class="text-xl font-bold" style="color: var(--vietjet-red);">Critical Schemas (Month 1-2)</h3>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-2">1. Organization Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> Homepage (th.vietjetair.com)<br>
+                                <strong>Purpose:</strong> Establish brand identity in AI systems
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: Airline<br>
+                                - name: "Thai Vietjet Air"<br>
+                                - iataCode: "VZ"<br>
+                                - logo, url, sameAs (social)<br>
+                                - contactPoint (customer service)<br>
+                                - address (HQ location)
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">2. Flight Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> All route pages<br>
+                                <strong>Purpose:</strong> Display flight details in search results
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: Flight<br>
+                                - flightNumber<br>
+                                - departureAirport (with iataCode)<br>
+                                - arrivalAirport (with iataCode)<br>
+                                - departureTime, arrivalTime<br>
+                                - provider (Thai Vietjet)<br>
+                                - offers (price, currency)
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">3. FAQPage Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> All FAQ pages<br>
+                                <strong>Purpose:</strong> Appear in AI-generated answers
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: FAQPage<br>
+                                - mainEntity (array of Questions)<br>
+                                - Question: name, acceptedAnswer<br>
+                                - Answer: text (concise, direct)
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">4. WebPage Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> All pages<br>
+                                <strong>Purpose:</strong> Improve page understanding
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: WebPage<br>
+                                - name, description<br>
+                                - url, datePublished<br>
+                                - dateModified<br>
+                                - inLanguage<br>
+                                - isPartOf (website)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priority 2 -->
+                <div class="priority-medium p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800 mr-3">PRIORITY 2</span>
+                        <h3 class="text-xl font-bold text-orange-900">Important Schemas (Month 2-3)</h3>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-2">5. HowTo Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> HowTo guide pages<br>
+                                <strong>Purpose:</strong> Featured snippets & AI citations
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: HowTo<br>
+                                - name, description<br>
+                                - totalTime<br>
+                                - step (array)<br>
+                                - HowToStep: name, text, image<br>
+                                - tool, supply (if applicable)
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">6. BreadcrumbList Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> All pages<br>
+                                <strong>Purpose:</strong> Improve navigation in search results
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: BreadcrumbList<br>
+                                - itemListElement (array)<br>
+                                - ListItem: position, name, item (URL)
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">7. TouristDestination Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> Destination guide pages<br>
+                                <strong>Purpose:</strong> Rich results for destination queries
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: TouristDestination<br>
+                                - name, description<br>
+                                - geo (coordinates)<br>
+                                - image<br>
+                                - touristType<br>
+                                - includesAttraction
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">8. FlightReservation Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> Booking confirmation emails<br>
+                                <strong>Purpose:</strong> Gmail/Outlook integration
+                            </p>
+                            <div class="text-sm bg-gray-50 p-3 rounded">
+                                <strong>Required Properties:</strong><br>
+                                - @type: FlightReservation<br>
+                                - reservationId<br>
+                                - reservationFor (Flight)<br>
+                                - underName (passenger)<br>
+                                - reservationStatus<br>
+                                - totalPrice
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priority 3 -->
+                <div class="priority-low p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 mr-3">PRIORITY 3</span>
+                        <h3 class="text-xl font-bold text-blue-900">Enhancement Schemas (Month 4-6)</h3>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-2">9. Offer Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> Promotional pages<br>
+                                <strong>Purpose:</strong> Display special offers
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">10. Review/AggregateRating</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> Route pages, homepage<br>
+                                <strong>Purpose:</strong> Star ratings in search
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">11. VideoObject Schema</h4>
+                            <p class="text-sm text-gray-700 mb-2">
+                                <strong>Target:</strong> Pages with video content<br>
+                                <strong>Purpose:</strong> Video snippets
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400">
+                <p class="text-sm text-yellow-800">
+                    <i class="fas fa-lightbulb mr-2"></i>
+                    <strong>Pro Tip:</strong> Always validate schema markup using Google's Rich Results Test (search.google.com/test/rich-results) and Schema.org Validator (validator.schema.org) before deployment.
+                </p>
+            </div>
+        </div>
+
+        <!-- Off-Page SEO & UGC Strategy -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">Off-Page SEO & User-Generated Content Strategy</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="phase-card bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">
+                        <i class="fas fa-comments mr-2"></i>Q&A Platform Strategy
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Reddit Strategy</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Target subreddits: r/Thailand, r/travel, r/solotravel, r/backpacking</li>
+                                <li>• Answer 10+ questions per week</li>
+                                <li>• Provide helpful, detailed answers (not promotional)</li>
+                                <li>• Include Thai Vietjet in context when relevant</li>
+                                <li>• Monitor: "best airline to", "how to fly to", "cheap flights"</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Quora Strategy</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Answer 5+ questions per week</li>
+                                <li>• Focus on destination & travel planning questions</li>
+                                <li>• Create comprehensive answers (500+ words)</li>
+                                <li>• Add images, data, personal insights</li>
+                                <li>• Link to Thai Vietjet guides when helpful</li>
+                            </ul>
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Deliverable:</strong> 200+ Q&A responses across platforms in 6 months
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card bg-gradient-to-br from-red-50 to-white p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-red);">
+                        <i class="fas fa-star mr-2"></i>Review Management
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Platform Optimization</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• <strong>TripAdvisor:</strong> Claim listing, respond to all reviews</li>
+                                <li>• <strong>Google Business:</strong> Complete profile, add photos</li>
+                                <li>• <strong>Skytrax:</strong> Monitor ratings, encourage reviews</li>
+                                <li>• <strong>Trustpilot:</strong> Set up company page</li>
+                                <li>• <strong>AirlineRatings:</strong> Update information</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Review Generation</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Post-flight email with review request</li>
+                                <li>• QR codes in boarding passes</li>
+                                <li>• In-app review prompts</li>
+                                <li>• Incentives: extra Fun Rewards points</li>
+                                <li>• Target: 500+ new reviews in 6 months</li>
+                            </ul>
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Deliverable:</strong> 4.0+ average rating across major platforms
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card bg-gradient-to-br from-green-50 to-white p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-green-900">
+                        <i class="fas fa-pen-nib mr-2"></i>Guest Blogging & PR
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Target Publications</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• <strong>Travel Blogs:</strong> Nomadic Matt, Travel Blog, The Poor Traveler</li>
+                                <li>• <strong>Tourism Sites:</strong> Tourism Thailand, Visit Vietnam</li>
+                                <li>• <strong>News Sites:</strong> TTG Asia, Travel Daily Media</li>
+                                <li>• <strong>Lifestyle:</strong> Time Out Bangkok, Coconuts Bangkok</li>
+                                <li>• <strong>Business:</strong> Aviation Week, Simple Flying</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Content Topics</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Destination guides (2000+ words)</li>
+                                <li>• Travel tips & hacks</li>
+                                <li>• Industry insights (Boeing 737-8 fleet)</li>
+                                <li>• Sustainability initiatives</li>
+                                <li>• Partnership announcements</li>
+                            </ul>
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Deliverable:</strong> 15+ guest posts, 20+ press releases in 6 months
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-card bg-gradient-to-br from-purple-50 to-white p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-purple-900">
+                        <i class="fas fa-users mr-2"></i>Influencer Partnerships
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold mb-2">Target Influencers</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• <strong>Travel Vloggers:</strong> 50K-500K subscribers</li>
+                                <li>• <strong>Instagram Travel:</strong> 100K+ followers</li>
+                                <li>• <strong>Travel Bloggers:</strong> DA 40+ websites</li>
+                                <li>• <strong>Focus Markets:</strong> Thailand, Vietnam, Australia, Japan</li>
+                                <li>• Partner with 10-15 influencers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Collaboration Types</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Sponsored flights + destination experience</li>
+                                <li>• Unboxing videos (SkyBOSS experience)</li>
+                                <li>• Destination vlogs featuring Thai Vietjet</li>
+                                <li>• Instagram Stories & Reels</li>
+                                <li>• Blog posts with affiliate links</li>
+                            </ul>
+                        </div>
+                        <div class="deliverable-item">
+                            <strong>Deliverable:</strong> 20+ influencer posts, 50M+ reach in 6 months
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Link Building Strategy</h3>
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr style="background-color: var(--vietjet-blue); color: white;">
+                            <th class="border p-3 text-left">Link Type</th>
+                            <th class="border p-3 text-left">Target</th>
+                            <th class="border p-3 text-left">Tactics</th>
+                            <th class="border p-3 text-left">Goal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Editorial Links</td>
+                            <td class="border p-3">DA 50+ travel sites</td>
+                            <td class="border p-3">Guest posts, expert quotes, data contributions</td>
+                            <td class="border p-3">20+ links</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Resource Links</td>
+                            <td class="border p-3">Travel guides, wikis</td>
+                            <td class="border p-3">Comprehensive destination guides, tools</td>
+                            <td class="border p-3">30+ links</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Partner Links</td>
+                            <td class="border p-3">Hotels, tours, tourism boards</td>
+                            <td class="border p-3">Partnership pages, joint promotions</td>
+                            <td class="border p-3">50+ links</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Directory Links</td>
+                            <td class="border p-3">Travel directories, local listings</td>
+                            <td class="border p-3">Profile optimization, regular updates</td>
+                            <td class="border p-3">100+ links</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Social Signals</td>
+                            <td class="border p-3">Facebook, Instagram, Twitter, LinkedIn</td>
+                            <td class="border p-3">Regular content sharing, engagement</td>
+                            <td class="border p-3">1000+ shares</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- AI Visibility Tracking Plan -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">AI Visibility Tracking & Measurement Plan</h2>
+            
+            <div class="mb-6 p-4 bg-blue-50 border-l-4 border-blue-500">
+                <p class="text-sm text-blue-900">
+                    <i class="fas fa-chart-line mr-2"></i>
+                    <strong>Key Insight:</strong> Traditional SEO metrics don't fully capture AI visibility. Thai Vietjet needs a comprehensive AI-first measurement framework to track performance across ChatGPT, Perplexity, Google AI Overviews, and other answer engines.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border border-blue-200">
+                    <h3 class="text-lg font-bold mb-4" style="color: var(--vietjet-blue);">
+                        <i class="fas fa-robot mr-2"></i>AI Platform Tracking
+                    </h3>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2">1. ChatGPT (84% of AI traffic)</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Test 50+ queries weekly</li>
+                                <li>• Track citation rate (goal: 30%+)</li>
+                                <li>• Monitor sentiment of mentions</li>
+                                <li>• Document which pages are cited</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2">2. Perplexity AI</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Test 30+ queries weekly</li>
+                                <li>• Track source attribution</li>
+                                <li>• Monitor ranking in source list</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2">3. Google AI Overviews</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Track AI Overview appearance rate</li>
+                                <li>• Monitor citation in AI summaries</li>
+                                <li>• Measure CTR from AI Overviews</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm mb-2">4. Bing Copilot</h4>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>• Test 20+ queries weekly</li>
+                                <li>• Track mentions & citations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-white p-6 rounded-lg border border-red-200">
+                    <h3 class="text-lg font-bold mb-4" style="color: var(--vietjet-red);">
+                        <i class="fas fa-bullseye mr-2"></i>Key Performance Indicators
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded border">
+                            <div class="font-semibold text-sm mb-1">Answer Surface Inclusion (ASI)</div>
+                            <div class="text-xs text-gray-600">% of queries where Thai Vietjet appears in AI answers</div>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-sm">Baseline: 10%</span>
+                                <span class="text-sm font-bold" style="color: var(--vietjet-red);">Target: 50%</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <div class="font-semibold text-sm mb-1">AI Share of Voice (SoV)</div>
+                            <div class="text-xs text-gray-600">% of mentions vs. competitors in AI answers</div>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-sm">Baseline: 15%</span>
+                                <span class="text-sm font-bold" style="color: var(--vietjet-red);">Target: 40%</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <div class="font-semibold text-sm mb-1">Citation Velocity</div>
+                            <div class="text-xs text-gray-600">Frequency of mentions per 100 queries</div>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-sm">Baseline: 8/100</span>
+                                <span class="text-sm font-bold" style="color: var(--vietjet-red);">Target: 35/100</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded border">
+                            <div class="font-semibold text-sm mb-1">AI Referral Traffic</div>
+                            <div class="text-xs text-gray-600">Traffic from AI platforms (GA4)</div>
+                            <div class="mt-2 flex justify-between items-center">
+                                <span class="text-sm">Baseline: 500/mo</span>
+                                <span class="text-sm font-bold" style="color: var(--vietjet-red);">Target: 5,000/mo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Testing Query Framework</h3>
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr style="background-color: var(--vietjet-blue); color: white;">
+                            <th class="border p-3 text-left">Query Category</th>
+                            <th class="border p-3 text-left">Example Queries</th>
+                            <th class="border p-3 text-left">Test Frequency</th>
+                            <th class="border p-3 text-left">Target Platforms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border p-3">Brand Queries</td>
+                            <td class="border p-3 text-sm">
+                                - "Thai Vietjet baggage allowance"<br>
+                                - "Thai Vietjet check-in"<br>
+                                - "Thai Vietjet SkyBOSS"
+                            </td>
+                            <td class="border p-3">Weekly</td>
+                            <td class="border p-3">All platforms</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Route Queries</td>
+                            <td class="border p-3 text-sm">
+                                - "Best airline Bangkok to Phuket"<br>
+                                - "Cheap flights to Chiang Mai"<br>
+                                - "How to fly to Da Nang"
+                            </td>
+                            <td class="border p-3">Daily</td>
+                            <td class="border p-3">ChatGPT, Perplexity</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Destination Queries</td>
+                            <td class="border p-3 text-sm">
+                                - "How to get to Phu Quoc"<br>
+                                - "Best way to travel to Vietnam"<br>
+                                - "Flights from Thailand to Australia"
+                            </td>
+                            <td class="border p-3">Weekly</td>
+                            <td class="border p-3">Google AI, ChatGPT</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Comparison Queries</td>
+                            <td class="border p-3 text-sm">
+                                - "Thai Vietjet vs AirAsia"<br>
+                                - "Best low cost airline Thailand"<br>
+                                - "Cheapest airline to fly in Thailand"
+                            </td>
+                            <td class="border p-3">Weekly</td>
+                            <td class="border p-3">All platforms</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-3">Service Queries</td>
+                            <td class="border p-3 text-sm">
+                                - "How to check-in online Thai Vietjet"<br>
+                                - "What is Power Pass"<br>
+                                - "How to upgrade to SkyBOSS"
+                            </td>
+                            <td class="border p-3">Bi-weekly</td>
+                            <td class="border p-3">ChatGPT, Google AI</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Analytics Setup & Tracking</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-bold mb-3">GA4 Configuration</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Custom Dimension:</strong> AI Platform (ChatGPT, Perplexity, etc.)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Traffic Source Filter:</strong> chat, perplexity.ai, etc.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Conversion Events:</strong> AI_referral_booking, AI_referral_inquiry</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
+                                <span><strong>Engagement Rate:</strong> Track by AI platform</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-bold mb-3">Monitoring Tools</h4>
+                        <ul class="text-sm space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-blue-600 mr-2 mt-1"></i>
+                                <span><strong>Profound:</strong> AI visibility tracking ($2,000-7,500/mo)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-blue-600 mr-2 mt-1"></i>
+                                <span><strong>Google Search Console:</strong> AI Overview data</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-blue-600 mr-2 mt-1"></i>
+                                <span><strong>SEMrush/Ahrefs:</strong> Traditional SEO metrics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tools text-blue-600 mr-2 mt-1"></i>
+                                <span><strong>Manual Testing:</strong> Weekly AI query audits</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Monthly Reporting Dashboard</h3>
+                <div class="bg-gradient-to-r from-blue-50 to-red-50 p-6 rounded-lg">
+                    <div class="grid md:grid-cols-4 gap-4 mb-4">
+                        <div class="bg-white p-4 rounded text-center">
+                            <div class="text-2xl font-bold" style="color: var(--vietjet-blue);">50%</div>
+                            <div class="text-xs text-gray-600">AI Visibility</div>
+                        </div>
+                        <div class="bg-white p-4 rounded text-center">
+                            <div class="text-2xl font-bold" style="color: var(--vietjet-red);">5,000</div>
+                            <div class="text-xs text-gray-600">AI Referrals/mo</div>
+                        </div>
+                        <div class="bg-white p-4 rounded text-center">
+                            <div class="text-2xl font-bold text-green-600">40%</div>
+                            <div class="text-xs text-gray-600">Share of Voice</div>
+                        </div>
+                        <div class="bg-white p-4 rounded text-center">
+                            <div class="text-2xl font-bold text-purple-600">72%</div>
+                            <div class="text-xs text-gray-600">Engagement Rate</div>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-700">
+                        <strong>Report Includes:</strong> AI visibility by platform, citation rate trends, organic traffic growth, keyword rankings, schema validation status, competitor benchmarking, conversion rates from AI traffic, content performance analysis
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Timeline -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">Implementation Timeline & Milestones</h2>
+            
+            <div class="space-y-4">
+                <div>
+                    <h3 class="font-bold mb-2">Month 1: Foundation (March 2026)</h3>
+                    <div style="background: linear-gradient(90deg, var(--vietjet-red) 0%, var(--vietjet-red) 100%);" class="timeline-bar">
+                        Technical Audit • Organization Schema • 10 Priority Routes • 5 FAQ Pages
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-2">Month 2: Content Expansion (April 2026)</h3>
+                    <div style="background: linear-gradient(90deg, #ff6b6b 0%, #ff6b6b 100%);" class="timeline-bar">
+                        20 Secondary Routes • 8 Destination Guides • 10 HowTo Guides • Flight Schema
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-2">Month 3: Deep Content (May 2026)</h3>
+                    <div style="background: linear-gradient(90deg, #ff8787 0%, #ff8787 100%);" class="timeline-bar">
+                        10 Comparison Articles • 15 Travel Tips • 8 Promo Pages • FAQPage Schema
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-2">Month 4: Off-Page SEO (June 2026)</h3>
+                    <div style="background: linear-gradient(90deg, #ffa3a3 0%, #ffa3a3 100%);" class="timeline-bar">
+                        Reddit/Quora Presence • 10 Guest Posts • Review Management • HowTo Schema
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-2">Month 5: AI Testing (July 2026)</h3>
+                    <div style="background: linear-gradient(90deg, #ffbfbf 0%, #ffbfbf 100%);" class="timeline-bar">
+                        200+ AI Tests • Content Optimization • 10 Videos • Offer Schema
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-2">Month 6: Optimization (August 2026)</h3>
+                    <div style="background: linear-gradient(90deg, #ffd6d6 0%, #ffd6d6 100%);" class="timeline-bar">
+                        Performance Review • 30+ Additional Pages • Digital PR • Future Planning
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-bold mb-4" style="color: var(--vietjet-blue);">Key Milestones</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <div class="font-bold text-green-900">Month 2</div>
+                        <div class="text-sm text-gray-700">50 pages live with schema</div>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <div class="font-bold text-yellow-900">Month 4</div>
+                        <div class="text-sm text-gray-700">100+ backlinks acquired</div>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <div class="font-bold text-blue-900">Month 6</div>
+                        <div class="text-sm text-gray-700">50% AI visibility achieved</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deliverables Checklist -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold mb-6">Complete Deliverables Checklist</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-bold mb-4 text-lg" style="color: var(--vietjet-blue);">Content Deliverables</h3>
+                    <div class="space-y-2">
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Route Pages (all routes)</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">50+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Destination Guides</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">15+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">FAQ Pages</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">15+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">HowTo Guides</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">15+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Comparison Articles</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">10+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Travel Tips Articles</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">20+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Promotional Landing Pages</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">10+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Video Guides</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">10+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-lg" style="color: var(--vietjet-blue);">Technical Deliverables</h3>
+                    <div class="space-y-2">
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Organization Schema</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Flight Schema (all routes)</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">FAQPage Schema</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">HowTo Schema</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">BreadcrumbList Schema</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Offer Schema</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Site Speed Optimization</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Mobile Optimization</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-lg" style="color: var(--vietjet-blue);">Off-Page Deliverables</h3>
+                    <div class="space-y-2">
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Reddit Answers</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">100+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Quora Answers</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">50+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Guest Posts</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">15+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Press Releases</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">20+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Influencer Partnerships</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">15+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Quality Backlinks</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">200+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Customer Reviews</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">500+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold mb-4 text-lg" style="color: var(--vietjet-blue);">Reporting & Analytics</h3>
+                    <div class="space-y-2">
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Monthly Performance Reports</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">6</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">AI Visibility Reports</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">6</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Competitor Analysis</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">3</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">Schema Validation Reports</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">6</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">AI Query Testing (queries)</span>
+                            <span class="font-bold" style="color: var(--vietjet-red);">1,000+</span>
+                        </div>
+                        <div class="deliverable-item flex justify-between items-center">
+                            <span class="text-sm">GA4 Dashboard Setup</span>
+                            <span class="font-bold text-green-600"><i class="fas fa-check-circle"></i> Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-6 bg-gradient-to-r from-blue-50 to-red-50 rounded-lg">
+                <h3 class="font-bold mb-3 text-lg" style="color: var(--vietjet-blue);">Total Project Deliverables</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div>
+                        <div class="text-3xl font-bold" style="color: var(--vietjet-red);">180+</div>
+                        <div class="text-sm text-gray-700">Content Pieces</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold" style="color: var(--vietjet-blue);">8</div>
+                        <div class="text-sm text-gray-700">Schema Types</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-green-600">200+</div>
+                        <div class="text-sm text-gray-700">Backlinks</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-600">1,000+</div>
+                        <div class="text-sm text-gray-700">AI Tests</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="bg-gradient-to-br from-blue-900 to-red-900 text-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-3xl font-bold mb-6">
+                <i class="fas fa-rocket mr-3"></i>Next Steps & Action Items
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Immediate Actions (Week 1)</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-square mr-3 mt-1"></i>
+                            <span>Review and approve this implementation plan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-square mr-3 mt-1"></i>
+                            <span>Assign internal team members & responsibilities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-square mr-3 mt-1"></i>
+                            <span>Set up project management system (Trello/Asana)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-square mr-3 mt-1"></i>
+                            <span>Schedule kickoff meeting with all stakeholders</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-square mr-3 mt-1"></i>
+                            <span>Provide website access & credentials</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Month 1 Priorities</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-3 mt-1"></i>
+                            <span>Complete technical SEO audit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-3 mt-1"></i>
+                            <span>Implement Organization schema</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-3 mt-1"></i>
+                            <span>Create 10 priority route pages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-3 mt-1"></i>
+                            <span>Set up GA4 AI tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-right mr-3 mt-1"></i>
+                            <span>Begin AI visibility baseline testing</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">Budget & Resources</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                        <div class="text-2xl font-bold mb-1">฿750,000</div>
+                        <div class="text-sm opacity-90">Total Budget (6 months)</div>
+                        <div class="text-xs opacity-75 mt-1">≈ $21,000 USD / $31,000 AUD</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold mb-1">5-7</div>
+                        <div class="text-sm opacity-90">Team Members Required</div>
+                        <div class="text-xs opacity-75 mt-1">Content, SEO, Dev, Analytics</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold mb-1">6</div>
+                        <div class="text-sm opacity-90">Months to Results</div>
+                        <div class="text-xs opacity-75 mt-1">First wins in Month 2-3</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-yellow-500 bg-opacity-20 rounded-lg">
+                <p class="text-sm">
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <strong>Ready to Start?</strong> Contact the implementation team to schedule your kickoff meeting and begin transforming Thai Vietjet's digital presence with AI-First Marketing & AEO.
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center py-8 text-gray-600">
+            <p class="text-sm mb-2">
+                <strong>Thai Vietjet AI-First Marketing & AEO Implementation Plan</strong>
+            </p>
+            <p class="text-xs">
+                Created: February 2026 | Version 1.0 | Confidential
+            </p>
+            <p class="text-xs mt-2 opacity-75">
+                <i class="fas fa-plane mr-2"></i>Fly everywhere with Vietjet<i class="fas fa-plane ml-2"></i>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDv6qfqA0vIO3DoBOLWcuGKweVGIW%2BqL3NV4qnEXMD3iiERX3jHf2L8kFq5nZH%2F99Mu9A%2BDl5ypbPcR8dxV5YVsEoWRxvD4LA830%2BDfWxsewdBlHc5TsAr1UaYQvw1sO6FEDu%2F7%2F6jxqED%2FlP9rMAN%2B2rUDrf3IIVMeTbcnwl1GMfrExUo%2FZyn7PXGg5gA%2FIajXUZ7lfZJZo4fzndGgLmBMhkj4IkZ8ut%2B8phnHib9x9ReUkJJeQetnLW2TTHy0O6Jv3BANdfJbB9MvfL%2FZRJINqu%2BK9Zy28LMZSo33MlYeWP3bCd0aKqny%2F09dMnov8QMG%2B8IqMUM2IcUytJFEFzvrLy3zraPlybXkg3useLOpAcV5hC53R%2BDjC0ZVVhApsx%2FantvmMrw64ci4j9%2BrKngxxl18xsASsGatSWPM6X2PvG32LncFr5I%2FzNiFtAGyjK1zXEIN61SmuEgqAvNxBfxt0GqXf8sJAsLDhaJhtWgZ9YmQTLJddBfmpbNrTGbx3nVuuYiCQJ4i9Fg6mkKmuYeEiMxFTtAcMtckb5b8bCYTiYsjRKIeOqRy3wJhvSbb8Gl2XKJjz%2BpsGgI5VZkpHSKIsg4bi6lbJ%2Fbms0yD9d2WpPUcOcrMiwZoYBJgr4am8R%2F5%2FZNUi7pgB2HXDW3APJYDs%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDv6qfqA0vIO3DoBOLWcuGKweVGIW+qL3NV4qnEXMD3iiERX3jHf2L8kFq5nZH/99Mu9A+Dl5ypbPcR8dxV5YVsEoWRxvD4LA830+DfWxsewdBlHc5TsAr1UaYQvw1sO6FEDu/7/6jxqED/lP9rMAN+2rUDrf3IIVMeTbcnwl1GMfrExUo/Zyn7PXGg5gA/IajXUZ7lfZJZo4fzndGgLmBMhkj4IkZ8ut+8phnHib9x9ReUkJJeQetnLW2TTHy0O6Jv3BANdfJbB9MvfL/ZRJINqu+K9Zy28LMZSo33MlYeWP3bCd0aKqny/09dMnov8QMG+8IqMUM2IcUytJFEFzvrLy3zraPlybXkg3useLOpAcV5hC53R+DjC0ZVVhApsx/antvmMrw64ci4j9+rKngxxl18xsASsGatSWPM6X2PvG32LncFr5I/zNiFtAGyjK1zXEIN61SmuEgqAvNxBfxt0GqXf8sJAsLDhaJhtWgZ9YmQTLJddBfmpbNrTGbx3nVuuYiCQJ4i9Fg6mkKmuYeEiMxFTtAcMtckb5b8bCYTiYsjRKIeOqRy3wJhvSbb8Gl2XKJjz+psGgI5VZkpHSKIsg4bi6lbJ/bms0yD9d2WpPUcOcrMiwZoYBJgr4am8R/5/ZNUi7pgB2HXDW3APJYDs=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

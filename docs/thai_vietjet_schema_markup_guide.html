@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Vietjet Schema Markup Implementation Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --vietjet-red: #E31E24;
+            --vietjet-blue: #1A2B4A;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        .vietjet-gradient {
+            background: linear-gradient(135deg, var(--vietjet-blue) 0%, var(--vietjet-red) 100%);
+        }
+        .schema-code {
+            background: #1e293b;
+            color: #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .schema-code .key { color: #60a5fa; }
+        .schema-code .string { color: #86efac; }
+        .schema-code .number { color: #fbbf24; }
+        .schema-code .boolean { color: #fb923c; }
+        .schema-property {
+            border-left: 3px solid var(--vietjet-red);
+            padding-left: 1rem;
+            margin: 1rem 0;
+        }
+        .section-header {
+            border-bottom: 3px solid var(--vietjet-red);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .icon-box {
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="vietjet-gradient text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-plane text-5xl mr-4"></i>
+                <div>
+                    <h1 class="text-4xl font-bold">Thai Vietjet</h1>
+                    <p class="text-xl opacity-90">Schema Markup Implementation Guide</p>
+                </div>
+            </div>
+            <p class="text-lg opacity-90 mt-4">Complete JSON-LD Schema Examples for AI-First Marketing & Answer Engine Optimization</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-6 py-8">
+        
+        <!-- Introduction -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Overview</h2>
+            <p class="text-gray-700 mb-4">This guide provides complete Schema.org structured data implementations for Thai Vietjet Air. These schemas help search engines and AI systems understand your content, improving visibility in Google Rich Results, AI Overviews, ChatGPT, Perplexity, and other answer engines.</p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="icon-box bg-blue-600 text-white mb-3">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">SEO Benefits</h3>
+                    <p class="text-sm text-gray-600">Enhanced visibility in search results with rich snippets and featured answers</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <div class="icon-box bg-green-600 text-white mb-3">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">AI Optimization</h3>
+                    <p class="text-sm text-gray-600">Better citation in AI-generated answers from ChatGPT, Gemini, and Perplexity</p>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg">
+                    <div class="icon-box bg-red-600 text-white mb-3">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Direct Bookings</h3>
+                    <p class="text-sm text-gray-600">Increased direct traffic and conversions by appearing in answer engines</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schema 1: Organization -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">1. Organization Schema</h2>
+            </div>
+            <p class="text-gray-700 mb-4"><strong>Usage:</strong> Add to homepage (th.vietjetair.com) in the <code class="bg-gray-100 px-2 py-1 rounded">&lt;head&gt;</code> section</p>
+            <p class="text-gray-700 mb-6"><strong>Purpose:</strong> Defines Thai Vietjet as an organization, establishing brand identity for search engines and AI systems</p>
+            
+            <div class="schema-property mb-6">
+                <h3 class="font-semibold text-gray-800 mb-2">Key Properties:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>@type:</strong> "Airline" (defines the organization type)</li>
+                    <li><strong>name:</strong> Official airline name</li>
+                    <li><strong>iataCode:</strong> "VZ" (airline code for Thai Vietjet)</li>
+                    <li><strong>url:</strong> Homepage URL</li>
+                    <li><strong>logo:</strong> High-resolution logo URL</li>
+                    <li><strong>sameAs:</strong> Social media profiles for authority</li>
+                    <li><strong>contactPoint:</strong> Customer service information</li>
+                </ul>
+            </div>
+
+            <div class="schema-code">
+<pre>{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"Airline"</span>,
+  <span class="key">"name"</span>: <span class="string">"Thai Vietjet Air"</span>,
+  <span class="key">"alternateName"</span>: <span class="string">"Thai VietJet"</span>,
+  <span class="key">"iataCode"</span>: <span class="string">"VZ"</span>,
+  <span class="key">"url"</span>: <span class="string">"https://th.vietjetair.com"</span>,
+  <span class="key">"logo"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"ImageObject"</span>,
+    <span class="key">"url"</span>: <span class="string">"https://th.vietjetair.com/images/logo.png"</span>,
+    <span class="key">"width"</span>: <span class="number">600</span>,
+    <span class="key">"height"</span>: <span class="number">200</span>
+  },
+  <span class="key">"description"</span>: <span class="string">"Thai Vietjet Air is a low-cost airline operating domestic and international flights from Thailand to Vietnam, Japan, Taiwan, and Australia."</span>,
+  <span class="key">"sameAs"</span>: [
+    <span class="string">"https://www.facebook.com/thaivietjetair"</span>,
+    <span class="string">"https://www.instagram.com/thaivietjetair"</span>,
+    <span class="string">"https://twitter.com/thaivietjetair"</span>,
+    <span class="string">"https://www.youtube.com/thaivietjetair"</span>,
+    <span class="string">"https://en.wikipedia.org/wiki/Thai_VietJet_Air"</span>
+  ],
+  <span class="key">"contactPoint"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"ContactPoint"</span>,
+    <span class="key">"telephone"</span>: <span class="string">"+66-2-126-8999"</span>,
+    <span class="key">"contactType"</span>: <span class="string">"Customer Service"</span>,
+    <span class="key">"areaServed"</span>: [<span class="string">"TH"</span>, <span class="string">"VN"</span>, <span class="string">"JP"</span>, <span class="string">"TW"</span>, <span class="string">"AU"</span>],
+    <span class="key">"availableLanguage"</span>: [<span class="string">"Thai"</span>, <span class="string">"English"</span>, <span class="string">"Vietnamese"</span>]
+  },
+  <span class="key">"foundingDate"</span>: <span class="string">"2014"</span>,
+  <span class="key">"address"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"PostalAddress"</span>,
+    <span class="key">"streetAddress"</span>: <span class="string">"Don Mueang International Airport"</span>,
+    <span class="key">"addressLocality"</span>: <span class="string">"Bangkok"</span>,
+    <span class="key">"addressCountry"</span>: <span class="string">"TH"</span>
+  }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Schema 2: Flight -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">2. Flight Schema</h2>
+            </div>
+            <p class="text-gray-700 mb-4"><strong>Usage:</strong> Add to individual route pages (e.g., Bangkok to Phuket page)</p>
+            <p class="text-gray-700 mb-6"><strong>Purpose:</strong> Provides detailed flight information for AI systems to answer queries like "flights from Bangkok to Phuket" or "Thai Vietjet flight times"</p>
+            
+            <div class="schema-property mb-6">
+                <h3 class="font-semibold text-gray-800 mb-2">Key Properties:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>flightNumber:</strong> Complete with airline code (e.g., "VZ101")</li>
+                    <li><strong>departureAirport/arrivalAirport:</strong> Use IATA codes (BKK, HKT)</li>
+                    <li><strong>departureTime/arrivalTime:</strong> ISO 8601 format with timezone</li>
+                    <li><strong>provider:</strong> Link to airline organization</li>
+                    <li><strong>estimatedFlightDuration:</strong> ISO 8601 duration format</li>
+                </ul>
+            </div>
+
+            <div class="schema-code">
+<pre>{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"Flight"</span>,
+  <span class="key">"flightNumber"</span>: <span class="string">"VZ101"</span>,
+  <span class="key">"provider"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Airline"</span>,
+    <span class="key">"name"</span>: <span class="string">"Thai Vietjet Air"</span>,
+    <span class="key">"iataCode"</span>: <span class="string">"VZ"</span>,
+    <span class="key">"url"</span>: <span class="string">"https://th.vietjetair.com"</span>
+  },
+  <span class="key">"departureAirport"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Airport"</span>,
+    <span class="key">"name"</span>: <span class="string">"Don Mueang International Airport"</span>,
+    <span class="key">"iataCode"</span>: <span class="string">"DMK"</span>,
+    <span class="key">"address"</span>: {
+      <span class="key">"@type"</span>: <span class="string">"PostalAddress"</span>,
+      <span class="key">"addressLocality"</span>: <span class="string">"Bangkok"</span>,
+      <span class="key">"addressCountry"</span>: <span class="string">"TH"</span>
+    }
+  },
+  <span class="key">"departureTime"</span>: <span class="string">"2026-03-15T08:00:00+07:00"</span>,
+  <span class="key">"departureGate"</span>: <span class="string">"A12"</span>,
+  <span class="key">"departureTerminal"</span>: <span class="string">"1"</span>,
+  <span class="key">"arrivalAirport"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Airport"</span>,
+    <span class="key">"name"</span>: <span class="string">"Phuket International Airport"</span>,
+    <span class="key">"iataCode"</span>: <span class="string">"HKT"</span>,
+    <span class="key">"address"</span>: {
+      <span class="key">"@type"</span>: <span class="string">"PostalAddress"</span>,
+      <span class="key">"addressLocality"</span>: <span class="string">"Phuket"</span>,
+      <span class="key">"addressCountry"</span>: <span class="string">"TH"</span>
+    }
+  },
+  <span class="key">"arrivalTime"</span>: <span class="string">"2026-03-15T09:20:00+07:00"</span>,
+  <span class="key">"arrivalGate"</span>: <span class="string">"3"</span>,
+  <span class="key">"arrivalTerminal"</span>: <span class="string">"Domestic"</span>,
+  <span class="key">"estimatedFlightDuration"</span>: <span class="string">"PT1H20M"</span>,
+  <span class="key">"flightDistance"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Distance"</span>,
+    <span class="key">"value"</span>: <span class="string">"682"</span>,
+    <span class="key">"unitCode"</span>: <span class="string">"KMT"</span>
+  },
+  <span class="key">"aircraft"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Vehicle"</span>,
+    <span class="key">"name"</span>: <span class="string">"Airbus A320"</span>,
+    <span class="key">"vehicleModelDate"</span>: <span class="string">"2020"</span>
+  },
+  <span class="key">"boardingPolicy"</span>: <span class="string">"https://schema.org/ZoneBoardingPolicy"</span>,
+  <span class="key">"mealService"</span>: <span class="string">"Snacks and beverages available for purchase"</span>,
+  <span class="key">"webCheckinTime"</span>: <span class="string">"2026-03-14T08:00:00+07:00"</span>
+}</pre>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mt-4">
+                <p class="text-sm text-gray-700"><strong>💡 Pro Tip:</strong> Add this schema to every route page. Create dynamic pages for all city pairs (Bangkok-Phuket, Bangkok-Hanoi, etc.) to capture long-tail search queries and AI recommendations.</p>
+            </div>
+        </div>
+
+        <!-- Schema 3: FlightReservation -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">3. FlightReservation Schema</h2>
+            </div>
+            <p class="text-gray-700 mb-4"><strong>Usage:</strong> Add to booking confirmation emails and confirmation pages</p>
+            <p class="text-gray-700 mb-6"><strong>Purpose:</strong> Enables Gmail, Outlook, and other email clients to display rich booking cards and automatic calendar entries</p>
+            
+            <div class="schema-property mb-6">
+                <h3 class="font-semibold text-gray-800 mb-2">Key Properties:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>reservationId:</strong> Unique booking reference (PNR)</li>
+                    <li><strong>reservationStatus:</strong> Confirmed, Cancelled, or Pending</li>
+                    <li><strong>underName:</strong> Passenger information</li>
+                    <li><strong>reservationFor:</strong> Nested Flight schema</li>
+                    <li><strong>totalPrice:</strong> Total cost with currency</li>
+                </ul>
+            </div>
+
+            <div class="schema-code">
+<pre>{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"FlightReservation"</span>,
+  <span class="key">"reservationId"</span>: <span class="string">"VZ8H2K"</span>,
+  <span class="key">"reservationStatus"</span>: <span class="string">"https://schema.org/ReservationConfirmed"</span>,
+  <span class="key">"underName"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Person"</span>,
+    <span class="key">"name"</span>: <span class="string">"John Smith"</span>,
+    <span class="key">"email"</span>: <span class="string">"<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1872777076366b75716c70587d60797568747d367b7775">[email&#160;protected]</a>"</span>
+  },
+  <span class="key">"bookingTime"</span>: <span class="string">"2026-02-20T14:30:00+07:00"</span>,
+  <span class="key">"modifiedTime"</span>: <span class="string">"2026-02-20T14:30:00+07:00"</span>,
+  <span class="key">"passengerSequenceNumber"</span>: <span class="string">"001"</span>,
+  <span class="key">"passengerPriorityStatus"</span>: <span class="string">"SkyBoss"</span>,
+  <span class="key">"boardingGroup"</span>: <span class="string">"A"</span>,
+  <span class="key">"securityScreening"</span>: <span class="string">"Fast Track"</span>,
+  <span class="key">"reservationFor"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Flight"</span>,
+    <span class="key">"flightNumber"</span>: <span class="string">"VZ101"</span>,
+    <span class="key">"provider"</span>: {
+      <span class="key">"@type"</span>: <span class="string">"Airline"</span>,
+      <span class="key">"name"</span>: <span class="string">"Thai Vietjet Air"</span>,
+      <span class="key">"iataCode"</span>: <span class="string">"VZ"</span>
+    },
+    <span class="key">"departureAirport"</span>: {
+      <span class="key">"@type"</span>: <span class="string">"Airport"</span>,
+      <span class="key">"name"</span>: <span class="string">"Don Mueang International Airport"</span>,
+      <span class="key">"iataCode"</span>: <span class="string">"DMK"</span>
+    },
+    <span class="key">"departureTime"</span>: <span class="string">"2026-03-15T08:00:00+07:00"</span>,
+    <span class="key">"arrivalAirport"</span>: {
+      <span class="key">"@type"</span>: <span class="string">"Airport"</span>,
+      <span class="key">"name"</span>: <span class="string">"Phuket International Airport"</span>,
+      <span class="key">"iataCode"</span>: <span class="string">"HKT"</span>
+    },
+    <span class="key">"arrivalTime"</span>: <span class="string">"2026-03-15T09:20:00+07:00"</span>
+  },
+  <span class="key">"reservedTicket"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Ticket"</span>,
+    <span class="key">"ticketToken"</span>: <span class="string">"qrCode:VZ8H2K001"</span>,
+    <span class="key">"ticketNumber"</span>: <span class="string">"VZ8H2K"</span>,
+    <span class="key">"ticketedSeat"</span>: {
+      <span class="key">"@type"</span>: <span class="string">"Seat"</span>,
+      <span class="key">"seatNumber"</span>: <span class="string">"12A"</span>,
+      <span class="key">"seatSection"</span>: <span class="string">"Economy"</span>
+    }
+  },
+  <span class="key">"totalPrice"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"PriceSpecification"</span>,
+    <span class="key">"price"</span>: <span class="number">1999</span>,
+    <span class="key">"priceCurrency"</span>: <span class="string">"THB"</span>
+  },
+  <span class="key">"broker"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Organization"</span>,
+    <span class="key">"name"</span>: <span class="string">"Thai Vietjet Air"</span>,
+    <span class="key">"url"</span>: <span class="string">"https://th.vietjetair.com"</span>
+  }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Schema 4: FAQPage -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">4. FAQPage Schema</h2>
+            </div>
+            <p class="text-gray-700 mb-4"><strong>Usage:</strong> Add to FAQ pages, help center, and pages with Q&A content</p>
+            <p class="text-gray-700 mb-6"><strong>Purpose:</strong> Powers Google's FAQ rich results and helps AI systems answer direct questions about your airline</p>
+            
+            <div class="schema-property mb-6">
+                <h3 class="font-semibold text-gray-800 mb-2">Key Properties:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>mainEntity:</strong> Array of Question objects</li>
+                    <li><strong>Question.name:</strong> The question text</li>
+                    <li><strong>acceptedAnswer:</strong> The answer content</li>
+                    <li>Each question should have a clear, concise answer (under 300 characters for best results)</li>
+                </ul>
+            </div>
+
+            <div class="schema-code">
+<pre>{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"FAQPage"</span>,
+  <span class="key">"mainEntity"</span>: [
+    {
+      <span class="key">"@type"</span>: <span class="string">"Question"</span>,
+      <span class="key">"name"</span>: <span class="string">"What is Thai Vietjet's baggage allowance?"</span>,
+      <span class="key">"acceptedAnswer"</span>: {
+        <span class="key">"@type"</span>: <span class="string">"Answer"</span>,
+        <span class="key">"text"</span>: <span class="string">"Thai Vietjet allows 7kg of cabin baggage (one main bag + one personal item). SkyBoss fares include 30kg checked baggage, Deluxe fares include 20kg, and Eco fares do not include checked baggage (can be purchased separately)."</span>
+      }
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"Question"</span>,
+      <span class="key">"name"</span>: <span class="string">"How early should I arrive at the airport for my Thai Vietjet flight?"</span>,
+      <span class="key">"acceptedAnswer"</span>: {
+        <span class="key">"@type"</span>: <span class="string">"Answer"</span>,
+        <span class="key">"text"</span>: <span class="string">"For domestic flights, arrive at least 90 minutes before departure. For international flights, arrive at least 2 hours before departure. Check-in counters close 40 minutes before departure."</span>
+      }
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"Question"</span>,
+      <span class="key">"name"</span>: <span class="string">"Can I check in online for Thai Vietjet flights?"</span>,
+      <span class="key">"acceptedAnswer"</span>: {
+        <span class="key">"@type"</span>: <span class="string">"Answer"</span>,
+        <span class="key">"text"</span>: <span class="string">"Yes, online check-in is available 24 hours before departure through th.vietjetair.com or the Thai Vietjet mobile app. You can select seats and download your boarding pass. Check-in closes 1 hour before departure."</span>
+      }
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"Question"</span>,
+      <span class="key">"name"</span>: <span class="string">"What destinations does Thai Vietjet fly to?"</span>,
+      <span class="key">"acceptedAnswer"</span>: {
+        <span class="key">"@type"</span>: <span class="string">"Answer"</span>,
+        <span class="key">"text"</span>: <span class="string">"Thai Vietjet operates domestic flights within Thailand (Bangkok, Phuket, Chiang Mai, Krabi, Khon Kaen) and international flights to Vietnam (Hanoi, Ho Chi Minh, Da Nang, Phu Quoc), Japan (Fukuoka), Taiwan (Taipei), and Australia (Sydney, Melbourne)."</span>
+      }
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"Question"</span>,
+      <span class="key">"name"</span>: <span class="string">"What is Thai Vietjet's cancellation policy?"</span>,
+      <span class="key">"acceptedAnswer"</span>: {
+        <span class="key">"@type"</span>: <span class="string">"Answer"</span>,
+        <span class="key">"text"</span>: <span class="string">"Cancellation fees vary by fare type. Eco fares have higher cancellation fees, while SkyBoss fares offer more flexibility. You can cancel up to 4 hours before departure through the website or call center. Refunds are processed within 7-10 business days."</span>
+      }
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"Question"</span>,
+      <span class="key">"name"</span>: <span class="string">"Does Thai Vietjet offer inflight meals?"</span>,
+      <span class="key">"acceptedAnswer"</span>: {
+        <span class="key">"@type"</span>: <span class="string">"Answer"</span>,
+        <span class="key">"text"</span>: <span class="string">"Meals are not included in the base fare. Passengers can pre-order meals when booking or purchase food and beverages onboard. SkyBoss passengers receive complimentary meals and drinks."</span>
+      }
+    }
+  ]
+}</pre>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-4">
+                <p class="text-sm text-gray-700"><strong>⚠️ Important:</strong> Each FAQ answer should be under 300 characters for best results in Google Rich Results. Focus on direct, actionable answers.</p>
+            </div>
+        </div>
+
+        <!-- Schema 5: HowTo -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">5. HowTo Schema</h2>
+            </div>
+            <p class="text-gray-700 mb-4"><strong>Usage:</strong> Add to help pages, guides, and instructional content (e.g., "How to check in online")</p>
+            <p class="text-gray-700 mb-6"><strong>Purpose:</strong> Powers Google's HowTo rich results and helps AI systems provide step-by-step instructions</p>
+            
+            <div class="schema-property mb-6">
+                <h3 class="font-semibold text-gray-800 mb-2">Key Properties:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>name:</strong> Title of the how-to guide</li>
+                    <li><strong>step:</strong> Array of HowToStep objects</li>
+                    <li><strong>HowToStep.text:</strong> The instruction for each step</li>
+                    <li><strong>totalTime:</strong> Estimated time to complete (ISO 8601 duration)</li>
+                </ul>
+            </div>
+
+            <div class="schema-code">
+<pre>{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"HowTo"</span>,
+  <span class="key">"name"</span>: <span class="string">"How to Check In Online for Thai Vietjet Flights"</span>,
+  <span class="key">"description"</span>: <span class="string">"Complete guide to checking in online for your Thai Vietjet flight, selecting seats, and downloading your boarding pass."</span>,
+  <span class="key">"totalTime"</span>: <span class="string">"PT5M"</span>,
+  <span class="key">"estimatedCost"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"MonetaryAmount"</span>,
+    <span class="key">"currency"</span>: <span class="string">"THB"</span>,
+    <span class="key">"value"</span>: <span class="number">0</span>
+  },
+  <span class="key">"tool"</span>: [
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToTool"</span>,
+      <span class="key">"name"</span>: <span class="string">"Computer or smartphone"</span>
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToTool"</span>,
+      <span class="key">"name"</span>: <span class="string">"Booking reference number"</span>
+    }
+  ],
+  <span class="key">"step"</span>: [
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToStep"</span>,
+      <span class="key">"position"</span>: <span class="number">1</span>,
+      <span class="key">"name"</span>: <span class="string">"Visit the Thai Vietjet website or app"</span>,
+      <span class="key">"text"</span>: <span class="string">"Go to th.vietjetair.com or open the Thai Vietjet mobile app on your smartphone."</span>,
+      <span class="key">"url"</span>: <span class="string">"https://th.vietjetair.com/checkin"</span>
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToStep"</span>,
+      <span class="key">"position"</span>: <span class="number">2</span>,
+      <span class="key">"name"</span>: <span class="string">"Click on Online Check-in"</span>,
+      <span class="key">"text"</span>: <span class="string">"Find and click the 'Online Check-in' button in the main navigation menu."</span>
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToStep"</span>,
+      <span class="key">"position"</span>: <span class="number">3</span>,
+      <span class="key">"name"</span>: <span class="string">"Enter your booking details"</span>,
+      <span class="key">"text"</span>: <span class="string">"Enter your 6-character booking reference (PNR) and the passenger's last name exactly as shown on your booking confirmation."</span>
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToStep"</span>,
+      <span class="key">"position"</span>: <span class="number">4</span>,
+      <span class="key">"name"</span>: <span class="string">"Select your seat"</span>,
+      <span class="key">"text"</span>: <span class="string">"Choose your preferred seat from the available options. Some seats may have additional charges."</span>
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToStep"</span>,
+      <span class="key">"position"</span>: <span class="number">5</span>,
+      <span class="key">"name"</span>: <span class="string">"Confirm passenger details"</span>,
+      <span class="key">"text"</span>: <span class="string">"Review all passenger information including names, passport numbers, and travel documents to ensure accuracy."</span>
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToStep"</span>,
+      <span class="key">"position"</span>: <span class="number">6</span>,
+      <span class="key">"name"</span>: <span class="string">"Download your boarding pass"</span>,
+      <span class="key">"text"</span>: <span class="string">"Once check-in is complete, download your boarding pass as a PDF or save it to your mobile wallet (Apple Wallet or Google Pay)."</span>
+    },
+    {
+      <span class="key">"@type"</span>: <span class="string">"HowToStep"</span>,
+      <span class="key">"position"</span>: <span class="number">7</span>,
+      <span class="key">"name"</span>: <span class="string">"Arrive at the airport"</span>,
+      <span class="key">"text"</span>: <span class="string">"Arrive at the airport at least 90 minutes before domestic flights or 2 hours before international flights. Proceed directly to security if you have no checked baggage."</span>
+    }
+  ]
+}</pre>
+            </div>
+        </div>
+
+        <!-- Schema 6: Offer -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">6. Offer Schema</h2>
+            </div>
+            <p class="text-gray-700 mb-4"><strong>Usage:</strong> Add to promotional pages, special deals, and flight booking pages</p>
+            <p class="text-gray-700 mb-6"><strong>Purpose:</strong> Helps search engines and AI systems understand current pricing and special offers</p>
+            
+            <div class="schema-property mb-6">
+                <h3 class="font-semibold text-gray-800 mb-2">Key Properties:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>@type:</strong> "Offer" or "AggregateOffer" for multiple price points</li>
+                    <li><strong>price/lowPrice:</strong> Numeric price value</li>
+                    <li><strong>priceCurrency:</strong> ISO 4217 currency code</li>
+                    <li><strong>priceValidUntil:</strong> Expiration date for promotional pricing</li>
+                    <li><strong>availability:</strong> InStock, OutOfStock, PreOrder</li>
+                </ul>
+            </div>
+
+            <div class="schema-code">
+<pre>{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"Product"</span>,
+  <span class="key">"name"</span>: <span class="string">"Thai Vietjet Flight: Bangkok to Phuket"</span>,
+  <span class="key">"description"</span>: <span class="string">"Direct flights from Bangkok (Don Mueang) to Phuket with Thai Vietjet Air. Multiple daily departures available."</span>,
+  <span class="key">"brand"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Brand"</span>,
+    <span class="key">"name"</span>: <span class="string">"Thai Vietjet Air"</span>
+  },
+  <span class="key">"offers"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"AggregateOffer"</span>,
+    <span class="key">"lowPrice"</span>: <span class="number">750</span>,
+    <span class="key">"highPrice"</span>: <span class="number">2500</span>,
+    <span class="key">"priceCurrency"</span>: <span class="string">"THB"</span>,
+    <span class="key">"priceValidUntil"</span>: <span class="string">"2026-12-31"</span>,
+    <span class="key">"availability"</span>: <span class="string">"https://schema.org/InStock"</span>,
+    <span class="key">"url"</span>: <span class="string">"https://th.vietjetair.com/flights/bangkok-phuket"</span>,
+    <span class="key">"seller"</span>: {
+      <span class="key">"@type"</span>: <span class="string">"Organization"</span>,
+      <span class="key">"name"</span>: <span class="string">"Thai Vietjet Air"</span>
+    },
+    <span class="key">"offerCount"</span>: <span class="number">14</span>
+  }
+}
+
+<span class="key">// For promotional "Zero Dong" campaigns:</span>
+{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"Offer"</span>,
+  <span class="key">"name"</span>: <span class="string">"Thai Vietjet 0 VND Promotional Fare"</span>,
+  <span class="key">"description"</span>: <span class="string">"Limited-time promotional fares starting from 0 VND (excluding taxes and fees) on selected domestic routes."</span>,
+  <span class="key">"price"</span>: <span class="number">0</span>,
+  <span class="key">"priceCurrency"</span>: <span class="string">"VND"</span>,
+  <span class="key">"priceValidUntil"</span>: <span class="string">"2026-03-31T23:59:59+07:00"</span>,
+  <span class="key">"availability"</span>: <span class="string">"https://schema.org/LimitedAvailability"</span>,
+  <span class="key">"validFrom"</span>: <span class="string">"2026-03-01T00:00:00+07:00"</span>,
+  <span class="key">"url"</span>: <span class="string">"https://th.vietjetair.com/promotions/zero-dong-sale"</span>,
+  <span class="key">"seller"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Airline"</span>,
+    <span class="key">"name"</span>: <span class="string">"Thai Vietjet Air"</span>,
+    <span class="key">"iataCode"</span>: <span class="string">"VZ"</span>
+  },
+  <span class="key">"eligibleRegion"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Country"</span>,
+    <span class="key">"name"</span>: <span class="string">"Thailand"</span>
+  },
+  <span class="key">"priceSpecification"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"PriceSpecification"</span>,
+    <span class="key">"price"</span>: <span class="number">0</span>,
+    <span class="key">"priceCurrency"</span>: <span class="string">"VND"</span>,
+    <span class="key">"valueAddedTaxIncluded"</span>: <span class="boolean">false</span>
+  }
+}</pre>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-500 p-4 mt-4">
+                <p class="text-sm text-gray-700"><strong>✅ Best Practice:</strong> Update promotional offers weekly. AI systems favor fresh, current pricing data when making recommendations.</p>
+            </div>
+        </div>
+
+        <!-- Schema 7: Vehicle (Fleet Information) -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">7. Vehicle Schema (Fleet Information)</h2>
+            </div>
+            <p class="text-gray-700 mb-4"><strong>Usage:</strong> Add to fleet/aircraft information pages</p>
+            <p class="text-gray-700 mb-6"><strong>Purpose:</strong> Provides details about aircraft types, helping AI answer questions like "What planes does Thai Vietjet use?"</p>
+            
+            <div class="schema-property mb-6">
+                <h3 class="font-semibold text-gray-800 mb-2">Key Properties:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><strong>@type:</strong> "Vehicle" for individual aircraft</li>
+                    <li><strong>name:</strong> Aircraft model name</li>
+                    <li><strong>manufacturer:</strong> Aircraft manufacturer</li>
+                    <li><strong>vehicleModelDate:</strong> Year of manufacture</li>
+                    <li><strong>numberOfSeats:</strong> Total passenger capacity</li>
+                </ul>
+            </div>
+
+            <div class="schema-code">
+<pre>{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"Vehicle"</span>,
+  <span class="key">"name"</span>: <span class="string">"Airbus A320"</span>,
+  <span class="key">"description"</span>: <span class="string">"Modern single-aisle aircraft offering comfortable seating and efficient fuel consumption"</span>,
+  <span class="key">"manufacturer"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Organization"</span>,
+    <span class="key">"name"</span>: <span class="string">"Airbus"</span>
+  },
+  <span class="key">"model"</span>: <span class="string">"A320-200"</span>,
+  <span class="key">"vehicleConfiguration"</span>: <span class="string">"Single-aisle narrow-body"</span>,
+  <span class="key">"vehicleModelDate"</span>: <span class="string">"2020"</span>,
+  <span class="key">"numberOfSeats"</span>: <span class="number">180</span>,
+  <span class="key">"fuelType"</span>: <span class="string">"Jet A-1"</span>,
+  <span class="key">"vehicleSeatingCapacity"</span>: <span class="number">180</span>
+}
+
+<span class="key">// For Boeing 737-8 (newer fleet):</span>
+{
+  <span class="key">"@context"</span>: <span class="string">"https://schema.org"</span>,
+  <span class="key">"@type"</span>: <span class="string">"Vehicle"</span>,
+  <span class="key">"name"</span>: <span class="string">"Boeing 737-8"</span>,
+  <span class="key">"description"</span>: <span class="string">"Next-generation Boeing 737 MAX aircraft with advanced fuel efficiency and passenger comfort"</span>,
+  <span class="key">"manufacturer"</span>: {
+    <span class="key">"@type"</span>: <span class="string">"Organization"</span>,
+    <span class="key">"name"</span>: <span class="string">"Boeing"</span>
+  },
+  <span class="key">"model"</span>: <span class="string">"737-8 MAX"</span>,
+  <span class="key">"vehicleConfiguration"</span>: <span class="string">"Single-aisle narrow-body"</span>,
+  <span class="key">"vehicleModelDate"</span>: <span class="string">"2023"</span>,
+  <span class="key">"numberOfSeats"</span>: <span class="number">189</span>,
+  <span class="key">"vehicleSeatingCapacity"</span>: <span class="number">189</span>
+}</pre>
+            </div>
+        </div>
+
+        <!-- Implementation Best Practices -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">Implementation Best Practices</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-code text-blue-600 mr-2"></i>
+                        Technical Implementation
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li>Add JSON-LD in <code class="bg-gray-100 px-1 rounded">&lt;script type="application/ld+json"&gt;</code> tags</li>
+                        <li>Place in the <code class="bg-gray-100 px-1 rounded">&lt;head&gt;</code> section for best results</li>
+                        <li>Can also be placed in <code class="bg-gray-100 px-1 rounded">&lt;body&gt;</code> near relevant content</li>
+                        <li>Multiple schema types can coexist on one page</li>
+                        <li>Use schema generators to minimize syntax errors</li>
+                    </ul>
+                </div>
+                
+                <div class="border-l-4 border-green-500 pl-4">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                        Validation & Testing
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li><strong>Google Rich Results Test:</strong> search.google.com/test/rich-results</li>
+                        <li><strong>Schema.org Validator:</strong> validator.schema.org</li>
+                        <li>Test on mobile and desktop</li>
+                        <li>Monitor Google Search Console for errors</li>
+                        <li>Re-validate after any schema updates</li>
+                    </ul>
+                </div>
+                
+                <div class="border-l-4 border-yellow-500 pl-4">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-sync-alt text-yellow-600 mr-2"></i>
+                        Maintenance
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li>Update pricing weekly for promotional fares</li>
+                        <li>Sync flight times with actual schedules</li>
+                        <li>Keep FAQs current with policy changes</li>
+                        <li>Add new routes as they launch</li>
+                        <li>Monitor for Schema.org updates annually</li>
+                    </ul>
+                </div>
+                
+                <div class="border-l-4 border-red-500 pl-4">
+                    <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <i class="fas fa-exclamation-triangle text-red-600 mr-2"></i>
+                        Common Pitfalls to Avoid
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                        <li>Don't hide schema content that's not visible on page</li>
+                        <li>Avoid mismatches between schema and visible content</li>
+                        <li>Don't use placeholder or fake data</li>
+                        <li>Never markup unavailable flights or outdated prices</li>
+                        <li>Don't ignore validation warnings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Priority Implementation Roadmap -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">Priority Implementation Roadmap</h2>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-red-50 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="icon-box bg-red-600 text-white mr-4 flex-shrink-0">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Phase 1: Foundation (Week 1-2)</h3>
+                            <p class="text-gray-700 mb-3"><strong>Priority: CRITICAL</strong></p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li><strong>Organization Schema</strong> on homepage (th.vietjetair.com)</li>
+                                <li><strong>Flight Schema</strong> on top 10 routes (Bangkok-Phuket, Bangkok-Hanoi, etc.)</li>
+                                <li>Validate all schemas with Google Rich Results Test</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="icon-box bg-orange-600 text-white mr-4 flex-shrink-0">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Phase 2: Content Enhancement (Week 3-4)</h3>
+                            <p class="text-gray-700 mb-3"><strong>Priority: HIGH</strong></p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li><strong>FAQPage Schema</strong> on help center and popular FAQ pages</li>
+                                <li><strong>HowTo Schema</strong> for check-in, baggage, and booking guides</li>
+                                <li>Create 20-30 FAQs covering common customer questions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="icon-box bg-yellow-600 text-white mr-4 flex-shrink-0">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Phase 3: Revenue Optimization (Week 5-6)</h3>
+                            <p class="text-gray-700 mb-3"><strong>Priority: MEDIUM</strong></p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li><strong>Offer Schema</strong> on all promotional pages</li>
+                                <li><strong>FlightReservation Schema</strong> in booking confirmation emails</li>
+                                <li>Implement dynamic pricing updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="flex items-start">
+                        <div class="icon-box bg-green-600 text-white mr-4 flex-shrink-0">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Phase 4: Scale & Expand (Week 7+)</h3>
+                            <p class="text-gray-700 mb-3"><strong>Priority: ONGOING</strong></p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li><strong>Vehicle Schema</strong> for fleet information pages</li>
+                                <li>Expand to all routes (100+ route pages)</li>
+                                <li>Add destination guides with TouristAttraction schema</li>
+                                <li>Monitor AI visibility and adjust based on data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expected Results & KPIs -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">Expected Results & KPIs</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-blue-50 rounded-lg">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">30-40%</div>
+                    <p class="text-gray-700 font-semibold mb-1">Increase in AI Citations</p>
+                    <p class="text-sm text-gray-600">Expected increase in mentions by ChatGPT, Perplexity, and Google AI Overviews</p>
+                </div>
+                
+                <div class="text-center p-6 bg-green-50 rounded-lg">
+                    <div class="text-4xl font-bold text-green-600 mb-2">20-30%</div>
+                    <p class="text-gray-700 font-semibold mb-1">Traffic Growth</p>
+                    <p class="text-sm text-gray-600">Organic traffic increase from improved search visibility within 6 months</p>
+                </div>
+                
+                <div class="text-center p-6 bg-purple-50 rounded-lg">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">15-25%</div>
+                    <p class="text-gray-700 font-semibold mb-1">Direct Bookings</p>
+                    <p class="text-sm text-gray-600">Increase in direct bookings from AI-referred traffic</p>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-gray-800 mb-4">Key Metrics to Track:</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>AI Visibility:</strong> Track mentions in ChatGPT, Perplexity, Gemini</li>
+                        <li><strong>Rich Results:</strong> Monitor Google Search Console for FAQ/HowTo appearances</li>
+                        <li><strong>CTR:</strong> Click-through rate from search results</li>
+                        <li><strong>AI Referral Traffic:</strong> Use GA4 to track traffic from "chat" sources</li>
+                    </ul>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Booking Conversion:</strong> Conversion rate from AI-referred visitors</li>
+                        <li><strong>Schema Coverage:</strong> % of pages with valid structured data</li>
+                        <li><strong>Validation Errors:</strong> Monitor and fix schema errors weekly</li>
+                        <li><strong>Competitor Comparison:</strong> Compare AI visibility vs AirAsia, Nok Air</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools & Resources -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold text-gray-800">Essential Tools & Resources</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-tools text-blue-600 mr-2"></i>
+                        Schema Tools
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-semibold text-gray-800">Google Rich Results Test</p>
+                            <a href="https://search.google.com/test/rich-results" class="text-sm text-blue-600 hover:underline" target="_blank">search.google.com/test/rich-results</a>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-semibold text-gray-800">Schema.org Validator</p>
+                            <a href="https://validator.schema.org/" class="text-sm text-blue-600 hover:underline" target="_blank">validator.schema.org</a>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-semibold text-gray-800">Schemantra Generator</p>
+                            <a href="https://schemantra.com/" class="text-sm text-blue-600 hover:underline" target="_blank">schemantra.com</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-gray-800 mb-3 flex items-center">
+                        <i class="fas fa-book text-green-600 mr-2"></i>
+                        Documentation
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-semibold text-gray-800">Schema.org Documentation</p>
+                            <a href="https://schema.org/" class="text-sm text-blue-600 hover:underline" target="_blank">schema.org</a>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-semibold text-gray-800">Google Search Central</p>
+                            <a href="https://developers.google.com/search/docs" class="text-sm text-blue-600 hover:underline" target="_blank">developers.google.com/search/docs</a>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p class="font-semibold text-gray-800">Airline SEO Best Practices</p>
+                            <a href="https://www.branchspace.com/news/seo-and-ai-for-airlines" class="text-sm text-blue-600 hover:underline" target="_blank">branchspace.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg p-8 mb-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-bold mb-4">Ready to Implement?</h2>
+                <p class="text-gray-300 mb-6">Start with Phase 1 (Organization & Flight schemas) and expand from there. Monitor results weekly and adjust based on data.</p>
+                <div class="flex justify-center space-x-4">
+                    <div class="bg-white bg-opacity-10 px-6 py-3 rounded-lg">
+                        <p class="text-sm text-gray-300">Estimated Implementation Time</p>
+                        <p class="text-2xl font-bold">6-8 Weeks</p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 px-6 py-3 rounded-lg">
+                        <p class="text-sm text-gray-300">Expected ROI Timeline</p>
+                        <p class="text-2xl font-bold">3-6 Months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Info -->
+        <div class="text-center text-gray-500 text-sm pb-8">
+            <p>Thai Vietjet Schema Markup Implementation Guide | Last Updated: February 2026</p>
+            <p class="mt-2">For technical support, contact your development team or digital marketing agency</p>
+        </div>
+
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDtjr10K7H%2FhHtWSW02KIdu0R06ZwxluKsvzPQE10NRQaT3kMwRZm0B8TwZDmedeld%2FkRYZz51QETXy4Blw11K9PSAnFYaRtrSK1zFpnuzZg1IbNelpqwIHc5FFIxZ0CnREvTsUvPozVotxKV8dPRYkRtwHueF7RfKK%2FHW%2BCq0Wh%2B6wsOw%2FGaZMb4FbZhNPJ8GnRC90V9COE2lkopphSOMvfpRfRwkDKqdyTTTgfeiPABd6Z%2BCtYeXj5b1gzCAKW5bgB%2BtdyrDchKAgLlMi0s3zE%2Bf5Bef72L1isLB13aCf7SVhet6NEnhen8hp9hwvxwUtQishldLvPLHkqaKxeOhsL2PQYaATxqYCMnOFA3HC9kelUtb8maoznSJXS9MZMhbW4%2BZ9mWxcReulBXddj35vmXkHi%2F7j%2BMTIk%2Fpc6VZKd9uHUyRsRXgQs9XvhE5x4PzNeobvfz9kpFneqRNuWZuU5pt83TiXauuJUJENGkZ7sHw%2BFiB%2FgOxNMTfj86i%2FF9v8y9nU13SKhUTMM4t8YyBa3M7xa3tHgo89eqWix0sgGAV%2B0jDIrMgNoJzKGGbXC6gwlpVJT6aSEjTfY%2FRoES66CPEuf8N6RGlIdKnymb3liCHUo7r1PJrGHLP6rU6EZdFA%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDtjr10K7H/hHtWSW02KIdu0R06ZwxluKsvzPQE10NRQaT3kMwRZm0B8TwZDmedeld/kRYZz51QETXy4Blw11K9PSAnFYaRtrSK1zFpnuzZg1IbNelpqwIHc5FFIxZ0CnREvTsUvPozVotxKV8dPRYkRtwHueF7RfKK/HW+Cq0Wh+6wsOw/GaZMb4FbZhNPJ8GnRC90V9COE2lkopphSOMvfpRfRwkDKqdyTTTgfeiPABd6Z+CtYeXj5b1gzCAKW5bgB+tdyrDchKAgLlMi0s3zE+f5Bef72L1isLB13aCf7SVhet6NEnhen8hp9hwvxwUtQishldLvPLHkqaKxeOhsL2PQYaATxqYCMnOFA3HC9kelUtb8maoznSJXS9MZMhbW4+Z9mWxcReulBXddj35vmXkHi/7j+MTIk/pc6VZKd9uHUyRsRXgQs9XvhE5x4PzNeobvfz9kpFneqRNuWZuU5pt83TiXauuJUJENGkZ7sHw+FiB/gOxNMTfj86i/F9v8y9nU13SKhUTMM4t8YyBa3M7xa3tHgo89eqWix0sgGAV+0jDIrMgNoJzKGGbXC6gwlpVJT6aSEjTfY/RoES66CPEuf8N6RGlIdKnymb3liCHUo7r1PJrGHLP6rU6EZdFA==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
